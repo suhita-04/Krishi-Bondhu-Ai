@@ -233,25 +233,22 @@ Every union is indexed with its exact latitude/longitude, elevation in meters ab
 
 ## 📊 Multi-Decadal Dataset Harmonization (1980–2026)
 
-To back our AI models with empirical longitudinal rigor, **Team Nokkhotro** engineered an open-access tabular dataset spanning **47 years** ($564\text{ monthly time-steps}$) across all **536 Unions** in Rangpur Division:
+To back our AI models with empirical longitudinal rigor, **Team Nokkhotro** engineered an open-access tabular dataset spanning **47 consecutive years** ($564\text{ monthly time-steps}$) across all **536 Unions** in Rangpur Division. **All 7 production CSV datasets (totaling 311.2 MB and 1,913,624 records) are published and committed directly inside [`dataset/data/`](dataset/data/):**
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│             HARMONIZED PRODUCTION DATASETS (1,913,624 TOTAL RECORDS)            │
-├─────────────────────────────────────┬──────────────┬─────────────┬──────────────┤
-│ Production File Name                │ Rows         │ Span        │ Resolution   │
-├─────────────────────────────────────┼──────────────┼─────────────┼──────────────┤
-│ 1. rangpur_536_unions.csv           │ 536          │ Static      │ Union Geo    │
-│ 2. agent1_precipitation_1980_2026.csv│ 302,304     │ 1980–2026   │ Monthly      │
-│ 3. agent2_thermal_drought_1980_2026.csv│ 302,304   │ 1980–2026   │ Monthly      │
-│ 4. agent3_soil_moisture_1980_2026.csv│ 302,304     │ 1980–2026   │ Monthly      │
-│ 5. agent4_agronomy_solar_1980_2026.csv│ 302,304    │ 1980–2026   │ Monthly      │
-│ 6. agent5_crop_economics_1980_2026.csv│ 99,264     │ 1980–2026   │ Monthly/Crop │
-│ 7. agent6_wind_pressure_1980_2026.csv│ 302,304     │ 1980–2026   │ Monthly      │
-└─────────────────────────────────────┴──────────────┴─────────────┴──────────────┘
-```
+| Production File Name | File Size | Record Count | Temporal Scope | Primary NASA / Ground Sensor Sources |
+| :--- | :---: | :---: | :---: | :--- |
+| [`rangpur_536_unions.csv`](dataset/data/rangpur_536_unions.csv) | 0.14 MB | 536 | Static Baseline | Administrative hierarchy (Division, District, Upazila, Union), Centroid (Lat/Lon), Elevation (m), Soil Texture, River Basin. |
+| [`agent1_precipitation_1980_2026.csv`](dataset/data/agent1_precipitation_1980_2026.csv) | 88.32 MB | 302,304 | 1980–2026 | **NASA GPM IMERG & MERRA-2**: Corrected precipitation (`PRECTOTCORR`), localized rainfall (mm/month), flood factor, waterlogging days. |
+| [`agent2_Soil_Moisture_Rainfall_Temperature_536_Unions_Monthly_1981-2026.csv`](dataset/data/agent2_Soil_Moisture_Rainfall_Temperature_536_Unions_Monthly_1981-2026.csv) | 24.36 MB | 295,872 | 1981–2026 | **NASA POWER (MERRA-2)**: Mean temperature at 2m (`T2M`), Maximum (`T2M_MAX`), Minimum (`T2M_MIN`), Relative humidity (`RH2M`), seasonal heat stress. |
+| [`agent3_soil_moisture_1980_2026.csv`](dataset/data/agent3_soil_moisture_1980_2026.csv) | 74.42 MB | 302,304 | 1980–2026 | **NASA POWER (CERES / MERRA-2)**: All-sky downward shortwave irradiance (`ALLSKY_SFC_SW_DWN` in $MJ/m^2/day$), photo-thermal indices, evapotranspiration. |
+| [`agent4_agronomy_solar_1980_2026.csv`](dataset/data/agent4_agronomy_solar_1980_2026.csv) | 65.46 MB | 302,304 | 1980–2026 | **NASA SMAP L4 & MERRA-2**: Surface topsoil wetness (`GWETTOP`), Root-zone soil wetness (`GWETROOT`), soil water deficit, AWD trigger flags. |
+| [`agent5_crop_economics_1980_2026.csv`](dataset/data/agent5_crop_economics_1980_2026.csv) | 33.78 MB | 302,304 | 1980–2026 | **World Bank CPI & BBS / DAM**: Consumer Price Index (`FP.CPI.TOTL`), real inflation-adjusted crop market prices (BDT/kg), per-bigha production budgets. |
+| [`agent6_Atmospheric_Conditions_536_Unions_Monthly_1981-2026.csv`](dataset/data/agent6_Atmospheric_Conditions_536_Unions_Monthly_1981-2026.csv) | 24.67 MB | 295,872 | 1981–2026 | **NASA POWER (MERRA-2)**: Surface wind speed at 2m (`WS2M`), surface atmospheric pressure (`PS`), aerodynamic resistance, crop lodging vulnerability. |
+| **TOTALS** | **311.15 MB** | **1,913,624 Records** | **47 Years** | **Full Multi-Spectral NASA Earth Observation Fusion** |
 
-Detailed technical schemas and validation methodology are fully documented in [`data_validation_and_dataset_uses.md`](file:///e:/Academic/4.1/Project/Nasa/Krishi-Bondhu-AI-saad-dev/data_validation_and_dataset_uses.md).
+> [!TIP]
+> Complete data synthesis scripts, ingestion pipelines, and reproducible code are located in [`dataset/code/`](dataset/code/).
+> Detailed technical schemas and validation methodology are documented in [`dataset/README.md`](dataset/README.md) and [`data_validation_and_dataset_uses.md`](data_validation_and_dataset_uses.md).
 
 ---
 

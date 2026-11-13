@@ -1,158 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
   <defs>
-    <!-- Gradients -->
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#022c22" />
-      <stop offset="50%" stop-color="#064e3b" />
-      <stop offset="100%" stop-color="#047857" />
+    <linearGradient id="leafGrad" x1="16" y1="112" x2="112" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
     </linearGradient>
-
-    <linearGradient id="emeraldLeaf" x1="120" y1="420" x2="300" y2="120" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#047857" />
-      <stop offset="40%" stop-color="#10b981" />
-      <stop offset="80%" stop-color="#34d399" />
-      <stop offset="100%" stop-color="#6ee7b7" />
+    <linearGradient id="harvestGrad" x1="32" y1="96" x2="112" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EA580C" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FDE047" />
     </linearGradient>
-
-    <linearGradient id="goldenHarvest" x1="220" y1="380" x2="420" y2="100" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#b45309" />
-      <stop offset="35%" stop-color="#d97706" />
-      <stop offset="70%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#fde047" />
-    </linearGradient>
-
-    <linearGradient id="nasaAqua" x1="80" y1="80" x2="440" y2="440" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="50%" stop-color="#06b6d4" />
-      <stop offset="100%" stop-color="#38bdf8" />
-    </linearGradient>
-
-    <linearGradient id="waterDrop" x1="180" y1="200" x2="260" y2="340" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="60%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#0369a1" />
-    </linearGradient>
-
-    <radialGradient id="satelliteGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#34d399" stop-opacity="0.25" />
-      <stop offset="75%" stop-color="#059669" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#064e3b" stop-opacity="0" />
+    <radialGradient id="satelliteGlow" cx="64" cy="64" r="56" gradientUnits="userSpaceOnUse">
+      <stop offset="60%" stop-color="#10B981" stop-opacity="0" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.2" />
     </radialGradient>
-
-    <!-- Filters -->
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="125%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#022c22" flood-opacity="0.45" />
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#064E3B" flood-opacity="0.2" />
     </filter>
   </defs>
 
-  <!-- Base Badge Shield / Circle with subtle border -->
-  <g filter="url(#badgeShadow)">
-    <circle cx="256" cy="256" r="236" fill="url(#bgGrad)" />
-    <circle cx="256" cy="256" r="235" stroke="url(#emeraldLeaf)" stroke-width="2.5" opacity="0.6" />
+  <!-- Background Glow & Satellite Waves -->
+  <circle cx="64" cy="64" r="58" fill="url(#satelliteGlow)" />
+  <circle cx="64" cy="64" r="54" stroke="#10B981" stroke-width="2" stroke-dasharray="4 6" opacity="0.35" />
+  <circle cx="64" cy="64" r="42" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.4" />
+
+  <!-- Main Agro Stem & Leaves (Clean Stylized Wheat/Sprout) -->
+  <g filter="url(#softShadow)">
+    <!-- Central curved growth stem -->
+    <path d="M40 106 C 52 92, 60 74, 64 34" stroke="url(#leafGrad)" stroke-width="7" stroke-linecap="round" />
+    
+    <!-- Left Green Leaf (SMAP/Soil) -->
+    <path d="M57 78 C 36 78, 24 64, 26 48 C 42 46, 56 60, 58 76 Z" fill="url(#leafGrad)" />
+    
+    <!-- Right Golden Wheat Grain (Harvest) -->
+    <path d="M63 60 C 82 56, 94 40, 90 26 C 74 26, 62 42, 62 58 Z" fill="url(#harvestGrad)" />
+    
+    <!-- Secondary Golden Grain -->
+    <path d="M60 84 C 78 80, 88 66, 86 52 C 72 54, 60 68, 60 82 Z" fill="url(#harvestGrad)" />
+
+    <!-- Top Sprout Peak -->
+    <path d="M64 34 C 64 20, 72 14, 76 12 C 76 22, 70 30, 64 34 Z" fill="url(#harvestGrad)" />
   </g>
 
-  <!-- Ambient Radar & Satellite Aura -->
-  <circle cx="256" cy="256" r="210" fill="url(#satelliteGlow)" />
-
-  <!-- Orbital Ellipses (NASA Satellite Telemetry Bands) -->
-  <g opacity="0.75">
-    <!-- Orbit 1 - Equatorial Tilt -->
-    <ellipse cx="256" cy="256" rx="205" ry="92" stroke="url(#nasaAqua)" stroke-width="2.5" stroke-dasharray="8 10" transform="rotate(-28 256 256)" opacity="0.65" />
-    <!-- Orbit 2 - Polar Tilt -->
-    <ellipse cx="256" cy="256" rx="205" ry="78" stroke="url(#emeraldLeaf)" stroke-width="2" stroke-dasharray="6 8" transform="rotate(38 256 256)" opacity="0.5" />
-  </g>
-
-  <!-- NASA Satellite Telemetry Waves in Orbit -->
-  <g transform="rotate(-28 256 256)" opacity="0.9">
-    <!-- Satellite Unit Body -->
-    <g transform="translate(452, 256)">
-      <!-- Solar Panels -->
-      <rect x="-18" y="-6" width="12" height="12" rx="2" fill="#38bdf8" stroke="#0284c7" stroke-width="1" />
-      <line x1="-12" y1="-6" x2="-12" y2="6" stroke="#0369a1" stroke-width="0.8" />
-      <rect x="6" y="-6" width="12" height="12" rx="2" fill="#38bdf8" stroke="#0284c7" stroke-width="1" />
-      <line x1="12" y1="-6" x2="12" y2="6" stroke="#0369a1" stroke-width="0.8" />
-      <!-- Central Satellite Core -->
-      <circle cx="0" cy="0" r="6" fill="#fde047" stroke="#d97706" stroke-width="1.5" />
-      <!-- Telemetry Radar Pulse -->
-      <circle cx="0" cy="0" r="14" stroke="#6ee7b7" stroke-width="1.5" fill="none" opacity="0.8">
-        <animate attributeName="r" values="8;24" dur="2.4s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.9;0" dur="2.4s" repeatCount="indefinite" />
-      </circle>
-    </g>
-  </g>
-
-  <!-- Agricultural Root-Zone Foundation (Soil Horizon Arcs) -->
-  <g opacity="0.4">
-    <path d="M120 405 Q 256 435 392 405" stroke="#10b981" stroke-width="3" stroke-linecap="round" fill="none" />
-    <path d="M150 428 Q 256 452 362 428" stroke="#059669" stroke-width="2.5" stroke-linecap="round" fill="none" />
-  </g>
-
-  <!-- Central Emblem: Sprout, Leaf, Water Droplet & Golden Grain Sheaf -->
-  <!-- Left Sprout: Moisture & Vegetation Leaf (NASA SMAP & NDVI) -->
-  <path d="M256 400 C 230 350, 140 310, 140 220 C 140 148, 205 130, 248 116 C 242 165, 230 240, 256 400 Z" 
-        fill="url(#emeraldLeaf)" filter="url(#softGlow)" />
-
-  <!-- Inner Leaf Highlights (Vein Dynamics) -->
-  <path d="M232 340 C 215 280, 172 235, 176 185 C 196 210, 222 250, 238 310" 
-        stroke="#a7f3d0" stroke-width="3.5" stroke-linecap="round" opacity="0.75" fill="none" />
-
-  <!-- Right Sheaf: Ripening Golden Grain (Crop Yield & Financial Resilience) -->
-  <!-- Grain 1 (Top) -->
-  <path d="M262 136 C 285 110, 335 112, 348 136 C 342 165, 300 178, 268 160 Z" 
-        fill="url(#goldenHarvest)" />
-  <!-- Grain 2 -->
-  <path d="M272 175 C 305 152, 362 158, 372 186 C 362 216, 312 225, 278 202 Z" 
-        fill="url(#goldenHarvest)" />
-  <!-- Grain 3 -->
-  <path d="M276 220 C 318 198, 380 208, 388 238 C 375 270, 322 274, 282 246 Z" 
-        fill="url(#goldenHarvest)" />
-  <!-- Grain 4 (Base) -->
-  <path d="M274 268 C 314 250, 372 262, 378 290 C 362 320, 314 320, 278 292 Z" 
-        fill="url(#goldenHarvest)" />
-
-  <!-- Central Water Droplet (Hydrology & Precision Irrigation) -->
-  <g filter="url(#softGlow)">
-    <path d="M256 220 C 235 255, 205 285, 205 315 C 205 348, 228 372, 256 372 C 284 372, 307 348, 307 315 C 307 285, 277 255, 256 220 Z" 
-          fill="url(#waterDrop)" opacity="0.95" />
-    <!-- Water Droplet Specular Reflection -->
-    <ellipse cx="238" cy="295" rx="8" ry="16" transform="rotate(-24 238 295)" fill="#ffffff" opacity="0.7" />
-    <circle cx="248" cy="330" r="4" fill="#ffffff" opacity="0.5" />
-  </g>
-
-  <!-- Central Stem & Growth Spine -->
-  <path d="M256 415 L 256 128" stroke="#34d399" stroke-width="4" stroke-linecap="round" opacity="0.85" />
-
-  <!-- AI Constellation Nodes & Digital Connections -->
-  <!-- Connected Signal Network -->
-  <g stroke="#6ee7b7" stroke-width="1.5" opacity="0.55" stroke-dasharray="2 3">
-    <line x1="256" y1="116" x2="348" y2="136" />
-    <line x1="348" y1="136" x2="372" y2="186" />
-    <line x1="372" y1="186" x2="388" y2="238" />
-    <line x1="256" y1="116" x2="176" y2="185" />
-    <line x1="176" y1="185" x2="205" y2="315" />
-    <line x1="256" y1="116" x2="256" y2="68" />
-  </g>
-
-  <!-- Glowing Neural Nodes -->
-  <circle cx="256" cy="116" r="6" fill="#fde047" stroke="#b45309" stroke-width="2" filter="url(#nodeGlow)" />
-  <circle cx="348" cy="136" r="5" fill="#f59e0b" filter="url(#nodeGlow)" />
-  <circle cx="372" cy="186" r="5" fill="#f59e0b" filter="url(#nodeGlow)" />
-  <circle cx="388" cy="238" r="5" fill="#f59e0b" filter="url(#nodeGlow)" />
-  <circle cx="176" cy="185" r="5" fill="#34d399" filter="url(#nodeGlow)" />
-  <circle cx="256" cy="68" r="7" fill="#38bdf8" stroke="#0284c7" stroke-width="2" filter="url(#nodeGlow)" />
-
-  <!-- Zenith Star (NASA High-Precision GPS/Telemetry Fix) -->
-  <path d="M256 52 L 260 64 L 272 68 L 260 72 L 256 84 L 252 72 L 240 68 L 252 64 Z" fill="#ffffff" filter="url(#nodeGlow)" />
-
-  <!-- Orbital Outer Satellite Pulse Node -->
-  <circle cx="92" cy="168" r="4.5" fill="#38bdf8" filter="url(#nodeGlow)" />
-  <circle cx="410" cy="365" r="4" fill="#34d399" filter="url(#nodeGlow)" />
+  <!-- AI Nexus Tech Nodes (Satellite Intelligence Connectivity) -->
+  <circle cx="76" cy="12" r="3.5" fill="#F59E0B" />
+  <circle cx="26" cy="48" r="3.5" fill="#10B981" />
+  <circle cx="90" cy="26" r="3" fill="#EA580C" />
+  <circle cx="86" cy="52" r="3" fill="#F59E0B" />
+  
+  <!-- Orbital Signal Dot -->
+  <circle cx="106" cy="64" r="4" fill="#0284C7" />
+  <circle cx="106" cy="64" r="7" stroke="#0284C7" stroke-width="1.5" opacity="0.5" />
 </svg>
+
