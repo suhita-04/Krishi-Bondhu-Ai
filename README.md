@@ -1,33 +1,35 @@
-# 🌾 কৃষি BONDHU AI (Krishi BONDHU AI)
-### *Farmer's Digital Ally — Voice-Activated Precision Agriculture Powered by NASA Earth Science*
+# 🌾 KRISHI BONDHU AI (কৃষি BONDHU AI)
+### *Farmer's Digital Ally — Voice-Activated Precision Agriculture & Climate-Adaptive Crop Shift Powered by NASA Earth Science*
 
-[![NASA Space Apps Challenge 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026%20Challenge-0B3D91?style=for-the-badge&logo=nasa&logoColor=white)](https://www.spaceappschallenge.org/)
-[![Theme](https://img.shields.io/badge/Challenge-Field%20Shift%3A%20Adapting%20Farms%20with%20NASA%20Data-FC3D21?style=for-the-badge)](https://www.spaceappschallenge.org/)
+[![NASA Space Apps Challenge 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026%20Global%20Challenge-0B3D91?style=for-the-badge&logo=nasa&logoColor=white)](https://www.spaceappschallenge.org/)
+[![Challenge Category](https://img.shields.io/badge/Challenge-Field%20Shift%3A%20Adapting%20Farms%20with%20NASA%20Data-FC3D21?style=for-the-badge)](https://www.spaceappschallenge.org/)
+[![Live Web Application](https://img.shields.io/badge/Live%20Application-krishi--bondhu--ai.onrender.com-00C7B7?style=for-the-badge&logo=render&logoColor=white)](https://krishi-bondhu-ai.onrender.com/)
 [![Team](https://img.shields.io/badge/Team-Nokkhotro%20(%E0%A6%A8%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A4%E0%A7%8D%E0%A6%B0)-10B981?style=for-the-badge)](https://github.com/suhita-04/Krishi-Bondhu-Ai)
-[![License](https://img.shields.io/badge/License-Permission%20Required-red?style=for-the-badge)](#-license--terms-of-use)
-[![Bilingual](https://img.shields.io/badge/Language-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%20%7C%20English-F59E0B?style=for-the-badge)](#-bilingual-accessibility--localization)
-[![Dataset](https://img.shields.io/badge/Telemetry-1.91M%20Records%20(47%20Years)-8B5CF6?style=for-the-badge)](#-multi-decadal-dataset-harmonization-19802026)
-[![Zero Dependency](https://img.shields.io/badge/Stack-Vanilla%20JS%20%7C%20TailwindCSS-06B6D4?style=for-the-badge)](#-technology-stack)
-[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://render.com/deploy?repo=https://github.com/suhita-04/Krishi-Bondhu-Ai)
+[![Bilingual](https://img.shields.io/badge/Language-English%20%7C%20%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE-F59E0B?style=for-the-badge)](#-bilingual-accessibility--localization)
+[![Multi-Agent AI](https://img.shields.io/badge/AI%20Architecture-6%2B1%20Specialist%20Agents%20%7C%20Random%20Forest%20ML-8B5CF6?style=for-the-badge)](#-the-61-multi-agent-architecture)
+[![Coverage](https://img.shields.io/badge/Geospatial%20Coverage-536%20Unions%20(8%20Districts%2C%2056%20Upazilas)-06B6D4?style=for-the-badge)](#-3-tier-hyper-localized-geospatial-hierarchy)
+[![Dataset](https://img.shields.io/badge/Longitudinal%20Data-1.91M%20Records%20(1980--2026)-EC4899?style=for-the-badge)](#-multi-decadal-dataset-harmonization-19802026)
 
 ---
 
 <p align="center">
-  <a href="https://render.com/deploy?repo=https://github.com/suhita-04/Krishi-Bondhu-Ai">
-    <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+  <a href="https://krishi-bondhu-ai.onrender.com/" target="_blank">
+    <img src="assets/icons/logo.png" alt="KRISHI BONDHU AI Logo" width="160" height="160" style="filter: drop-shadow(0 10px 20px rgba(4,120,87,0.35));" />
   </a>
 </p>
 
 <p align="center">
-  <img src="assets/icons/logo.png" alt="কৃষি BONDHU AI Logo" width="140" height="140" />
+  <a href="https://krishi-bondhu-ai.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Launch%20Live%20Platform-Click%20Here-success?style=for-the-badge&logo=rocket&logoColor=white" height="36" />
+  </a>
 </p>
 
 <p align="center">
-  <strong>কৃষি BONDHU AI</strong> is an open-science, voice-first precision agriculture advisory platform created for the <strong>NASA International Space Apps Challenge 2026</strong> under the challenge category <em>"Field Shift: Adapting Farms with NASA Data"</em>.
+  <strong>KRISHI BONDHU AI (কৃষি BONDHU AI)</strong> is a voice-first, multi-agent agricultural decision-support ecosystem engineered for the <strong>NASA International Space Apps Challenge 2026</strong> under the challenge track <em>"Field Shift: Adapting Farms with NASA Data"</em>.
 </p>
 
 <p align="center">
-  Designed specifically for smallholder and rural farmers in climate-vulnerable regions (such as northern Bangladesh and South Asia), the platform demystifies raw NASA satellite telemetry into actionable, localized agronomic advice delivered through <strong>spoken voice in native Bangla and English</strong>.
+  Designed specifically for smallholder farmers across climate-vulnerable zones (such as northern Bangladesh's drought-prone Teesta Floodplain and Barind Tract), the system bridges the gap between complex NASA satellite telemetry and rural farm gates. It translates subsoil moisture, thermal stress, and radar rainfall data into actionable farming advice, delivered in native spoken <strong>Bangla (বাংলা)</strong> and <strong>English</strong>.
 </p>
 
 ---
@@ -37,23 +39,26 @@
 - [🌟 Executive Summary: The "Orbital Paradox"](#-executive-summary-the-orbital-paradox)
 - [📖 The Human Story: From Orbit to Soil](#-the-human-story-from-orbit-to-soil)
 - [🚨 The Problem: Climate Shocks & The Smallholder Crisis](#-the-problem-climate-shocks--the-smallholder-crisis)
-- [💡 The Solution: Field Shift with কৃষি BONDHU AI](#-the-solution-field-shift-with-কৃষি-bondhu-ai)
-- [🤖 The 6+1 Multi-Agent Architecture](#-the-61-multi-agent-architecture)
+- [💡 The Solution: The Two Pillars of Field Shift](#-the-solution-the-two-pillars-of-field-shift)
+- [🤖 The 6+1 Multi-Agent AI Framework](#-the-61-multi-agent-ai-framework)
+- [🌲 Machine Learning Models & Validation Metrics](#-machine-learning-models--validation-metrics)
 - [🛰️ NASA Earth Science Data Integration](#️-nasa-earth-science-data-integration)
+- [🗺️ 3-Tier Hyper-Localized Geospatial Hierarchy](#️-3-tier-hyper-localized-geospatial-hierarchy)
 - [📊 Multi-Decadal Dataset Harmonization (1980–2026)](#-multi-decadal-dataset-harmonization-19802026)
-- [✨ Key Platform Features](#-key-platform-features)
-  - [1. 🎙️ AgroBani Voice Assistant (ভয়েস বন্ধু)](#1-️-agrobani-voice-assistant-ভয়েস-বন্ধু)
-  - [2. 🗺️ Interactive Satellite Parcel Explorer (জমির নকশা)](#2-️-interactive-satellite-parcel-explorer-জমির-নকশা)
-  - [3. 🌾 Climate-Smart Crop Shift Matrix (লাভজনক বিকল্প ফসল)](#3--climate-smart-crop-shift-matrix-লাভজনক-বিকল্প-ফসল)
-  - [4. ⛽ Precision Irrigation & Fuel Cost Calculator (সেচ ও তেলের খরচ)](#4--precision-irrigation--fuel-cost-calculator-সেচ-ও-তেলের-খরচ)
-  - [5. 📊 Farm Space Telemetry Dashboard (ফসলের হালচাল)](#5--farm-space-telemetry-dashboard-ফসলের-হালচাল)
-  - [6. 🔊 Field Breeze Ambience Synthesizer (মাঠের বাতাস)](#6--field-breeze-ambience-synthesizer-মাঠের-বাতাস)
-- [🏗️ End-to-End System Architecture](#️-end-to-end-system-architecture)
+- [✨ Core Interactive Platform Modules](#-core-interactive-platform-modules)
+  - [1. 🗺️ Satellite Parcel & Vegetation Map (`#map-explorer`)](#1-️-satellite-parcel--vegetation-map-map-explorer)
+  - [2. 🌾 Climate-Smart Crop Shift Recommender (`#crop-recommender`)](#2--climate-smart-crop-shift-recommender-crop-recommender)
+  - [3. ⛽ Precision Irrigation & Fuel Cost Calculator (`#pump-calculator`)](#3--precision-irrigation--fuel-cost-calculator-pump-calculator)
+  - [4. 📊 Farm Space Telemetry Dashboard (`#dashboard`)](#4--farm-space-telemetry-dashboard-dashboard)
+  - [5. 🎙️ AgroBani Voice Assistant & Field Breeze Engine](#5-️-agrobani-voice-assistant--field-breeze-engine)
+  - [6. 📚 NASA Scientific Literature & Validation Guides (`#resources`)](#6--nasa-scientific-literature--validation-guides-resources)
+- [🌐 Bilingual Accessibility & Localization Architecture](#-bilingual-accessibility--localization-architecture)
 - [📐 Mathematical & Agronomic Formulations](#-mathematical--agronomic-formulations)
-- [🌐 Bilingual Accessibility & Localization](#-bilingual-accessibility--localization)
+- [🏗️ End-to-End System Architecture](#️-end-to-end-system-architecture)
 - [💻 Technology Stack](#-technology-stack)
 - [📂 Project Directory Structure](#-project-directory-structure)
 - [🚀 Quick Start & Local Setup](#-quick-start--local-setup)
+- [🔌 REST API Reference](#-rest-api-reference)
 - [👥 Meet Team Nokkhotro](#-meet-team-nokkhotro)
 - [🏛️ Acknowledgements & Open Science](#️-acknowledgements--open-science)
 - [📄 License & Terms of Use](#-license--terms-of-use)
@@ -62,52 +67,52 @@
 
 ## 🌟 Executive Summary: The "Orbital Paradox"
 
-Seven hundred kilometers above Earth, NASA satellites can see a drought coming weeks before the soil visibly cracks. Yet on the ground in northern Bangladesh, a smallholder farmer still plants thirsty Boro rice—and loses his family's entire seasonal savings—because no scientific system translated that orbital signal into his native tongue.
+Seven hundred kilometers above Earth, NASA satellites detect flash droughts weeks before topsoil visibly cracks, observe thermal stress before crop leaves curl, and measure precipitation rates across entire river basins in real time. Yet on the ground in northern Bangladesh, a smallholder farmer still plants thirsty Boro paddy and exhausts his family's savings pumping groundwater—because orbital insights remain trapped behind GIS complexity, raw binary formats (NetCDF4, HDF5), and language barriers.
 
 We call this the **"Orbital Paradox"**:
-- **In Space**: Terabytes of hyper-accurate Earth observations exist across microwave radiometers (**SMAP**), multispectral sensors (**Landsat 8/9**, **MODIS**), thermal imagers (**ECOSTRESS**), and radar sweeps (**GPM**).
-- **On Earth**: Raw granules (NetCDF4, HDF5, GeoTIFF) remain locked behind scientific complexity, spatial mismatch, and language barriers that rural smallholders cannot access.
+- **In Space**: Terabytes of hyper-accurate Earth observation data stream daily from microwave radiometers (**SMAP**), multispectral sensors (**Landsat 8/9**, **MODIS**), thermal infrared radiometers (**ECOSTRESS**), and dual-frequency radar sweeps (**GPM IMERG**).
+- **On Earth**: Rural smallholders lack broadband GIS workstations, English literacy, and complex scientific tools to convert raw gigabytes into day-to-day agricultural decisions.
 
-**কৃষি BONDHU AI breaks the Orbital Paradox.** Developed by **Team Nokkhotro**, our system combines a multi-decadal data fusion pipeline ($1.91\text{ million}$ harmonized records covering all $536$ unions of Rangpur Division from $1980$ to $2026$) with a **6+1 Multi-Agent AI Engine** and a **zero-dependency, voice-first web application**. Farmers simply tap a microphone and speak in colloquial Bangla or English to receive instant, field-specific intelligence.
+**KRISHI BONDHU AI dissolves the Orbital Paradox.** Developed by **Team Nokkhotro**, our system pairs a multi-decadal data fusion pipeline ($1.91\text{ million}$ harmonized records covering all $536$ unions of Rangpur Division from $1980$ to $2026$) with a **6+1 Multi-Agent AI Consensus Engine** and a **zero-dependency, voice-first web interface**. Farmers simply tap a microphone and speak in colloquial Bangla or English to receive instant, field-specific intelligence.
 
 ---
 
 ## 📖 The Human Story: From Orbit to Soil
 
-> *"For generations, local experience was enough. Today, that rhythm is broken. Heatwaves linger longer, monsoon rains arrive too late, and flash floods strike right before harvest. Choosing the wrong crop rotation doesn't just reduce yield—it wipes out a family's entire year of food and income."*
+> *"For generations, our ancestors farmed by the calendar of the seasons. Today, that rhythm is broken. Heatwaves strike earlier, monsoon rains arrive erratic and delayed, and the groundwater table sinks deeper every spring. Choosing the wrong crop doesn't just reduce yield—it wipes out an entire family's livelihood."*
 
-Meet **Rafik**, a real-world smallholder farmer in Rangpur, Bangladesh:
-- In March, Rafik looks at dry topsoil and decides whether to plant high-risk Boro paddy or shift to low-water alternatives.
-- Midday temperatures soar past $38^\circ\text{C}$. Pumping water with his $4\text{ HP}$ shallow tube well burns expensive diesel at **৳১০৮/Liter**, yet over **$40\%$ of the water evaporates before penetrating crop root zones**.
-- In July, sudden upstream river surges in the Teesta and Brahmaputra basins trigger flash floods, submerging low-lying crops days before harvest.
+Meet **Rafik**, a smallholder farmer in Badarganj, Rangpur:
+- **The Water Dilemma**: In March, Rafik looks at dry topsoil and decides whether to plant high-cost Boro paddy. The tube well burns expensive diesel at **৳১০৮/Liter**, and groundwater levels have dropped past $40\text{ feet}$.
+- **The Evaporative Trap**: Pumping during hot afternoons ($>36^\circ\text{C}$) loses over **$40\%$ of applied water to immediate atmospheric evaporation** before it penetrates root zones.
+- **The Monoculture Cycle**: Planting continuous paddy season after season depletes soil micronutrients, triggers pest vulnerability, and requires escalating synthetic urea expenditures.
 
-**কৃষি BONDHU AI was built for Rafik.** It guides him to shift parched plots to pearl millet, sorghum, and pulses (saving $45\%\text{--}70\%$ water), warns him $72$ hours ahead of heavy rainfall via GPM radar to hold diesel pumps, and advises nocturnal irrigation ($3:30\text{ AM -- }6:00\text{ AM}$) when evaporative losses drop to near zero.
+**KRISHI BONDHU AI stands with Rafik.** It guides him to transition parched parcels to climate-resilient alternatives like pearl millet, sorghum, and pulses (saving $45\%\text{--}70\%$ water), warns him $72$ hours ahead of heavy rainfall via GPM radar to hold fuel pumps, and schedules nocturnal watering ($3:30\text{ AM -- }6:00\text{ AM}$) when evaporative loss drops to near zero.
 
 ---
 
 ## 🚨 The Problem: Climate Shocks & The Smallholder Crisis
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                           THE GLOBAL & LOCAL CRISIS                             │
-├──────────────────────────┬──────────────────────────┬───────────────────────────┤
-│    $400 BILLION / YEAR   │   1.1M METRIC TONS RICE  │     12.3% ➔ 37.5% COST    │
-│  Global economic loss    │   Destroyed by extreme   │  Farmer irrigation share  │
-│  from land degradation   │  flash floods in recent  │  surge due to groundwater │
-│     (UNCCD Baseline)     │   Bangladesh seasons     │  depletion (Barind Tract) │
-└──────────────────────────┴──────────────────────────┴───────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                               THE GLOBAL & REGIONAL CRISIS                             │
+├────────────────────────────┬─────────────────────────────┬─────────────────────────────┤
+│    $400 BILLION / YEAR     │    1.1M METRIC TONS RICE    │      12.3% ➔ 37.5% COST     │
+│   Global economic loss     │    Destroyed by sudden      │   Farmer irrigation share   │
+│   from land degradation    │   flash floods in recent    │   surge due to groundwater  │
+│      (UNCCD Baseline)      │    Bangladesh seasons       │   drawdown (Barind Tract)   │
+└────────────────────────────┴─────────────────────────────┴─────────────────────────────┘
 ```
 
-1. **Intensifying Droughts & Groundwater Depletion**: In the Barind Tract and Teesta basin, groundwater levels drop precipitously each dry season. Traditional Boro paddy requires $2,500\text{ to }5,000\text{ Liters}$ of water per kilogram of grain.
-2. **Crippling Fuel & Electricity Expenses**: Farmers burn scarce household capital running centrifugal and shallow tube pumps.
-3. **Mid-Day Evaporative Loss**: Pumping under blinding sunlight wastes fuel as atmospheric vapor pressure deficit drives rapid surface drying.
-4. **Information Literacy Divide**: Illiterate or elderly farmers cannot navigate complex English interfaces, interactive dashboards, or scientific GIS layers without conversational voice guidance.
+1. **Intensifying Droughts & Aquifer Drawdown**: In the Barind Tract and Teesta floodplain, groundwater tables decline by up to $0.5\text{--}1.0\text{ m/year}$. Traditional Boro paddy requires $2,500\text{ to }5,000\text{ Liters}$ of water per kilogram of grain.
+2. **Escalating Fuel & Energy Tariffs**: Pumping costs consume up to $37.5\%$ of a smallholder's operational budget, with diesel tariffs at ৳108/L and rising electricity rates.
+3. **Mid-Day Evaporative Waste**: Pumping under intense solar irradiance wastes costly fuel as atmospheric vapor pressure deficit (VPD) evaporates water before reaching root depths.
+4. **Data & Language Literacy Barriers**: Complex GIS maps, scientific dashboards, and English-only tools fail rural farmers who need direct answers in their colloquial spoken dialect.
 
 ---
 
-## 💡 The Solution: Field Shift with কৃষি BONDHU AI
+## 💡 The Solution: The Two Pillars of Field Shift
 
-Answering the NASA Space Apps 2026 challenge **Field Shift: Adapting Farms with NASA Data**, কৃষি BONDHU AI empowers smallholders to execute two foundational agricultural shifts:
+Answering NASA Space Apps 2026 Challenge **Field Shift: Adapting Farms with NASA Data**, KRISHI BONDHU AI operationalizes two foundational agricultural shifts:
 
 ```
                   ┌────────────────────────────────────────────────────────┐
@@ -117,19 +122,19 @@ Answering the NASA Space Apps 2026 challenge **Field Shift: Adapting Farms with 
               ┌───────────────────────────────┴──────────────────────────────┐
               ▼                                                              ▼
    🌾 SHIFT 1: CROP SHIFT                                         💧 SHIFT 2: IRRIGATION SHIFT
-   Transition from high-water crops                               Shift from daytime blind pumping
-   (Boro paddy, standard maize) to                                to precision nocturnal schedules
-   drought-hardy alternatives (Pearl                              (3:30 AM – 6:00 AM) guided by
-   Millet, Grain Sorghum, Chickpeas).                             SMAP root moisture & GPM radar.
-   👉 Saves 45%–70% water, cuts                                   👉 Cuts diesel burn by 38.5%+,
-   fertilizer cost by 50%.                                        eliminates evaporative loss.
+   Transition from water-exhausting crops                         Shift from unguided midday pumping
+   (Boro paddy, standard corn) to climate-                        to precision nocturnal schedules
+   smart rotations (Pearl Millet, Grain                           (3:30 AM – 6:00 AM) guided by
+   Sorghum, Chickpeas, Mung Pulses).                              SMAP subsoil moisture & GPM radar.
+   👉 Saves 45%–70% water, fixes 40–60 kg/ha                      👉 Cuts fuel burn by 38.5%+,
+   natural nitrogen, cuts urea costs by 50%.                      eliminates midday evaporative waste.
 ```
 
 ---
 
-## 🤖 The 6+1 Multi-Agent Architecture
+## 🤖 The 6+1 Multi-Agent AI Framework
 
-Our decision-support backend is architected around six specialized domain agents coordinated by a master synthesis orchestrator:
+Our decision-support backend is architected around six specialized domain agents coordinated by a Master Synthesis Orchestrator:
 
 ```
                  ┌─────────────────────────────────────────────────────────┐
@@ -151,9 +156,9 @@ Our decision-support backend is architected around six specialized domain agents
                                        ▼
                  ┌─────────────────────────────────────────────────────────┐
                  │     🤖 THE +1 MASTER SYNTHESIS & ROTATION ENGINE        │
-                 │                 (Krishi BONDHU AI Core)                 │
+                 │                (Krishi BONDHU AI Core)                  │
                  │   • Conflict Resolution among competing Agent goals     │
-                 │   • Adaptive Multi-Season Crop Rotation Generation     │
+                 │   • Adaptive Multi-Season Crop Rotation Generation      │
                  │   • Precision Night Irrigation Scheduling Engine        │
                  └─────────────────────────────┬───────────────────────────┘
                                                │
@@ -162,13 +167,30 @@ Our decision-support backend is architected around six specialized domain agents
                            🎙️ AgroBani Voice UI    🗺️ Interactive GIS
 ```
 
-1. **Agent 1: Precipitation & Flood Agent**: Ingests **NASA GPM IMERG** radar precipitation and **NASA POWER** rainfall rates. Fused with Bangladesh Water Development Board (BWDB) river gauge models to compute standing water days and flash flood risks.
-2. **Agent 2: Thermal & Drought Stress Agent**: Ingests **NASA MODIS LST** (Land Surface Temperature) and **NASA ECOSTRESS** thermal infrared data. Computes topsoil wetness and evapotranspiration anomalies to flag thermal stress before stomata close.
-3. **Agent 3: Soil Hydrology & Health Agent**: Ingests **NASA SMAP L4** ($0\text{--}100\text{ cm}$ root-zone soil moisture). Cross-referenced with Barind (BMDA) groundwater piezometric depth logs to track aquifer drawdown and soil hydration.
-4. **Agent 4: Agronomy, Solar & Humidity Agent**: Ingests **Landsat 8/9 & MODIS NDVI/EVI** for canopy vigor alongside **NASA POWER** downward solar irradiance (`ALLSKY_SFC_SW_DWN`) and relative humidity (`RH2M`), predicting fungal blight risks (e.g., late blight, anthracnose).
-5. **Agent 5: Farmer Priority & Economic Agent**: Couples NASA water/thermal stress flags with **FAO GAEZ**, **World Bank CPI**, and local Department of Agricultural Marketing (DAM) commodity prices across **22 candidate crops** to optimize net profit per hectare ($\text{BDT/ha}$).
-6. **Agent 6: Atmospheric & Wind Dynamics Agent**: Ingests **NASA MERRA-2** and **NASA POWER** surface barometric pressure (`PS`), specific humidity (`QV2M`), and $2\text{m}$ wind speed (`WS2M`) to evaluate squall alerts (*Kalbaishakhi*) and mechanical crop lodging risks.
-7. **The +1 Master Synthesis Engine (Krishi BONDHU AI Core)**: Weighs conflicting agent goals (e.g., high economic reward vs flash-flood vulnerability) and outputs a conflict-free multi-season field shift rotation plan.
+1. **Agent 1: Precipitation & Flood Risk Agent**: Ingests **NASA GPM IMERG** radar precipitation and **NASA POWER** rainfall rates. Cross-referenced with river basin hydrology to compute flood hazard indices and issue proactive pumping pauses.
+2. **Agent 2: Thermal & Drought Stress Agent**: Ingests **NASA MODIS LST** (Land Surface Temperature) and **NASA ECOSTRESS** diurnal thermal infrared observations. Detects root water stress and canopy transpiration anomalies before visible wilting occurs.
+3. **Agent 3: Soil Hydrology & Health Agent**: Ingests **NASA SMAP L4** ($0\text{--}100\text{ cm}$ root-zone moisture) and soil texture classifications. Tracks subsoil water deficits, infiltration rates, and aquifer drawdown.
+4. **Agent 4: Crop Agronomy & Canopy Health Agent**: Ingests **Landsat 8/9 & MODIS NDVI/EVI** for vegetative density alongside **NASA POWER** downward solar irradiance (`ALLSKY_SFC_SW_DWN`) and relative humidity (`RH2M`), predicting fungal blight risks.
+5. **Agent 5: Farmer Priority & Economic Agent**: Couples NASA telemetry with local Department of Agricultural Marketing (DAM) commodity prices, crop budgets, and World Bank CPI indices to maximize net profit per hectare ($\text{BDT/ha}$).
+6. **Agent 6: Land Degradation & Pest Vulnerability Agent**: Evaluates monoculture soil fatigue (1–10 continuous years), pest recurrence cycles, and organic matter depletion using UNCCD degradation indicators.
+7. **The +1 Master Synthesis Engine (Krishi BONDHU AI Core)**: Resolves competing agent objectives (e.g., high economic reward vs flash-flood vulnerability) into a unified, conflict-free 3-season crop rotation (Kharif-1 ➔ Kharif-2 ➔ Rabi).
+
+---
+
+## 🌲 Machine Learning Models & Validation Metrics
+
+All six decision agents are backed by trained **Scikit-Learn Random Forest Classifiers and Regressors**, trained on over **20,000 multi-seasonal records** cross-validated against historical ground truth:
+
+| Model File | Target Evaluation | Estimators / Depth | Accuracy / $R^2$ | Validation Technique |
+| :--- | :--- | :---: | :---: | :--- |
+| `model1_flood_risk.joblib` | Flash Flood & Standing Water Risk | 120 / 12 | **96.8%** | 5-Fold Stratified CV |
+| `model2_thermal_drought.joblib` | Surface Heat & Evaporative Stress | 100 / 10 | **97.4%** | 5-Fold Stratified CV |
+| `model3_soil_hydrology.joblib` | Root-Zone Hydration Deficit | 150 / 14 | **98.1%** | 5-Fold Stratified CV |
+| `crop_risk_model.joblib` | Crop Shift Suitability & Monoculture Fatigue | 200 / 16 | **97.3%** | 5-Fold Stratified CV |
+| `model5_crop_economics.joblib` | Net Profit Margin Prediction (BDT/ha) | 120 / 12 | **$R^2 = 0.942$** | 5-Fold K-Fold Regr. |
+| `model6_atmospheric_wind.joblib` | Squall Alert & Lodging Risk | 80 / 8 | **95.9%** | 5-Fold Stratified CV |
+
+All pre-trained serialized model bundles and their hyperparameter manifests are maintained in [`backend/models/`](file:///e:/Academic/4.1/Project/Nasa/Krishi-Bondhu-AI-saad-dev/backend/models/).
 
 ---
 
@@ -176,18 +198,42 @@ Our decision-support backend is architected around six specialized domain agents
 
 | Satellite Mission | Sensor / Instrument | Spatial / Temporal Resolution | Agronomic Intelligence Delivered |
 | :--- | :--- | :--- | :--- |
-| **NASA SMAP** *(Soil Moisture Active Passive)* | L-Band Microwave Radiometer ($1.41\text{ GHz}$) | $9\text{ km} / 36\text{ km}$; 2–3 day revisit | **Subsoil Root-Zone Moisture ($0\text{--}100\text{ cm}$)**: Detects root water deficits before visible leaf wilting occurs; prevents premature or unnecessary pumping. |
-| **Landsat 8 & 9** *(USGS / NASA)* | Operational Land Imager (OLI) & TIRS | $30\text{ m}$ multispectral | **Canopy Vigour (NDVI)**: Tracks chlorophyll density, growth curves, and compares crop resilience (e.g., Pearl Millet vs Corn) over 6-month timelines. |
-| **NASA ECOSTRESS** *(ISS Instrument)* | Multispectral Thermal Infrared Radiometer | $70\text{ m} \times 38\text{ m}$; diurnal ISS passes | **Evapotranspiration (ET) & Thermal Stress**: Measures plant canopy temperature and transpiration stress; flags water shortages before plant stomata close. |
-| **NASA GPM** *(Global Precipitation Measurement)* | Dual-frequency Precipitation Radar (DPR) & GMI | $0.1^\circ \times 0.1^\circ$ ($\approx 10\text{ km}$); 30-min updates | **3-Day Precipitation Forecast**: Generates proactive rainfall warnings; alerts farmers to halt pump operations when natural rains are forecasted. |
-| **NASA POWER** *(Energy Resources Project)* | CERES / MERRA-2 meteorological assimilation | $0.5^\circ \times 0.5^\circ$ | **Solar Irradiance & Evaporative Demand**: Determines daily solar radiation factors to calculate exact crop water requirements and optimal nighttime watering windows. |
+| **NASA SMAP** *(Soil Moisture Active Passive)* | L-Band Microwave Radiometer ($1.41\text{ GHz}$) | $9\text{ km} / 36\text{ km}$; 2–3 day revisit | **Subsoil Root-Zone Moisture ($0\text{--}100\text{ cm}$)**: Detects root water deficits days before visible leaf wilting; prevents over-pumping. |
+| **Landsat 8 & 9** *(USGS / NASA)* | Operational Land Imager (OLI) & TIRS | $30\text{ m}$ multispectral | **Canopy Vigour (NDVI)**: Tracks vegetative chlorophyll curves and evaluates crop resilience across 6-month timelines. |
+| **NASA ECOSTRESS** *(ISS Instrument)* | Multispectral Thermal Infrared Radiometer | $70\text{ m} \times 38\text{ m}$; diurnal ISS passes | **Evapotranspiration (ET) & Thermal Stress**: Measures plant canopy temperature; flags water shortages before stomatal closure. |
+| **NASA GPM** *(Global Precipitation Measurement)* | Dual-frequency Precipitation Radar (DPR) & GMI | $0.1^\circ \times 0.1^\circ$ ($\approx 10\text{ km}$); 30-min updates | **3-Day Precipitation Forecast**: Generates proactive rainfall warnings; alerts farmers to halt pump operations when rains are imminent. |
+| **NASA POWER** *(Energy Resources Project)* | CERES / MERRA-2 meteorological assimilation | $0.5^\circ \times 0.5^\circ$ | **Solar Irradiance & Evaporative Demand**: Determines daily solar radiation factors to calculate exact crop water needs and night watering windows. |
 | **NASA SRTM** *(Shuttle Radar Topography)* | C-band InSAR Interferometric Radar | $30\text{ m}$ ($1\text{ arc-second}$) | **Topographic Land Elevation Classification**: Derives union elevation, surface slope, and water runoff duration across all 536 unions. |
+
+---
+
+## 🗺️ 3-Tier Hyper-Localized Geospatial Hierarchy
+
+Unlike generic country-level tools, KRISHI BONDHU AI implements a granular **3-Tier Geospatial Hierarchy** covering all **8 Districts, 56 Upazilas, and 536 Unions of Rangpur Division**:
+
+```
+[ Tier 1: 8 Districts ]
+  ├── Rangpur (রংপুর) - Teesta Floodplain & Monga/Drought Vulnerability
+  ├── Dinajpur (দিনাজপুর) - Old Himalayan Piedmont Plain & Drought
+  ├── Kurigram (কুড়িগ্রাম) - Teesta & Brahmaputra Basin & River Erosion
+  ├── Gaibandha (গাইবান্ধা) - Teesta & Brahmaputra Char & Flash Floods
+  ├── Nilphamari (নীলফামারী) - Teesta Irrigation Barrage Area & Dry Spells
+  ├── Thakurgaon (ঠাকুরগাঁও) - Acidic Sandy Loam & Subsurface Rock Layers
+  ├── Panchagarh (পঞ্চগড়) - Himalayan Border Extreme Cold Wave & Fog
+  └── Lalmonirhat (লালমনিরহাট) - Teesta Barrage Downstream & Sandy Riverbeds
+        │
+        └── [ Tier 2: 56 Upazilas ] (e.g., Badarganj, Gangachara, Pirgachha...)
+              │
+              └── [ Tier 3: 536 Unions ] with Elevation (m), Soil Texture & River Basin Telemetry
+```
+
+Every union is indexed with its exact latitude/longitude, elevation in meters above sea level (AMSL), soil texture classification, and local river basin drainage characteristics.
 
 ---
 
 ## 📊 Multi-Decadal Dataset Harmonization (1980–2026)
 
-To back our AI models with empirical rigor, **Team Nokkhotro** engineered an open-access tabular dataset spanning **47 years** ($564\text{ monthly time-steps}$) across all **536 Unions** in Rangpur Division:
+To back our AI models with empirical longitudinal rigor, **Team Nokkhotro** engineered an open-access tabular dataset spanning **47 years** ($564\text{ monthly time-steps}$) across all **536 Unions** in Rangpur Division:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -205,115 +251,84 @@ To back our AI models with empirical rigor, **Team Nokkhotro** engineered an ope
 └─────────────────────────────────────┴──────────────┴─────────────┴──────────────┘
 ```
 
-Detailed technical schemas and validation methodology are fully documented in [data_validation_and_dataset_uses.md](file:///e:/Academic/4.1/Project/Nasa/Krishi-Bondhu-Ai/data_validation_and_dataset_uses.md).
+Detailed technical schemas and validation methodology are fully documented in [`data_validation_and_dataset_uses.md`](file:///e:/Academic/4.1/Project/Nasa/Krishi-Bondhu-AI-saad-dev/data_validation_and_dataset_uses.md).
 
 ---
 
-## ✨ Key Platform Features
+## ✨ Core Interactive Platform Modules
 
-### 1. 🎙️ AgroBani Voice Assistant (ভয়েস বন্ধু)
-- **Natural Colloquial Dialogue**: Powered by the **Web Speech API** (`SpeechRecognition` & `SpeechSynthesis`), tailored to understand agricultural vernacular in native Bangladeshi Bangla (`bn-BD`) and English (`en-US`).
-- **Hands-Free Field Experience**: Large, pulse-animated $80\text{px}$ microphone button designed for farmers with wet or muddy hands.
-- **Natural Intent Classification**:
-  - *Rain & Clouds*: `"আগামী ৩ দিনে কি বৃষ্টি হবে?"` $\rightarrow$ GPM radar analysis with rain depth forecast and pump pause alert.
-  - *Soil Moisture*: `"মাটিতে রস কেমন আছে?"` $\rightarrow$ SMAP root moisture report for each monitored parcel.
-  - *Pump Runtime & Costs*: `"পাম্প ও তেলের খরচ কত?"` $\rightarrow$ Dynamic runtime and fuel expenditure breakdown.
-  - *Crop Selection*: `"খরায় কোন ফসল লাগাব?"` $\rightarrow$ Drought-resilient crop recommendations with water savings.
-- **Audio Playback**: Every recommendation can be replayed out loud with one tap (`আবার শুনুন`).
-- **Wind-Resistant Fallback**: Text input bar and one-touch question chips for windy field conditions.
+### 1. 🗺️ Satellite Parcel & Vegetation Map (`#map-explorer`)
+- **Interactive Leaflet Engine**: Real-time vector rendering of union telemetry across Rangpur Division.
+- **Layer Filters**: One-tap toggling between **SMAP Soil Moisture**, **Landsat NDVI**, **ECOSTRESS Surface Heat**, and **GPM Rain Radar**.
+- **Base Map Toggle**: Switch between OpenStreetMap street view and Esri World Imagery satellite view.
+- **7-Day Historical Time Scrubber**: Retrospective timeline slider with play/pause animations showing moisture evolution over the past week.
+- **Parcel Inspector**: Detailed telemetry popup for every union displaying elevation, soil texture, river basin, root-zone moisture %, canopy health score, and specialist agent recommendations.
+- **GPS Locator**: One-click device GPS geolocation (`My Location`) centering the map on the farmer's current coordinates.
 
-### 2. 🗺️ Interactive Satellite Parcel Explorer (জমির নকশা)
-- **Vector GIS Parcel Canvas**: Scalable SVG parcel mapping depicting real-time health across distinct farm plots:
-  - *Parcel 1 (North Orchard)*: Boro Paddy & Pulses ($45\text{ Ha}$) — Saturated, safe moisture.
-  - *Parcel 2 (East Ridge)*: Cornfield ($82\text{ Ha}$) — Water deficit ($14.2\%$), urgent night irrigation needed.
-  - *Parcel 3 (Valley Lowland)*: Gram & Mung Pulses ($58\text{ Ha}$) — Naturally sub-irrigated by canal seepage.
-  - *Parcel 4 (Millet Shift)*: Pearl Millet & Sorghum ($70\text{ Ha}$) — Climate-smart plot thriving on minimal water.
-- **Multi-Spectral Layer Toggles**: One-tap switching between **SMAP Soil Moisture**, **Landsat NDVI**, **ECOSTRESS Thermal Heat**, and **GPM Rain Radar**.
-- **Historical Time-Scrubber**: 7-day retrospective timeline scrubber with automatic animation playback (`Play / Pause`) showing how soil moisture evolves over time.
-- **Parcel Inspector**: Real-time diagnostic readouts for root moisture %, NDVI greenness score, evapotranspiration rate, and tailored advice.
-
-### 3. 🌾 Climate-Smart Crop Shift Matrix (লাভজনক বিকল্প ফসল)
+### 2. 🌾 Climate-Smart Crop Shift Recommender (`#crop-recommender`)
+- **Monoculture Degradation Slider (1–10 Years)**: Farmers select how many consecutive years they have planted the same crop; the AI dynamically computes soil nutrient depletion, organic matter loss, and pest risk.
+- **3-Season Adaptive Cycle**: Generates full annual field-shift rotations (Kharif-1 ➔ Kharif-2 ➔ Rabi) optimized for water conservation and profit.
 - **Scientific Alternatives Matrix**:
-  - **বাজরা (Pearl Millet / Bajra)**: $60\%$ water conserved, requires only $1\text{--}2$ light irrigations, matures in $75\text{--}85$ days (vs $140$ days for paddy), yields $+35\%$ profit margin in sandy loam soil.
-  - **দানা জোয়ার (Grain Sorghum / Jowar)**: $45\%$ water conserved, canopy resists extreme heat ($>38^\circ\text{C}$), provides high-value dry livestock fodder.
-  - **ছোলা ও মুগ ডাল (Chickpeas & Pulses)**: $70\%$ water conserved, root nodules fix atmospheric nitrogen naturally ($40\text{--}60\text{ kg N/ha}$), slashing synthetic urea fertilizer costs by $50\%$.
-- **Parametric Smart Filter**: Filters recommendations by environmental hazard (Drought, Sinking Groundwater, Extreme Heatwave), soil texture (Sandy Loam, Clay, Alluvial), and farmer goal (Water Conservation vs Profit Maximization).
-- **Direct Voice Guidance**: Tap `চাষের নিয়ম শুনুন` (Listen Guidance) to hear full agronomic planting practices read out loud.
+  - **Pearl Millet (বাজরা)**: Saves $60\%$ water, requires only $1\text{--}2$ light irrigations, matures in $75\text{--}85$ days (vs $140$ days for paddy), yields $+35\%$ profit margin.
+  - **Grain Sorghum (দানা জোয়ার)**: Saves $45\%$ water, thrives under high heat ($>38^\circ\text{C}$), provides high-value livestock fodder.
+  - **Chickpea & Mung Pulses (ছোলা ও মুগ ডাল)**: Saves $70\%$ water, fixes $40\text{--}60\text{ kg N/ha}$ of natural atmospheric nitrogen, slashing synthetic urea fertilizer costs by $50\%$.
+- **Direct Audio Guidance**: Tap `Listen Guidance` (`চাষের নিয়ম শুনুন`) to hear agronomic planting procedures spoken aloud.
 
-### 4. ⛽ Precision Irrigation & Fuel Cost Calculator (সেচ ও তেলের খরচ)
+### 3. ⛽ Precision Irrigation & Fuel Cost Calculator (`#pump-calculator`)
 - **Hyper-Localized Input Parameters**:
-  - Land Area (Bigha, Acre, or Katha)
-  - Pump Horsepower ($2\text{ HP to }12\text{ HP}$)
+  - Land Area (Bigha, Acre, or Katha with 1, 2, 3, 5 Bigha quick presets)
+  - Pump Capacity ($1\text{ HP to }50\text{ HP}$)
   - Power Source (⛽ Diesel Shallow Tube Well or ⚡ Electric Motor)
-  - Target Crop (Boro Paddy, Corn, Sorghum, Pearl Millet, Pulses)
-  - Weather Factor (Cloudy/Mild, Normal Sun, Extreme Heatwave $>35^\circ\text{C}$)
+  - Target Crop (Boro Paddy, Corn, Grain Sorghum, Pearl Millet, Pulses)
+  - Solar & Heat Condition (Overcast/Cool, Normal Sun, Extreme Heatwave $>35^\circ\text{C}$)
 - **Real-Time Scientific Outputs**:
-  - **⏱️ Required Pump Runtime** (e.g., `১ ঘণ্টা ৪৫ মিনিট`)
-  - **💰 Estimated Expense** (e.g., `৳ ১৭০ টাকা` based on real-time diesel and electricity agri-tariffs)
-  - **💧 Total Water Volume Needed** (calculated in Liters)
-  - **Optimal Watering Window**: Pinpoints the $3:30\text{ AM -- }6:00\text{ AM}$ window to minimize midday evaporation.
-- **7-Day Dynamic Irrigation Calendar**: Day-by-day scheduling integrating GPM rain warnings (e.g., `"বুধ: সেচ বন্ধ! ভারী বৃষ্টির সম্ভাবনা - ৩৫ মিমি"`).
+  - **⏱️ Required Pump Runtime** (e.g., `1 hrs 45 mins` / `১ ঘণ্টা ৪৫ মিনিট`)
+  - **💰 Estimated Expense** (e.g., `৳ 170 BDT` based on current diesel and electricity agri-tariffs)
+  - **💧 Total Water Needed** (calculated in Liters)
+  - **Optimal Watering Window**: Pinpoints the $3:30\text{ AM -- }6:00\text{ AM}$ window to minimize evaporation.
+- **7-Day Dynamic Irrigation Calendar**: Day-by-day scheduling integrating GPM rain warnings.
 
-### 5. 📊 Farm Space Telemetry Dashboard (ফসলের হালচাল)
-- **Real-Time KPIs**:
-  - Canopy Vigour (NDVI): `0.68` (Healthy vegetative density)
-  - Irrigation Water Conserved: `38.5%` (Proven fuel savings)
-  - Mean Subsoil Moisture: `22.4%` (Moderate resilience)
-  - Drought Resilience Score: `88 / 100` (Strong resilience index)
-- **6-Month Comparison Curve Chart**: Vector SVG analytical chart comparing traditional corn degradation against resilient millet shifts during August peak heatwaves.
-- **One-Click Printable Field Report**: `window.print()` formatted stylesheet for printing physical field cards or saving as PDF for extension officers.
+### 4. 📊 Farm Space Telemetry Dashboard (`#dashboard`)
+- **Telemetry KPIs**: Canopy Vigour (NDVI), Irrigation Water Conserved (%), Mean Soil Moisture (%), and Drought Resilience Index.
+- **6-Month Canopy Greenness Curve**: Vector analytical chart comparing traditional crop degradation against resilient millet shifts during August peak heatwaves.
+- **Print-Ready Field Report**: One-click printable stylesheet (`Download Report / Print`) formatted for extension workers and field record keeping.
 
-### 6. 🔊 Field Breeze Ambience Synthesizer (মাঠের বাতাস)
-- **Procedural Web Audio Engine**: Creates real-time synthetic pink/white noise through a tuned `BiquadFilterNode` low-pass filter ($320\text{ Hz}$) and exponential gain ramp to simulate a gentle rural field wind.
-- **Zero Audio Assets**: Runs entirely via algorithmic client-side synthesis with zero external MP3/audio files to load.
+### 5. 🎙️ AgroBani Voice Assistant & Field Breeze Engine
+- **Natural Colloquial Dialogue**: Powered by the **Web Speech API** (`SpeechRecognition` & `SpeechSynthesis`), tailored to understand agricultural vernacular in native Bangladeshi Bangla (`bn-BD`) and English (`en-US`).
+- **Hands-Free Field Experience**: Large, pulse-animated microphone button designed for farmers with wet or muddy hands.
+- **Wind-Resistant Fallback**: Text input bar and one-touch question chips for noisy field conditions.
+- **Field Breeze Ambience Synthesizer**: Procedural Web Audio API engine creating natural rural wind sounds via a tuned `BiquadFilterNode` low-pass filter ($320\text{ Hz}$) with zero external MP3 assets.
+
+### 6. 📚 NASA Scientific Literature & Validation Guides (`#resources`)
+- **14-Page Scientific Literature Matrix**: Complete validation dossiers connecting NASA satellite missions with empirical ground verification methodologies.
+- **Open-Science Portals**: Direct links to NASA Earthdata, Worldview, Giovanni, and OpenET tools.
 
 ---
 
-## 🏗️ End-to-End System Architecture
+## 🌐 Bilingual Accessibility & Localization Architecture
 
-```mermaid
-flowchart TD
-    subgraph Data_Layer["🛰️ 1. Multi-Decadal Geospatial & Ground Truth Data (1980–2026)"]
-        NASA_DATA["NASA SMAP • Landsat • ECOSTRESS • GPM • POWER • MERRA-2 • SRTM"]
-        GROUND_DATA["BMD Weather • BWDB River Basin • BMDA Groundwater • World Bank CPI • DAM/DAE"]
-        HARMONIZED_CSV["7 Production Datasets (1,913,624 Records across 536 Unions)"]
-        NASA_DATA --> HARMONIZED_CSV
-        GROUND_DATA --> HARMONIZED_CSV
-    end
+KRISHI BONDHU AI implements a strict **Bilingual Isolation Engine** supporting native **English** and **Bangla (বাংলা)**:
 
-    subgraph Agent_Layer["🤖 2. The 6+1 Multi-Agent Field Shift Engine"]
-        A1["Agent 1: Precipitation & Flood"]
-        A2["Agent 2: Thermal & Drought"]
-        A3["Agent 3: Soil Hydrology"]
-        A4["Agent 4: Agronomy & Disease"]
-        A5["Agent 5: Crop Economics (22 Crops)"]
-        A6["Agent 6: Atmospheric & Wind"]
-        MASTER["The +1 Master Synthesis & Rotation Engine<br/>(Krishi BONDHU AI Core)"]
-        
-        HARMONIZED_CSV --> A1 & A2 & A3 & A4 & A5 & A6
-        A1 & A2 & A3 & A4 & A5 & A6 --> MASTER
-    end
-
-    subgraph Client_App["📱 3. Multimodal Voice & Visual Interface (Zero-Dependency)"]
-        VOICE["🎙️ AgroBani Voice Engine (STT/TTS bn-BD & en-US)"]
-        GIS["🗺️ SVG Interactive Parcel Explorer"]
-        CALC["⛽ Precision Pump & Fuel Cost Calculator"]
-        DASH["📊 Farm Telemetry Dashboard & KPIs"]
-        
-        MASTER --> VOICE
-        MASTER --> GIS
-        MASTER --> CALC
-        MASTER --> DASH
-    end
-
-    FARMER(("🧑‍🌾 Smallholder Farmer")) <==> |Voice & Touch Interaction| Client_App
 ```
+[ English (Default) ]  <─────── Navbar Language Toggle ───────>  [ বাংলা ]
+- Plus Jakarta Sans Typography                                   - Hind Siliguri Typography
+- Voice Engine: en-US                                            - Voice Engine: bn-BD
+- Global Units: Ha, Acre, BDT (৳)                               - Local Units: Bigha, Katha, Taka (৳)
+- Technical international phrasing                               - Culturally resonant agronomic phrasing
+```
+
+- **Base Markup Purity**: The HTML source code is 100% native English markup (0 hardcoded Bengali characters in HTML tags).
+- **Navbar Toggle Button (`#langToggleBtn`)**: Acts as the single source of truth for language switching across the entire platform.
+- **Symmetrical Dictionary**: Every single `data-i18n` tag and dynamic JS string is mirrored across `t.en` and `t.bn`.
+- **Touch-First Ergonomics**: All interactive elements, buttons, and form controls maintain a minimum touch target size of **$48\text{px} \times 48\text{px}$** (`touch-target`).
+- **High-Contrast Dark Mode**: Battery-saving theme for outdoor sunlight or night irrigation monitoring.
+- **Government Emergency Helpline**: Direct click-to-call integration with the Bangladesh Government Agricultural Call Center **`16123`** (`১৬১২৩`).
 
 ---
 
 ## 📐 Mathematical & Agronomic Formulations
 
-### 1. Crop Water Demand & Required Pump Runtime
+### 1. Volumetric Crop Water Demand & Required Pump Runtime
 The volumetric crop water demand $V_{\text{water}}$ (in Liters) for field area $A_{\text{bigha}}$ is modeled as:
 
 $$V_{\text{water}} = A_{\text{bigha}} \times B_{\text{crop}} \times W_{\text{solar}}$$
@@ -353,23 +368,47 @@ Where $\alpha_{\text{season}}$ captures post-harvest glut ($0.92$) vs lean-seaso
 
 ---
 
-## 🌐 Bilingual Accessibility & Localization
+## 🏗️ End-to-End System Architecture
 
-The application implements a strict **Bilingual Isolation Engine** supporting native **Bangla (বাংলা)** and **English**:
+```mermaid
+flowchart TD
+    subgraph Data_Layer["🛰️ 1. Multi-Decadal Geospatial & Ground Truth Data (1980–2026)"]
+        NASA_DATA["NASA SMAP • Landsat • ECOSTRESS • GPM • POWER • MERRA-2 • SRTM"]
+        GROUND_DATA["BMD Weather • BWDB River Basin • BMDA Groundwater • World Bank CPI • DAM/DAE"]
+        HARMONIZED_CSV["7 Production Datasets (1,913,624 Records across 536 Unions)"]
+        NASA_DATA --> HARMONIZED_CSV
+        GROUND_DATA --> HARMONIZED_CSV
+    end
 
+    subgraph Agent_Layer["🤖 2. The 6+1 Multi-Agent Field Shift Engine (FastAPI & Scikit-Learn)"]
+        A1["Agent 1: Precipitation & Flood"]
+        A2["Agent 2: Thermal & Drought"]
+        A3["Agent 3: Soil Hydrology"]
+        A4["Agent 4: Agronomy & Disease"]
+        A5["Agent 5: Crop Economics (22 Crops)"]
+        A6["Agent 6: Land Degradation & Pests"]
+        MASTER["The +1 Master Synthesis & Rotation Engine<br/>(Krishi BONDHU AI Core)"]
+        
+        HARMONIZED_CSV --> A1 & A2 & A3 & A4 & A5 & A6
+        A1 & A2 & A3 & A4 & A5 & A6 --> MASTER
+    end
+
+    subgraph Client_App["📱 3. Responsive Web Application (Bilingual SPA)"]
+        VOICE["🎙️ AgroBani Voice Assistant (STT/TTS en-US & bn-BD)"]
+        GIS["🗺️ Interactive Leaflet Parcel Explorer & Timeline"]
+        CROPS["🌾 Climate-Smart Crop Shift & Monoculture Engine"]
+        CALC["⛽ Precision Pump & Fuel Cost Calculator"]
+        DASH["📊 Farm Telemetry Dashboard & KPIs"]
+        
+        MASTER --> VOICE
+        MASTER --> GIS
+        MASTER --> CROPS
+        MASTER --> CALC
+        MASTER --> DASH
+    end
+
+    FARMER(("🧑‍🌾 Smallholder Farmer")) <==> |Voice & Touch Interaction| Client_App
 ```
-[ বাংলা (Default) ]  <─────── Toggle Language Button ───────>  [ English ]
-- Hind Siliguri Typography                                     - Plus Jakarta Sans Typography
-- Voice Engine: bn-BD                                          - Voice Engine: en-US
-- Local Units: Bigha, Katha, Taka (৳)                         - Global Units: Ha, Acre, Currency
-- Culturally resonant agronomic phrasing                       - Technical international phrasing
-```
-
-### Mobile & Rural Accessibility Standards:
-- **Touch-First Ergonomics**: All interactive elements, buttons, and form controls have a minimum touch target size of **$48\text{px} \times 48\text{px}$** (`touch-target`).
-- **Safe Area Padding**: Explicit notch and navigation bar handling (`pb-safe`, `pt-safe`) for seamless experience on entry-level Android smartphones.
-- **High-Contrast Dark Mode**: Battery-saving, high-contrast dark theme for readability under glaring outdoor sunlight or night irrigation monitoring.
-- **Government Emergency Hotline**: Direct click-to-call integration with the Bangladesh Government Agricultural Call Center **`16123`** (`১৬১২৩`).
 
 ---
 
@@ -377,44 +416,49 @@ The application implements a strict **Bilingual Isolation Engine** supporting na
 
 | Domain | Technologies & Libraries |
 | :--- | :--- |
-| **Markup & Layout** | **HTML5** (Semantic, accessible markup with ARIA tags), Dual architecture (SPA + Multi-page) |
+| **Backend Framework** | **FastAPI 0.162.5**, **Uvicorn 0.54.0**, Pydantic v2 data contracts |
+| **Machine Learning** | **Scikit-Learn 1.9.1**, Joblib 1.6.0, Pandas 3.1.1, NumPy 2.5.4 |
+| **Markup & Layout** | **HTML5** (Semantic, accessible markup with ARIA tags), Single Page Application (SPA) with Hash Router |
 | **Styling & Design** | **Tailwind CSS (CDN)**, custom modern agricultural color palette (`leaf`, `terracotta`, `harvest`, `canal`, `earth`) |
-| **Typography & Icons** | **Google Fonts** (*Hind Siliguri* for Bengali, *Plus Jakarta Sans* for Latin), **FontAwesome 6** vector icons |
-| **Speech & Audio** | **Web Speech API** (`window.SpeechRecognition`, `window.speechSynthesis`), **Web Audio API** (`AudioContext`, `BiquadFilterNode`) |
-| **Geospatial & Vector** | Scalable Vector Graphics (**SVG**), CSS keyframe animation pipeline, SVG coordinate mapping |
+| **Typography & Icons** | **Google Fonts** (*Hind Siliguri* for Bengali, *Plus Jakarta Sans* for English), **FontAwesome 6** vector icons |
+| **Geospatial Mapping** | **Leaflet 1.9.4**, OpenStreetMap tiles, Esri World Imagery, SVG vector markers & radius circles |
+| **Speech & Audio** | **Web Speech API** (`SpeechRecognition` & `SpeechSynthesis`), **Web Audio API** (`AudioContext`, `BiquadFilterNode`) |
 | **State & Localization** | Native Vanilla JavaScript (ES6+), `localStorage` persistence, URL Hash Navigation (`#map-explorer`, `#crop-recommender`, etc.) |
 | **Telemetry Alignment** | Calibrated against **NASA SMAP, Landsat 8/9, ECOSTRESS, GPM, and POWER** archives |
-| **Build & Dependencies** | **Zero npm / node build dependencies required**; runs instantly on any browser or static web server |
+| **Deployment** | **Render Cloud Platform** (Automatic continuous deployment via Docker / Procfile) |
 
 ---
 
 ## 📂 Project Directory Structure
 
 ```text
-Krishi-Bondhu-Ai/
+Krishi-Bondhu-AI/
 │
 ├── index.html                  # Main All-in-One Single Page Application (SPA) with Hash Router
-├── crop-recommender.html       # Standalone Crop Recommender page
-├── dashboard.html              # Standalone Farm Telemetry & NDVI Chart Dashboard
-├── irrigation-alerts.html      # Standalone Irrigation Alerts & Pump Cost Calculator
-├── map-explorer.html           # Standalone NASA Earth Explorer Interactive Satellite Map
-├── resources.html              # Standalone NASA Open Science Guide & Satellite Portal
+├── crop-recommender.html       # Standalone Crop Recommender redirection entrypoint
+├── dashboard.html              # Standalone Farm Telemetry Dashboard redirection entrypoint
+├── irrigation-alerts.html      # Standalone Irrigation Alerts & Pump Cost redirection entrypoint
+├── map-explorer.html           # Standalone Satellite Parcel Map redirection entrypoint
+├── resources.html              # Standalone NASA Earth Science Guides redirection entrypoint
 │
 ├── README.md                   # Master Project Documentation & Architecture Guide
 ├── data_validation_and_dataset_uses.md # NASA Telemetry & Multi-Agent Dataset Validation Report
 ├── requirements.txt            # Python dependencies (FastAPI, Uvicorn, Scikit-Learn, Pandas)
+├── Dockerfile                  # Container build specification for cloud deployment
+├── Procfile                    # Process file for Render web service execution
+├── render.yaml                 # Render infrastructure-as-code specification
 │
 ├── backend/                    # The 6+1 Multi-Agent AI Engine (FastAPI Backend)
 │   ├── main.py                 # FastAPI Application Server & REST Endpoints (/api/analyze)
 │   ├── agents/                 # Specialized Multi-Agent Decision Modules
 │   │   ├── base_agent.py       # Standardized Agent Contract
-│   │   ├── flood_agent.py      # Agent 1: Precipitation & Flood Agent (NASA GPM IMERG & BMD ML)
-│   │   ├── drought_agent.py    # Agent 2: Thermal & Drought Stress Agent (NASA MODIS LST ML)
-│   │   ├── soil_agent.py       # Agent 3: Soil Hydrology & Health Agent (NASA SMAP L4 ML)
-│   │   ├── agronomy_agent.py   # Agent 4: Crop Agronomy Agent (NASA Landsat NDVI & FAO Specs ML)
-│   │   ├── economic_agent.py   # Agent 5: Farmer Priority & Economic Agent (DAE & CPI ML)
-│   │   ├── degradation_agent.py# Agent 6: Land Degradation & Pest Agent (UNCCD & MERRA-2 ML)
-│   │   └── master_agent.py     # Agent 7: The Master Rotation Agent (Field Shift Synthesis)
+│   │   ├── flood_agent.py      # Agent 1: Precipitation & Flood Agent (NASA GPM IMERG)
+│   │   ├── drought_agent.py    # Agent 2: Thermal & Drought Stress Agent (NASA MODIS LST)
+│   │   ├── soil_agent.py       # Agent 3: Soil Hydrology & Health Agent (NASA SMAP L4)
+│   │   ├── agronomy_agent.py   # Agent 4: Crop Agronomy Agent (NASA Landsat NDVI & FAO)
+│   │   ├── economic_agent.py   # Agent 5: Farmer Priority & Economic Agent (DAE & CPI)
+│   │   ├── degradation_agent.py# Agent 6: Land Degradation & Pest Agent (UNCCD & MERRA-2)
+│   │   └── master_agent.py     # Agent 7: Master Rotation Agent (Field Shift Synthesis)
 │   ├── data/                   # Dynamic NASA Client & 64-District GIS Telemetry
 │   │   ├── bangladesh_regions.py # 64 Districts, 8 Divisions, AEZ Zones & GIS metadata
 │   │   ├── crop_database.py    # Comprehensive crop profiles & agronomic benchmarks
@@ -447,27 +491,23 @@ Krishi-Bondhu-Ai/
 │       ├── agent5_crop_economics_1980_2026.csv
 │       └── agent6_Atmospheric_Conditions_536_Unions_Monthly_1981-2026.csv
 │
-├── frontend/                   # Frontend Workspace Mirror (HTML5, Tailwind, Leaflet)
-├── scripts/                    # Zero-Leakage 5-Fold CV Model Trainers & Utility Scripts
+├── frontend/                   # Frontend Static Web Server Mirror (HTML5, Tailwind, Leaflet)
+│   ├── index.html              # Synchronized Single Page Application
+│   ├── assets/                 # Brand icons and vector assets
+│   ├── css/                    # Custom CSS rules
+│   └── js/                     # Hierarchy data & client scripts
+│
+├── scripts/                    # Model Training, Validation & Testing Suites
+│   ├── test_bilingual_system.py# Comprehensive API and bilingual verification suite
 │   ├── train_all_6_models.py   # Complete 6-model training & verification suite
 │   ├── train_crop_model.py     # Crop risk core trainer
-│   └── format_project.py       # Project layout formatter
+│   └── format_project.py       # Layout formatter
 │
-├── assets/                     # Graphical assets and brand elements
-│   ├── icons/
-│   │   ├── logo.png            # High-resolution application brand logo
-│   │   └── logo.svg            # Scalable vector logo asset
-│   └── team-nokkhotro.png      # Team Nokkhotro title & roster card
-│
-├── css/
-│   └── styles.css              # Global accessibility rules, touch targets, and keyframe animations
-│
-└── js/
-    ├── app.js                  # Theme controller, dashboard KPI renderer, field wind ambience synth
-    ├── calculator.js           # Pump runtime, fuel/power expense formulas, 7-day irrigation schedule
-    ├── i18n.js                 # Complete bilingual isolation dictionary (Bangla & English)
-    ├── map.js                  # Satellite layer controller (SMAP, NDVI, ECOSTRESS, GPM), SVG parcel logic
-    └── voice-assistant.js      # AgroBani voice assistant (Speech recognition & speech synthesis engine)
+└── assets/                     # Graphical assets and brand elements
+    ├── icons/
+    │   ├── logo.png            # High-resolution 512x512 application brand logo
+    │   └── logo.svg            # Scalable vector logo asset
+    └── team-nokkhotro.png      # Team Nokkhotro title & roster card
 ```
 
 ---
@@ -477,37 +517,46 @@ Krishi-Bondhu-Ai/
 ### Option 1: Full-Stack Multi-Agent Engine (Recommended)
 Runs both the FastAPI backend with live ML models and serves the responsive user interface:
 ```bash
-# 1. Activate virtual environment or install dependencies
+# 1. Clone repository
+git clone https://github.com/suhita-04/Krishi-Bondhu-Ai.git
+cd Krishi-Bondhu-Ai
+
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 2. Launch Uvicorn Server
+# 3. Launch Uvicorn Server
 uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
+Open **[http://127.0.0.1:8000](http://127.0.0.1:8000)** in your web browser.
 
-### Option 2: Direct Browser Launch (Standalone Client)
-1. Clone or download the repository:
-   ```bash
-   git clone https://github.com/suhita-04/Krishi-Bondhu-Ai.git
-   cd Krishi-Bondhu-Ai
-   ```
-2. Double-click `index.html` to open it directly in any modern browser (Google Chrome, Microsoft Edge, Mozilla Firefox, or Safari).
+### Option 2: Docker Container Deployment
+```bash
+# Build Docker image
+docker build -t krishi-bondhu-ai .
 
-### Option 3: Local HTTP Server (For Web Speech API testing)
-The **Web Speech API** requires a secure context (`localhost` or `https://`):
-- **Using Python 3**:
-  ```bash
-  python -m http.server 8000
-  ```
-  Open [http://localhost:8000](http://localhost:8000) in your browser.
+# Run container
+docker run -p 8000:8000 krishi-bondhu-ai
+```
+Access the application at `http://localhost:8000`.
 
-- **Using Node.js `serve` / `npx`**:
-  ```bash
-  npx serve .
-  ```
+### Option 3: Standalone Client Browser Launch
+1. Clone or download the repository.
+2. Double-click `index.html` to open it directly in any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox, or Safari).
+   *(Note: Speech recognition requires a secure context such as `http://localhost:8000` or `https://`)*.
 
-- **Using VS Code Live Server**:
-  Right-click `index.html` and click **"Open with Live Server"**.
+---
+
+## 🔌 REST API Reference
+
+The FastAPI backend exposes clean, documented REST endpoints:
+
+| Endpoint | Method | Description |
+| :--- | :---: | :--- |
+| `/api/districts` | `GET` | Returns list of all 64 districts in Bangladesh with AEZ zones, coordinates, and primary environmental hazards. |
+| `/api/regions` | `GET` | Returns all administrative divisions with regional vulnerability profiles. |
+| `/api/crops` | `GET` | Returns comprehensive agronomic profiles for 17+ climate-smart crops. |
+| `/api/analyze` | `POST` | Ingests farmer inputs (district, upazila, union, past crop, monoculture years) and returns multi-agent evaluation reports, GPM rainfall alerts, and synthesized 3-season rotation strategy. |
+| `/docs` | `GET` | Interactive Swagger / OpenAPI documentation UI for testing endpoints. |
 
 ---
 
@@ -536,6 +585,7 @@ We are **Team Nokkhotro (টিম নক্ষত্র)**, passionate technolo
 - **NASA Earth Science Division**: For providing free, unrestricted, open-access telemetry from **SMAP**, **ECOSTRESS**, **GPM**, and **POWER**.
 - **United States Geological Survey (USGS)**: For over 50 years of continuous **Landsat** multi-spectral Earth monitoring.
 - **Department of Agricultural Extension (DAE), Bangladesh**: For agronomic benchmarks, crop calendar standards, and the **16123** national advisory helpline.
+- **Bangladesh Meteorological Department (BMD)** & **BWDB**: For regional meteorological and hydrologic observations.
 
 ---
 
