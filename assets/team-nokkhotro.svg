@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <defs>
+    <linearGradient id="bannerBg" x1="0" y1="0" x2="800" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="50%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#021c16" />
+    </linearGradient>
+    <linearGradient id="goldText" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="400" cy="120" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="240" rx="16" fill="url(#bannerBg)" stroke="#10b981" stroke-width="2" stroke-opacity="0.4" />
+  <rect width="800" height="240" rx="16" fill="url(#centerGlow)" />
+
+  <!-- Constellation Stars -->
+  <circle cx="80" cy="45" r="1.5" fill="#ffffff" opacity="0.6" />
+  <circle cx="160" cy="70" r="2" fill="#38bdf8" opacity="0.8" />
+  <circle cx="230" cy="35" r="1" fill="#ffffff" opacity="0.5" />
+  <circle cx="680" cy="50" r="2" fill="#fde047" opacity="0.8" />
+  <circle cx="730" cy="90" r="1.5" fill="#ffffff" opacity="0.6" />
+  <circle cx="620" cy="40" r="1" fill="#34d399" opacity="0.7" />
+  <circle cx="110" cy="180" r="1.5" fill="#ffffff" opacity="0.5" />
+  <circle cx="710" cy="190" r="2" fill="#38bdf8" opacity="0.7" />
+
+  <!-- Constellation Connecting Lines -->
+  <line x1="80" y1="45" x2="160" y2="70" stroke="#34d399" stroke-width="0.8" opacity="0.3" />
+  <line x1="160" y1="70" x2="230" y2="35" stroke="#34d399" stroke-width="0.8" opacity="0.3" />
+  <line x1="620" y1="40" x2="680" y2="50" stroke="#f59e0b" stroke-width="0.8" opacity="0.3" />
+  <line x1="680" y1="50" x2="730" y2="90" stroke="#f59e0b" stroke-width="0.8" opacity="0.3" />
+
+  <!-- Top Badge -->
+  <g transform="translate(400, 38)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#047857" fill-opacity="0.6" stroke="#34d399" stroke-width="1.2" />
+    <text x="0" y="5" text-anchor="middle" fill="#a7f3d0" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" letter-spacing="1.5">
+      NASA SPACE APPS CHALLENGE 2026
+    </text>
+  </g>
+
+  <!-- Team Title -->
+  <text x="400" y="105" text-anchor="middle" fill="url(#goldText)" font-family="'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" letter-spacing="2" filter="url(#glow)">
+    TEAM NOKKHOTRO
+  </text>
+  <text x="400" y="132" text-anchor="middle" fill="#6ee7b7" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="bold" letter-spacing="1">
+    টিম নক্ষত্র • FIELD SHIFT: ADAPTING FARMS WITH NASA DATA
+  </text>
+
+  <!-- Team Member Chips -->
+  <g transform="translate(400, 185)">
+    <!-- Member 1: Irfan -->
+    <g transform="translate(-320, 0)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">S. H. M. Irfan</text>
+    </g>
+    <!-- Member 2: Nasor -->
+    <g transform="translate(-192, 0)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#0f172a" stroke="#34d399" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Nasor Hidar</text>
+    </g>
+    <!-- Member 3: Alif -->
+    <g transform="translate(-64, 0)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Arafat Alif</text>
+    </g>
+    <!-- Member 4: Monjurul -->
+    <g transform="translate(64, 0)">
+      <rect x="-56" y="-15" width="112" height="30" rx="15" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Md Monjurul</text>
+    </g>
+    <!-- Member 5: Saad -->
+    <g transform="translate(192, 0)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#0f172a" stroke="#34d399" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Saad Ahmed</text>
+    </g>
+    <!-- Member 6: Suhita -->
+    <g transform="translate(320, 0)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Suhita Srutee</text>
+    </g>
+  </g>
+</svg>

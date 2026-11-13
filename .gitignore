@@ -8,6 +8,3 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Large raw training CSVs (ML models are already pre-trained and saved in backend/models/)
-dataset/data/agent*.csv
-
