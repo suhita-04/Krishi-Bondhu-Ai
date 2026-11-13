@@ -1360,27 +1360,36 @@
         <div
           class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-earth-900 p-5 sm:p-6 rounded-3xl border-2 border-earth-200 dark:border-earth-700">
           <div>
-            <div class="flex items-center gap-2 text-xs font-bold text-leaf-600 dark:text-leaf-400 mb-1">
-              <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline"
-                data-i18n="navHome">প্রথম পাতা</a>
-              <span>/</span>
-              <span class="text-slate-900 dark:text-white" data-i18n="navDash">ফসলের হালচাল</span>
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-leaf-600 dark:text-leaf-400 mb-1">
+              <div class="flex items-center gap-2">
+                <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline"
+                  data-i18n="navHome">Home</a>
+                <span>/</span>
+                <span class="text-slate-900 dark:text-white" data-i18n="navDash">Crop Health</span>
+              </div>
+              <!-- Quick In-Page Language Switcher -->
+              <div class="flex items-center gap-2 bg-black/5 dark:bg-black/40 px-3 py-1 rounded-2xl border border-earth-300 dark:border-white/10">
+                <span class="text-[11px] text-emerald-700 dark:text-emerald-300 font-bold flex items-center gap-1">
+                  <i class="fa-solid fa-language text-leaf-600 dark:text-leaf-400"></i> <span data-i18n="dashLangSelectorLabel">Language:</span>
+                </span>
+                <button type="button" onclick="setDashboardLanguage('en')" id="dashLangEnBtn" class="px-2.5 py-0.5 rounded-xl text-xs font-black transition">English</button>
+                <button type="button" onclick="setDashboardLanguage('bn')" id="dashLangBnBtn" class="px-2.5 py-0.5 rounded-xl text-xs font-bold transition">বাংলা</button>
+              </div>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="dashHeading">খামারের
-              স্যাটেলাইট তথ্য ও সার্বিক অবস্থা</h1>
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="dashHeading">Farm Space Telemetry & Health Overview</h1>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium" data-i18n="dashSub">
-              নির্বাচিত জেলার মাটি-আবহাওয়া (স্যাটেলাইট ডেটা) এবং আপনার ৩-মৌসুমী ফসল পরিকল্পনার সারসংক্ষেপ।
+              Multi-month vegetative health curves and operational farm checklists.
             </p>
             <div class="mt-2 flex flex-wrap gap-2">
-              <span id="dashDistCropBadge" class="px-3 py-1 rounded-xl bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 text-xs font-black border border-leaf-300 dark:border-leaf-700">
-                📍 জেলা: রাজশাহী | ফসল তুলনা: বোরো ধান বনাম প্রস্তাবিত রোটেশন
+              <span id="dashDistCropBadge" class="px-3 py-1 rounded-xl bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 text-xs font-black border border-leaf-300 dark:border-leaf-700" data-i18n="dashDistCropBadge">
+                📍 District: Rangpur | Comparing: Boro Rice vs Resilient Crop Shift
               </span>
             </div>
           </div>
           <button onclick="downloadReportPdf()"
-            class="px-5 py-3 rounded-2xl bg-leaf-600 hover:bg-leaf-700 text-white font-black text-xs shadow-glow-leaf transition flex items-center justify-center gap-2 self-stretch sm:self-center touch-target">
+            class="px-5 py-3 rounded-2xl bg-leaf-600 hover:bg-leaf-700 text-white font-black text-xs shadow-glow-leaf transition flex items-center justify-center gap-2 self-stretch sm:self-center touch-target shrink-0">
             <i class="fa-solid fa-file-pdf text-base"></i>
-            <span data-i18n="btnPdf">রিপোর্ট ডাউনলোড / প্রিন্ট</span>
+            <span data-i18n="btnPdf">Download Report / Print</span>
           </button>
         </div>
 
@@ -1392,16 +1401,15 @@
           <div
             class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-earth-100 dark:border-earth-800 gap-2">
             <div>
-              <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white" data-i18n="chartTitle">গত ৬
-                মাসে ফসলের সবুজ সতেজতার তুলনামূলক চিত্র</h3>
-              <p id="chartSubDynamic" class="text-xs text-slate-500 font-medium" data-i18n="dashChartSub">সনাতন ফসল বনাম মাস্টার রোটেশন স্মার্ট ফসল
+              <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white" data-i18n="chartTitle">6-Month Canopy Greenness Comparison Curve</h3>
+              <p id="chartSubDynamic" class="text-xs text-slate-500 font-medium" data-i18n="dashChartSub">Traditional Monoculture vs Master Rotation Climate-Smart Crop
               </p>
             </div>
             <div class="flex items-center gap-4 text-xs font-black flex-wrap">
               <span class="flex items-center gap-1.5 text-leaf-600"><span
-                  class="w-3.5 h-3.5 rounded-full bg-leaf-500 inline-block"></span> <span id="chartLeg1Text" data-i18n="dashLegRec">প্রস্তাবিত ফসল</span></span>
+                  class="w-3.5 h-3.5 rounded-full bg-leaf-500 inline-block"></span> <span id="chartLeg1Text" data-i18n="dashLegRec">Recommended Rotation</span></span>
               <span class="flex items-center gap-1.5 text-rose-600"><span
-                  class="w-3.5 h-3.5 rounded-full bg-rose-500 inline-block"></span> <span id="chartLeg2Text" data-i18n="dashLegBase">আগের ফসল</span></span>
+                  class="w-3.5 h-3.5 rounded-full bg-rose-500 inline-block"></span> <span id="chartLeg2Text" data-i18n="dashLegBase">Baseline Monoculture</span></span>
             </div>
           </div>
 
@@ -1420,12 +1428,12 @@
               <text x="6" y="129" fill="#64748b" font-size="10" font-weight="700">0.50</text>
               <text x="6" y="179" fill="#64748b" font-size="10" font-weight="700">0.30</text>
               <line x1="48" y1="190" x2="580" y2="190" stroke="#059669" stroke-width="2" />
-              <text x="60" y="210" fill="#047857" font-size="12" font-weight="800" id="m1">জুন</text>
-              <text x="160" y="210" fill="#047857" font-size="12" font-weight="800" id="m2">জুলাই</text>
-              <text x="260" y="210" fill="#047857" font-size="12" font-weight="800" id="m3">আগস্ট</text>
-              <text x="360" y="210" fill="#047857" font-size="12" font-weight="800" id="m4">সেপ্টেম্বর</text>
-              <text x="460" y="210" fill="#047857" font-size="12" font-weight="800" id="m5">অক্টোবর</text>
-              <text x="540" y="210" fill="#047857" font-size="12" font-weight="800" id="m6">নভেম্বর</text>
+              <text x="60" y="210" fill="#047857" font-size="12" font-weight="800" id="m1">Jun</text>
+              <text x="160" y="210" fill="#047857" font-size="12" font-weight="800" id="m2">Jul</text>
+              <text x="260" y="210" fill="#047857" font-size="12" font-weight="800" id="m3">Aug</text>
+              <text x="360" y="210" fill="#047857" font-size="12" font-weight="800" id="m4">Sep</text>
+              <text x="460" y="210" fill="#047857" font-size="12" font-weight="800" id="m5">Oct</text>
+              <text x="540" y="210" fill="#047857" font-size="12" font-weight="800" id="m6">Nov</text>
               <path id="chartCurvePast" d="M60,140 Q160,90 260,150 T360,175 T460,180 T540,185" fill="none" stroke="#EA580C" stroke-width="4"
                 stroke-linecap="round" />
               <path id="chartCurveShift" d="M60,150 Q160,100 260,70 T360,60 T460,55 T540,60" fill="none" stroke="#10B981" stroke-width="4.5"
@@ -1436,7 +1444,7 @@
 
           <div id="chartProofBox"
             class="p-3.5 sm:p-4 rounded-2xl bg-earth-50 dark:bg-earth-800 text-xs text-slate-700 dark:text-slate-300 font-medium">
-            <strong data-i18n="dashSatProofPrefix">স্যাটেলাইট প্রমাণ:</strong> জেলা ও ফসল অনুযায়ী স্যাটেলাইট তুলনামূলক বিশ্লেষণ লোড হচ্ছে...
+            <strong data-i18n="dashSatProofPrefix">Satellite Evidence:</strong> <span data-i18n="dashLoadingAnalysis">Loading satellite comparative analysis based on selected district and crop rotation...</span>
           </div>
         </div>
       </div>
@@ -2422,7 +2430,7 @@
       });
       try { if (window.location.hash !== '#' + pageId) window.history.pushState(null, null, '#' + pageId); } catch (e) { }
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (pageId === 'resources') {
+      if (pageId === 'resources' || pageId === 'dashboard') {
         if (!window.userExplicitlyToggledLang && currentLang !== 'en') {
           currentLang = 'en';
           const label = document.getElementById('currentLangLabel');
@@ -2479,6 +2487,9 @@
         dashLegBase: "আগের ফসল",
         dashLegRec: "প্রস্তাবিত ফসল",
         dashSatProofPrefix: "স্যাটেলাইট প্রমাণ:",
+        dashLangSelectorLabel: "ভাষা:",
+        dashDistCropBadge: "📍 জেলা: রংপুর | ফসল তুলনা: বোরো ধান বনাম প্রস্তাবিত রোটেশন",
+        dashLoadingAnalysis: "জেলা ও ফসল অনুযায়ী স্যাটেলাইট তুলনামূলক বিশ্লেষণ লোড হচ্ছে...", 
         dashSatelliteProof: "জেলা ও ফসল অনুযায়ী স্যাটেলাইট তুলনামূলক বিশ্লেষণ লোড হচ্ছে...",
         dashSub: "নির্বাচিত জেলার মাটি-আবহাওয়া (স্যাটেলাইট ডেটা) এবং আপনার ৩-মৌসুমী ফসল পরিকল্পনার সারসংক্ষেপ।",
         diagSelected: "নির্বাচিত জমি", diagMoistLbl: "মাটির শিকড়ের রস", diagNdviLbl: "গাছের সতেজতা ও স্বাস্থ্য", diagHeatLbl: "রোদে পানি শুকিয়ে যাওয়ার চাপ", diagAdviceTitle: "কৃষক ভাইয়ের জন্য সরাসরি পরামর্শ",
@@ -2780,6 +2791,9 @@
         dashLegBase: "Baseline Monoculture",
         dashLegRec: "Recommended Rotation",
         dashSatProofPrefix: "Satellite Evidence:",
+        dashLangSelectorLabel: "Language:",
+        dashDistCropBadge: "📍 District: Rangpur | Comparing: Boro Rice vs Resilient Crop Shift",
+        dashLoadingAnalysis: "Loading satellite comparative analysis based on selected district and crop rotation...", 
         dashSatelliteProof: "Comparing satellite spectral vegetative index between historical crop and proposed rotation.",
         dashSub: "Multi-month vegetative health curves, soil hydrology, and operational farm checklists.",
         diagSelected: "Selected Parcel", diagMoistLbl: "Root-Zone Soil Moisture", diagNdviLbl: "Canopy Vigour (NDVI)", diagHeatLbl: "Evaporative Heat Pressure", diagAdviceTitle: "Action Recommendation for Farmers",
@@ -3086,6 +3100,31 @@
       }
     }
 
+    function setDashboardLanguage(lang) {
+      if (currentLang !== lang) {
+        window.userExplicitlyToggledLang = true;
+        currentLang = lang;
+        const label = document.getElementById('currentLangLabel');
+        if (label) label.textContent = (currentLang === 'bn') ? 'English' : 'বাংলা';
+        const voiceTag = document.getElementById('activeVoiceLangTag');
+        if (voiceTag) voiceTag.textContent = (currentLang === 'bn') ? 'বাংলা (bn-BD)' : 'English (en-US)';
+        applyTranslations();
+      }
+    }
+
+    function updateDashboardLangPills() {
+      const enBtn = document.getElementById('dashLangEnBtn');
+      const bnBtn = document.getElementById('dashLangBnBtn');
+      if (!enBtn || !bnBtn) return;
+      if (currentLang === 'en') {
+        enBtn.className = 'px-2.5 py-0.5 rounded-xl text-xs font-black transition bg-leaf-500 text-white shadow-sm ring-1 ring-leaf-300';
+        bnBtn.className = 'px-2.5 py-0.5 rounded-xl text-xs font-bold transition text-slate-700 dark:text-emerald-200 hover:text-white hover:bg-white/10';
+      } else {
+        bnBtn.className = 'px-2.5 py-0.5 rounded-xl text-xs font-black transition bg-leaf-500 text-white shadow-sm ring-1 ring-leaf-300';
+        enBtn.className = 'px-2.5 py-0.5 rounded-xl text-xs font-bold transition text-slate-700 dark:text-emerald-200 hover:text-white hover:bg-white/10';
+      }
+    }
+
     function applyTranslations() {
       const dict = t[currentLang];
       const isBn = currentLang === 'bn';
@@ -3172,9 +3211,12 @@
       const aiOut = document.getElementById('aiResponseOutput');
       if (aiOut) aiOut.textContent = dict.assistantGreeting;
 
-      // 10. Sync In-Page Resources Language Selector Pills
+      // 10. Sync In-Page Resources & Dashboard Language Selector Pills
       if (typeof updateResourcesLangPills === 'function') {
         updateResourcesLangPills();
+      }
+      if (typeof updateDashboardLangPills === 'function') {
+        updateDashboardLangPills();
       }
     }
 
@@ -4126,7 +4168,7 @@
     /* 11. INITIALIZATION */
     window.addEventListener('DOMContentLoaded', () => {
       const initialHash = (window.location.hash || '').replace('#', '');
-      if (initialHash === 'resources') {
+      if (initialHash === 'resources' || initialHash === 'dashboard') {
         currentLang = 'en';
         const label = document.getElementById('currentLangLabel');
         if (label) label.textContent = 'বাংলা';
@@ -5718,7 +5760,7 @@ function renderDynamicCropHealthChart(data) {
 
   const isBn = currentLang === 'bn';
   const pastObj = pastCropLabels[currentPastCrop] || { bn: currentPastCrop, en: currentPastCrop };
-  const shiftCrop = seq[2]?.crop_name || seq[0]?.crop_name || 'Mustard';
+  const shiftCrop = isBn ? (seq[2]?.crop_name || seq[0]?.crop_name || 'সরিষা') : (seq[2]?.crop_name_en || seq[0]?.crop_name_en || 'Mustard');
   const shiftId = seq[2]?.crop_id || 'mustard';
   const mlPreds = agents.agronomy_agent?.ml_crop_risk_predictions || {};
   const pastSucc = mlPreds[currentPastCrop]?.ml_success_probability_pct ?? 18;
@@ -5729,8 +5771,8 @@ function renderDynamicCropHealthChart(data) {
   const badgeEl = document.getElementById('dashDistCropBadge');
   if (badgeEl) {
     badgeEl.textContent = isBn
-      ? `📍 জেলা: ${dist.name_bn} | ফসল তুলনা: ${pastObj.bn} বনাম ${shiftCrop}`
-      : `📍 District: ${dist.name_en} | Comparing: ${pastObj.en} vs ${shiftCrop}`;
+      ? `📍 জেলা: ${dist.name_bn || 'রংপুর'} | ফসল তুলনা: ${pastObj.bn} বনাম ${shiftCrop}`
+      : `📍 District: ${dist.name_en || 'Rangpur'} | Comparing: ${pastObj.en} vs ${shiftCrop}`;
   }
 
   const subEl = document.getElementById('chartSubDynamic');
@@ -5742,10 +5784,10 @@ function renderDynamicCropHealthChart(data) {
   const proofEl = document.getElementById('chartProofBox');
 
   if (subEl) subEl.textContent = isBn
-    ? `${dist.name_bn}: ${pastObj.bn} (টানা ${currentMonocultureYears} বছর) বনাম ${shiftCrop}`
-    : `${dist.name_en}: ${pastObj.en} (${currentMonocultureYears} yrs) vs ${shiftCrop}`;
-  if (leg1El) leg1El.textContent = `${shiftCrop} (রোটেশন)`;
-  if (leg2El) leg2El.textContent = `${pastObj.bn} (একটানা ${currentMonocultureYears} বছর)`;
+    ? `${dist.name_bn || 'রংপুর'}: ${pastObj.bn} (টানা ${currentMonocultureYears} বছর) বনাম ${shiftCrop}`
+    : `${dist.name_en || 'Rangpur'}: ${pastObj.en} (${currentMonocultureYears} yrs) vs ${shiftCrop}`;
+  if (leg1El) leg1El.textContent = isBn ? `${shiftCrop} (রোটেশন)` : `${shiftCrop} (Rotation)`;
+  if (leg2El) leg2El.textContent = isBn ? `${pastObj.bn} (একটানা ${currentMonocultureYears} বছর)` : `${pastObj.en} (Continuous ${currentMonocultureYears} yrs)`;
 
   const xs = [68, 162, 256, 350, 444, 538];
   const pastYs = [
