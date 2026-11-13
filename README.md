@@ -8,8 +8,15 @@
 [![Bilingual](https://img.shields.io/badge/Language-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%20%7C%20English-F59E0B?style=for-the-badge)](#-bilingual-accessibility--localization)
 [![Dataset](https://img.shields.io/badge/Telemetry-1.91M%20Records%20(47%20Years)-8B5CF6?style=for-the-badge)](#-multi-decadal-dataset-harmonization-19802026)
 [![Zero Dependency](https://img.shields.io/badge/Stack-Vanilla%20JS%20%7C%20TailwindCSS-06B6D4?style=for-the-badge)](#-technology-stack)
+[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://render.com/deploy?repo=https://github.com/suhita-04/Krishi-Bondhu-Ai)
 
 ---
+
+<p align="center">
+  <a href="https://render.com/deploy?repo=https://github.com/suhita-04/Krishi-Bondhu-Ai">
+    <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+  </a>
+</p>
 
 <p align="center">
   <img src="assets/icons/logo.png" alt="কৃষি BONDHU AI Logo" width="140" height="140" />
