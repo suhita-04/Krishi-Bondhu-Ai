@@ -565,269 +565,272 @@
     <!-- PAGE 2: NASA EARTH EXPLORER MAP -->
     <section id="page-map-explorer" class="page-view">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
-        <!-- Compact Header + Synced District Selector -->
+        <!-- Header -->
         <div
-          class="bg-white dark:bg-earth-900 p-4 sm:p-5 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-sm space-y-3">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
-            <div>
-              <div class="flex items-center gap-2 text-xs font-bold text-leaf-600 dark:text-leaf-400 mb-0.5">
-                <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline"
-                  data-i18n="navHome">প্রথম পাতা</a>
-                <span>/</span>
-                <span class="text-slate-900 dark:text-white" data-i18n="navMap">জমির নকশা</span>
-              </div>
-              <h1 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white" data-i18n="explorerHeading">জমির
-                মাটির রস ও স্যাটেলাইট মানচিত্র</h1>
+          class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-earth-900 p-5 sm:p-6 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-sm">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-bold text-leaf-600 dark:text-leaf-400 mb-1">
+              <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline"
+                data-i18n="navHome">Home</a>
+              <span>/</span>
+              <span class="text-slate-900 dark:text-white" data-i18n="navMap">Satellite Map</span>
             </div>
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1.5 rounded-xl bg-leaf-600 text-white text-xs font-black flex items-center gap-1.5">
+            <h1 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white" data-i18n="explorerHeading">Satellite Parcel Soil & Vegetation Map</h1>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span
+                class="px-3 py-1.5 rounded-xl bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 text-xs font-black border border-leaf-300 dark:border-leaf-700 flex items-center gap-1.5 shadow-sm">
                 <i class="fa-solid fa-location-dot"></i>
-                <span id="mapSelectedDistBadge">নির্বাচিত জেলা: রংপুর (Rangpur)</span>
+                <span id="mapSelectedDistBadge" data-i18n="mapSelectedDistBadge">Selected District: Rangpur (Rangpur)</span>
               </span>
               <span id="mapSelectedAezBadge"
-                class="px-2.5 py-1.5 rounded-xl bg-earth-100 dark:bg-earth-800 text-leaf-700 dark:text-leaf-300 text-[11px] font-mono font-bold border border-earth-200 dark:border-earth-700">
-                AEZ-3: Tista Meander Floodplain
-              </span>
+                class="px-2.5 py-1.5 rounded-xl bg-earth-100 dark:bg-earth-800 text-leaf-700 dark:text-leaf-300 text-[11px] font-mono font-bold border border-earth-200 dark:border-earth-700 hidden sm:inline-block">AEZ-3: Tista Meander Floodplain</span>
             </div>
-          </div>
-
-          <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-2 pt-2 border-t border-earth-100 dark:border-earth-800">
-            <div class="relative flex-1 min-w-[170px]">
-              <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-              <input id="mapDistrictSearch" type="text" oninput="filterMapDistrictsBySearch()"
-                placeholder="রংপুর বিভাগের জেলা খুঁজুন..." data-i18n-placeholder="mapDistrictSearchPh"
-                class="w-full text-xs font-bold pl-8 pr-3 py-2.5 rounded-xl border border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none focus:border-leaf-500" />
-            </div>
-            <select id="mapDistrictSelect" onchange="onMapDistrictChanged()"
-              class="flex-1 min-w-[130px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target" title="১. জেলা নির্বাচন">
-              <option value="rangpur" selected>রংপুর (Rangpur)</option>
-            </select>
-            <select id="mapUpazilaSelect" onchange="onMapUpazilaChanged()"
-              class="flex-1 min-w-[130px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target" title="২. উপজেলা নির্বাচন">
-              <!-- Populated dynamically -->
-            </select>
-            <select id="mapUnionSelect" onchange="onMapUnionChanged()"
-              class="flex-1 min-w-[150px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target" title="৩. ইউনিয়ন নির্বাচন">
-              <!-- Populated dynamically -->
-            </select>
-            <button type="button" id="mapLocateBtn" onclick="locateFarmerOnMap()"
-              class="px-3.5 py-2.5 rounded-xl bg-canal-600 hover:bg-canal-700 text-white text-xs font-black flex items-center justify-center gap-1.5 shrink-0 touch-target">
-              <i class="fa-solid fa-crosshairs"></i> <span data-i18n="btnGpsArea">আমার এলাকা (GPS)</span>
-            </button>
           </div>
         </div>
 
+        <!-- 3-Tier District / Upazila / Union Selection Bar -->
+        <div
+          class="bg-white dark:bg-earth-900 p-3 sm:p-4 rounded-2xl border-2 border-earth-200 dark:border-earth-700 shadow-sm flex flex-col md:flex-row items-stretch md:items-center gap-2.5">
+          <div class="relative flex-1 min-w-[200px]">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+            <input id="mapDistrictSearch" type="text" oninput="filterMapDistrictsBySearch()"
+              placeholder="Search Rangpur district..." data-i18n-placeholder="mapDistrictSearchPh"
+              class="w-full text-xs font-bold pl-8 pr-3 py-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none focus:border-leaf-500 shadow-inner" />
+          </div>
+          <div class="flex flex-wrap items-center gap-2 flex-1">
+            <select id="mapDistrictSelect" onchange="onMapDistrictChanged()"
+              class="flex-1 min-w-[130px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
+              <option value="rangpur" selected>Rangpur</option>
+            </select>
+            <select id="mapUpazilaSelect" onchange="onMapUpazilaChanged()"
+              class="flex-1 min-w-[130px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
+              <!-- Populated dynamically -->
+            </select>
+            <select id="mapUnionSelect" onchange="onMapUnionChanged()"
+              class="flex-1 min-w-[150px] text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+          <button type="button" onclick="locateUserAndNearestUnion(this)"
+            class="px-3.5 py-2.5 rounded-xl bg-canal-600 hover:bg-canal-700 text-white text-xs font-black flex items-center justify-center gap-1.5 shadow-sm transition touch-target shrink-0">
+            <i class="fa-solid fa-crosshairs"></i> <span data-i18n="btnGpsArea">My Location (GPS)</span>
+          </button>
+        </div>
+
+        <!-- Layer Selector Tabs (All 4 NASA Layers) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <button onclick="switchMapLayer('smap')" id="btnLayerSmap"
+            class="layer-tab active p-2.5 sm:p-3 rounded-2xl text-xs font-black transition flex items-center justify-center border-2 border-leaf-600 bg-leaf-600 text-white shadow-sm touch-target">
+            <i class="fa-solid fa-droplet mr-1"></i> <span data-i18n="layerSmap">Soil Moisture (SMAP)</span>
+          </button>
+          <button onclick="switchMapLayer('ndvi')" id="btnLayerNdvi"
+            class="layer-tab p-2.5 sm:p-3 rounded-2xl text-xs font-black transition flex items-center justify-center border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-900 text-slate-700 dark:text-slate-200 hover:border-leaf-500 touch-target">
+            <i class="fa-solid fa-leaf mr-1"></i> <span data-i18n="layerNdvi">Plant Health (NDVI)</span>
+          </button>
+          <button onclick="switchMapLayer('ecostress')" id="btnLayerEcostress"
+            class="layer-tab p-2.5 sm:p-3 rounded-2xl text-xs font-black transition flex items-center justify-center border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-900 text-slate-700 dark:text-slate-200 hover:border-leaf-500 touch-target">
+            <i class="fa-solid fa-temperature-high mr-1"></i> <span data-i18n="layerEcostress">Thermal Heat (ECOSTRESS)</span>
+          </button>
+          <button onclick="switchMapLayer('gpm')" id="btnLayerGpm"
+            class="layer-tab p-2.5 sm:p-3 rounded-2xl text-xs font-black transition flex items-center justify-center border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-900 text-slate-700 dark:text-slate-200 hover:border-leaf-500 touch-target">
+            <i class="fa-solid fa-cloud-showers-heavy mr-1"></i> <span data-i18n="layerGpm">Rainfall Radar (GPM)</span>
+          </button>
+        </div>
+
+        <div
+          class="flex items-center justify-between pb-2 border-b border-earth-100 dark:border-earth-800 text-xs gap-2 flex-wrap">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="activeLayerIndicator"
+              class="font-black text-slate-900 dark:text-white truncate max-w-[200px] sm:max-w-none" data-i18n="activeLayerIndicator">NASA SMAP: Root-Zone Moisture (100cm)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" id="mapScopeToggleBtn" onclick="toggleMapScope()"
+              class="px-2.5 py-1 rounded-xl bg-leaf-100 dark:bg-leaf-950 hover:bg-leaf-200 dark:hover:bg-leaf-900 text-leaf-800 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/40 flex items-center gap-1 transition shadow-sm" title="Toggle map scope">
+              <i class="fa-solid fa-layer-group text-leaf-500"></i> <span id="mapScopeToggleLbl" data-i18n="mapScopeToggleLbl">📍 District Unions</span>
+            </button>
+            <button type="button" id="mapStyleToggleBtn" onclick="toggleBaseMapStyle()"
+              class="px-2.5 py-1 rounded-xl bg-leaf-50 dark:bg-earth-800 hover:bg-leaf-100 dark:hover:bg-earth-700 text-leaf-700 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/30 flex items-center gap-1">
+              <i class="fa-solid fa-satellite"></i> <span id="mapStyleToggleLbl" data-i18n="mapStyleToggleLbl">Satellite View</span>
+            </button>
+            <div
+              class="flex items-center gap-2 text-[11px] font-mono font-bold text-leaf-700 dark:text-leaf-300 bg-earth-50 dark:bg-earth-800 px-2.5 py-1 rounded-xl shrink-0">
+              <span id="mapNodesCountLbl" data-i18n="mapNodesCountLbl">536 Unions Connected</span>
+              <span>|</span>
+              <span id="zoomLevelDisplay">10x</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map & Inspector Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Interactive Map Container -->
           <div class="lg:col-span-8 space-y-4">
             <div
-              class="bg-white dark:bg-earth-900 p-4 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-sm relative overflow-hidden space-y-3">
-              <!-- Layer Factor Controls Attached Directly Above Map (Always Visible Together!) -->
-              <div
-                class="flex flex-wrap items-center gap-1.5 sm:gap-2 bg-earth-100 dark:bg-earth-800 p-1.5 rounded-2xl border border-earth-200 dark:border-earth-700">
-                <button onclick="setMapLayer('smap')" id="layer-btn-smap"
-                  class="layer-pill flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-black bg-leaf-600 text-white shadow-sm transition touch-target text-center">
-                  <i class="fa-solid fa-droplet mr-1"></i> <span data-i18n="layerSmap">মাটির রস (SMAP)</span>
-                </button>
-                <button onclick="setMapLayer('ndvi')" id="layer-btn-ndvi"
-                  class="layer-pill flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-earth-200 dark:hover:bg-earth-700 transition touch-target text-center">
-                  <i class="fa-solid fa-leaf mr-1"></i> <span data-i18n="layerNdvi">গাছের সতেজতা (NDVI)</span>
-                </button>
-                <button onclick="setMapLayer('ecostress')" id="layer-btn-ecostress"
-                  class="layer-pill flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-earth-200 dark:hover:bg-earth-700 transition touch-target text-center">
-                  <i class="fa-solid fa-temperature-high mr-1"></i> <span data-i18n="layerEcostress">রোদের তাপ (ECOSTRESS)</span>
-                </button>
-                <button onclick="setMapLayer('gpm')" id="layer-btn-gpm"
-                  class="layer-pill flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-earth-200 dark:hover:bg-earth-700 transition touch-target text-center">
-                  <i class="fa-solid fa-cloud-showers-heavy mr-1"></i> <span data-i18n="layerGpm">বৃষ্টির মেঘ (GPM)</span>
-                </button>
+              class="bg-white dark:bg-earth-900 p-2 sm:p-3 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-sm relative overflow-hidden">
+              <div id="regionalLeafletMap"
+                class="w-full h-[380px] sm:h-[480px] lg:h-[540px] rounded-2xl z-0 bg-slate-100 dark:bg-earth-950">
               </div>
 
-              <div
-                class="flex items-center justify-between pb-2 border-b border-earth-100 dark:border-earth-800 text-xs gap-2 flex-wrap">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span id="activeLayerIndicator"
-                    class="font-black text-slate-900 dark:text-white truncate max-w-[200px] sm:max-w-none">নাসা SMAP
-                    উপগ্রহ</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <button type="button" id="mapScopeToggleBtn" onclick="toggleMapScope()"
-                    class="px-2.5 py-1 rounded-xl bg-leaf-100 dark:bg-leaf-950 hover:bg-leaf-200 dark:hover:bg-leaf-900 text-leaf-800 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/40 flex items-center gap-1 transition shadow-sm" title="ম্যাপের পরিধি পরিবর্তন করুন">
-                    <i class="fa-solid fa-layer-group text-leaf-500"></i> <span id="mapScopeToggleLbl" data-i18n="mapScopeToggleLbl">📍 জেলার ইউনিয়নসমূহ</span>
-                  </button>
-                  <button type="button" id="mapStyleToggleBtn" onclick="toggleBaseMapStyle()"
-                    class="px-2.5 py-1 rounded-xl bg-leaf-50 dark:bg-earth-800 hover:bg-leaf-100 dark:hover:bg-earth-700 text-leaf-700 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/30 flex items-center gap-1">
-                    <i class="fa-solid fa-satellite"></i> <span id="mapStyleToggleLbl" data-i18n="mapStyleToggleLbl">স্যাটেলাইট ভিউ</span>
-                  </button>
-                  <div
-                    class="flex items-center gap-2 text-[11px] font-mono font-bold text-leaf-700 dark:text-leaf-300 bg-earth-50 dark:bg-earth-800 px-2.5 py-1 rounded-xl shrink-0">
-                    <span id="mapNodesCountLbl" data-i18n="mapNodesCountLbl">৫৩৬ ইউনিয়ন সংযুক্ত</span>
-                    <span>|</span>
-                    <span id="zoomLevelDisplay">১০x</span>
-                  </div>
+              <!-- Floating Real-Time Map Legend Card -->
+              <div id="mapLegendCard"
+                class="absolute bottom-5 left-5 z-[500] p-3 rounded-2xl bg-white/95 dark:bg-earth-900/95 border-2 border-earth-200 dark:border-earth-700 shadow-lg max-w-[240px] text-xs backdrop-blur-sm pointer-events-auto">
+                <div class="font-black text-slate-900 dark:text-white mb-1" id="mapLegendTitle" data-i18n="mapLegendTitle">Soil Moisture Scale (SMAP L4)</div>
+                <div id="mapLegendBar"
+                  class="w-full h-3 rounded-full bg-gradient-to-r from-red-500 via-amber-500 to-emerald-500 mb-1"></div>
+                <div id="mapLegendLabels" class="flex justify-between text-[10px] font-black">
+                  <span class="text-rose-600">Dry (&lt;18%)</span>
+                  <span class="text-amber-600">Moderate</span>
+                  <span class="text-emerald-600">Adequate (&gt;24%)</span>
                 </div>
               </div>
 
-              <!-- Interactive Swipeable Regional Map (Leaflet.js) -->
-              <div
-                class="relative w-full max-w-full h-[360px] sm:h-[460px] bg-earth-950 rounded-2xl border-2 border-leaf-700/40 overflow-hidden select-none">
-                <div id="bangladeshLeafletMap" class="w-full h-full z-0"></div>
-
-                <!-- Map Legend -->
-                <div style="z-index: 450;"
-                  class="absolute bottom-3 left-3 bg-white/95 dark:bg-earth-900/95 p-2.5 sm:p-3 rounded-2xl border-2 border-earth-200 dark:border-earth-700 text-xs shadow-md max-w-[210px] sm:max-w-xs pointer-events-auto">
-                  <div class="font-black text-slate-900 dark:text-white mb-1" id="mapLegendTitle">মাটির রস নির্দেশক
-                    স্কেল</div>
-                  <div class="w-full h-3 rounded-full bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 mb-1"
-                    id="mapLegendBar"></div>
-                  <div class="flex justify-between text-[9px] sm:text-[10px] font-black gap-1" id="mapLegendLabels"></div>
-                </div>
-
-                <!-- Zoom Controls -->
-                <div style="z-index: 450;" class="absolute top-3 right-3 flex flex-col gap-2">
-                  <button onclick="zoomMap(1.15)" aria-label="Zoom in"
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white dark:bg-earth-800 text-slate-900 dark:text-white font-black shadow-md hover:scale-105 transition flex items-center justify-center touch-target border border-earth-200 dark:border-earth-700">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                  <button onclick="zoomMap(0.85)" aria-label="Zoom out"
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white dark:bg-earth-800 text-slate-900 dark:text-white font-black shadow-md hover:scale-105 transition flex items-center justify-center touch-target border border-earth-200 dark:border-earth-700">
-                    <i class="fa-solid fa-minus"></i>
-                  </button>
-                  <button onclick="resetMap()" aria-label="Reset map" title="নির্বাচিত জেলায় ফিরে যান"
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white dark:bg-earth-800 text-slate-900 dark:text-white font-black shadow-md hover:scale-105 transition flex items-center justify-center touch-target border border-earth-200 dark:border-earth-700">
-                    <i class="fa-solid fa-rotate-left"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 7-Day Timeline -->
-              <div
-                class="mt-4 pt-3 border-t border-earth-100 dark:border-earth-800 flex flex-col sm:flex-row items-center gap-3">
-                <div class="flex items-center gap-2 self-start sm:self-auto">
-                  <button id="playbackToggleBtn" onclick="toggleMapPlayback()" aria-label="Play timeline"
-                    class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-leaf-600 hover:bg-leaf-700 text-white flex items-center justify-center transition shadow-sm touch-target">
-                    <i class="fa-solid fa-play text-sm" id="playBtnIcon"></i>
-                  </button>
-                  <span class="text-xs font-black text-slate-900 dark:text-white whitespace-nowrap"
-                    data-i18n="timeScrubber">বিগত ৭ দিনের চিত্র:</span>
-                </div>
-                <input type="range" id="timeScrubber" min="0" max="6" value="6" step="1"
-                  oninput="handleTimeScrubber(this.value)" class="w-full accent-leaf-600 cursor-pointer h-3 rounded-lg">
-                <span id="timeScrubberLabel"
-                  class="text-xs font-mono font-black text-leaf-800 dark:text-leaf-300 bg-earth-100 dark:bg-earth-800 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl whitespace-nowrap self-stretch sm:self-auto text-center">
-                  আজকের লাইভ ছবি (Nov 2026)
-                </span>
+              <!-- Map Navigation Controls -->
+              <div class="absolute top-5 right-5 z-[500] flex flex-col gap-1.5">
+                <button onclick="zoomMap(1)" aria-label="Zoom in"
+                  class="w-8 h-8 rounded-xl bg-white/95 dark:bg-earth-900/95 border border-earth-200 dark:border-earth-700 text-slate-700 dark:text-white font-black text-sm flex items-center justify-center shadow-md hover:bg-leaf-50 touch-target">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+                <button onclick="zoomMap(-1)" aria-label="Zoom out"
+                  class="w-8 h-8 rounded-xl bg-white/95 dark:bg-earth-900/95 border border-earth-200 dark:border-earth-700 text-slate-700 dark:text-white font-black text-sm flex items-center justify-center shadow-md hover:bg-leaf-50 touch-target">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <button onclick="resetMap()" aria-label="Reset map" title="Reset to selected district"
+                  class="w-8 h-8 rounded-xl bg-white/95 dark:bg-earth-900/95 border border-earth-200 dark:border-earth-700 text-slate-700 dark:text-white font-black text-sm flex items-center justify-center shadow-md hover:bg-leaf-50 touch-target">
+                  <i class="fa-solid fa-rotate-right"></i>
+                </button>
               </div>
             </div>
 
-            <!-- Satellite Sensor Specs -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              <div
-                class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-earth-900 border-2 border-earth-200 dark:border-earth-700">
-                <span class="text-[11px] font-black text-canal-600 block mb-0.5" data-i18n="mapCard1Title">NASA SMAP উপগ্রহ</span>
-                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specSmap">মাটির ১০০ সেমি গভীরে
-                  রস</p>
+            <!-- Time-lapse / 7-Day Scrubber Bar -->
+            <div
+              class="bg-white dark:bg-earth-900 p-4 rounded-2xl border-2 border-earth-200 dark:border-earth-700 shadow-sm flex items-center gap-3">
+              <button onclick="toggleMapPlay()" id="btnPlayMap"
+                class="w-9 h-9 rounded-xl bg-leaf-600 hover:bg-leaf-700 text-white flex items-center justify-center shadow-sm shrink-0 touch-target">
+                <i class="fa-solid fa-play text-xs"></i>
+              </button>
+              <div class="flex-1 space-y-1">
+                <div class="flex justify-between text-xs font-bold text-slate-600 dark:text-slate-300">
+                  <span data-i18n="timeScrubber">Past 7-Day Timeline:</span>
+                  <span class="text-xs font-black text-leaf-600 dark:text-leaf-400 shrink-0"
+                    id="timeScrubberLiveTag" data-i18n="timeScrubberLiveTag">Today's Live Feed (Nov 2026)</span>
+                </div>
+                <input id="timeRange" type="range" min="0" max="6" value="6" oninput="onTimeScrubberChanged(this.value)"
+                  class="w-full accent-leaf-600 cursor-pointer" />
               </div>
-              <div
-                class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-earth-900 border-2 border-earth-200 dark:border-earth-700">
-                <span class="text-[11px] font-black text-leaf-600 block mb-0.5">Landsat 8/9</span>
-                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specLandsat">গাছের পাতার সবুজ
-                  সতেজতা</p>
+            </div>
+
+            <!-- 4 Satellite Mission Specs (Under Map) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+              <div class="p-3 rounded-2xl bg-earth-50 dark:bg-earth-800">
+                <span class="text-[11px] font-black text-canal-600 block mb-0.5" data-i18n="mapCard1Title">NASA SMAP Satellite</span>
+                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specSmap">Subsoil Moisture at 100cm</p>
               </div>
-              <div
-                class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-earth-900 border-2 border-earth-200 dark:border-earth-700">
-                <span class="text-[11px] font-black text-harvest-600 block mb-0.5">ECOSTRESS</span>
-                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specEcostress">রোদে পানি উবে
-                  যাওয়ার চাপ</p>
+              <div class="p-3 rounded-2xl bg-earth-50 dark:bg-earth-800">
+                <span class="text-[11px] font-black text-leaf-600 block mb-0.5" data-i18n="mapCard2Title">Landsat 8/9</span>
+                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specLandsat">Canopy Greenness & Health</p>
               </div>
-              <div
-                class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-earth-900 border-2 border-earth-200 dark:border-earth-700">
-                <span class="text-[11px] font-black text-canal-600 block mb-0.5" data-i18n="mapCard4Title">NASA GPM রাডার</span>
-                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specGpm">মেঘ ও বৃষ্টির পূর্বাভাস
-                </p>
+              <div class="p-3 rounded-2xl bg-earth-50 dark:bg-earth-800">
+                <span class="text-[11px] font-black text-rose-600 block mb-0.5" data-i18n="mapCard3Title">ECOSTRESS</span>
+                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specEcostress">Evapotranspiration Stress</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-earth-50 dark:bg-earth-800">
+                <span class="text-[11px] font-black text-canal-600 block mb-0.5" data-i18n="mapCard4Title">NASA GPM Radar</span>
+                <p class="text-xs font-black text-slate-900 dark:text-white" data-i18n="specGpm">Precipitation & Rain Radar</p>
               </div>
             </div>
           </div>
 
-          <!-- Inspector Panel -->
-          <div class="lg:col-span-4" id="parcelInspectorSection">
-            <div
-              class="bg-white dark:bg-earth-900 p-5 sm:p-6 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-xl space-y-4 sm:space-y-5 lg:sticky lg:top-24">
-              <div class="flex items-center justify-between pb-3 border-b border-earth-100 dark:border-earth-800">
+          <!-- Selected Parcel Deep Telemetry Inspector -->
+          <div
+            class="lg:col-span-4 bg-white dark:bg-earth-900 p-5 rounded-3xl border-2 border-earth-200 dark:border-earth-700 space-y-4 shadow-sm flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-earth-100 dark:border-earth-800 pb-2">
                 <div>
-                  <span class="text-[10px] font-black uppercase text-leaf-600 dark:text-leaf-400"
-                    data-i18n="diagSelected">নির্বাচিত জমি</span>
-                  <h3 id="inspectorParcelName" class="text-base sm:text-lg font-black text-slate-900 dark:text-white">২
-                    নম্বর জমি: পূর্ব উঁচু ক্ষেত</h3>
+                  <span class="text-[10px] font-black uppercase tracking-wider text-slate-400"
+                    data-i18n="diagSelected">SELECTED PARCEL</span>
+                  <h3 id="inspectorParcelName" class="text-base sm:text-lg font-black text-slate-900 dark:text-white" data-i18n="inspectorParcelName">
+                    Parcel 2: East Ridge</h3>
                 </div>
                 <span id="inspectorStatusBadge"
-                  class="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-black border flex items-center gap-1"></span>
+                  class="text-xs font-black px-2.5 py-1 rounded-full border bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-300" data-i18n="inspectorStatusBadge">
+                  Urgent Irrigation Needed
+                </span>
               </div>
 
-              <div class="space-y-3.5 sm:space-y-4">
-                <div>
-                  <div class="flex justify-between text-xs font-black text-slate-800 dark:text-slate-200 mb-1">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-droplet text-canal-500"></i> <span
-                        data-i18n="diagMoistLbl">মাটির শিকড়ের রস</span></span>
-                    <span id="inspectorMoistVal" class="text-rose-600 font-black"></span>
+              <!-- Live 3 NASA telemetry gauges for selected parcel -->
+              <div class="space-y-3">
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-bold">
+                    <span class="text-slate-600 dark:text-slate-300 flex items-center gap-1"><i
+                        class="fa-solid fa-droplet text-canal-500"></i> <span
+                        data-i18n="diagMoistLbl">Root-Zone Soil Moisture</span></span>
+                    <span class="font-black text-canal-600" id="inspectorMoistVal">14.2% (Dry Deficit)</span>
                   </div>
-                  <div class="w-full h-3 bg-earth-100 dark:bg-earth-800 rounded-full overflow-hidden">
-                    <div id="inspectorMoistBar" class="h-full bg-rose-500 rounded-full transition-all duration-500">
+                  <div class="w-full h-2 rounded-full bg-earth-100 dark:bg-earth-800 overflow-hidden">
+                    <div id="inspectorMoistBar" class="h-full bg-canal-500 transition-all duration-300"
+                      style="width: 28%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-bold">
+                    <span class="text-slate-600 dark:text-slate-300 flex items-center gap-1"><i
+                        class="fa-solid fa-seedling text-leaf-500"></i> <span
+                        data-i18n="diagNdviLbl">Canopy Vigour (NDVI)</span></span>
+                    <span class="font-black text-leaf-600" id="inspectorNdviVal">0.48 (Leaves Wilting)</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-earth-100 dark:bg-earth-800 overflow-hidden">
+                    <div id="inspectorNdviBar" class="h-full bg-leaf-500 transition-all duration-300"
+                      style="width: 48%"></div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-xs font-bold">
+                    <span class="text-slate-600 dark:text-slate-300 flex items-center gap-1"><i
+                        class="fa-solid fa-temperature-arrow-up text-rose-500"></i> <span data-i18n="diagHeatLbl">Evaporative Heat Pressure</span></span>
+                    <span class="font-black text-rose-600" id="inspectorEtVal">6.8 mm/day (Excess Heat)</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-earth-100 dark:bg-earth-800 overflow-hidden">
+                    <div id="inspectorEtBar" class="h-full bg-rose-500 transition-all duration-300" style="width: 78%">
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div>
-                  <div class="flex justify-between text-xs font-black text-slate-800 dark:text-slate-200 mb-1">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-leaf text-leaf-500"></i> <span
-                        data-i18n="diagNdviLbl">গাছের সতেজতা ও স্বাস্থ্য</span></span>
-                    <span id="inspectorNdviVal" class="font-black text-amber-600"></span>
-                  </div>
-                  <div class="w-full h-3 bg-earth-100 dark:bg-earth-800 rounded-full overflow-hidden">
-                    <div id="inspectorNdviBar" class="h-full bg-amber-500 rounded-full transition-all duration-500">
-                    </div>
-                  </div>
-                </div>
+              <!-- Recommendation Card -->
+              <div
+                class="p-4 rounded-2xl bg-leaf-50 dark:bg-leaf-950/40 border border-leaf-200 dark:border-leaf-800 space-y-1.5">
+                <span class="text-xs font-black text-leaf-700 dark:text-leaf-300 flex items-center gap-1.5">
+                  <i class="fa-solid fa-lightbulb text-harvest-500"></i> <span
+                    data-i18n="diagAdviceTitle">Action Recommendation for Farmers</span>
+                </span>
+                <p id="inspectorAdvice"
+                  class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-semibold">
+                  Corn leaves are wilting under midday 32°C heat. Water between 3:30 AM and 6:00 AM tonight. Shifting this high ground to pearl millet next season will save 40% water.
+                </p>
+              </div>
+            </div>
 
-                <div>
-                  <div class="flex justify-between text-xs font-black text-slate-800 dark:text-slate-200 mb-1">
-                    <span class="flex items-center gap-1.5"><i
-                        class="fa-solid fa-temperature-arrow-up text-rose-500"></i> <span data-i18n="diagHeatLbl">রোদে
-                        পানি শুকিয়ে যাওয়ার চাপ</span></span>
-                    <span id="inspectorEtVal" class="text-rose-600 font-black"></span>
-                  </div>
-                  <div class="w-full h-3 bg-earth-100 dark:bg-earth-800 rounded-full overflow-hidden">
-                    <div id="inspectorEtBar" class="h-full bg-rose-600 rounded-full transition-all duration-500"></div>
-                  </div>
-                </div>
-
-                <div
-                  class="p-3.5 sm:p-4 rounded-2xl bg-emerald-50 dark:bg-earth-800/90 border-2 border-emerald-200 dark:border-earth-700">
-                  <div class="flex items-center gap-2 text-xs font-black text-emerald-900 dark:text-emerald-300 mb-1">
-                    <i class="fa-solid fa-lightbulb text-harvest-500 text-sm"></i>
-                    <span data-i18n="diagAdviceTitle">কৃষক ভাইয়ের জন্য সরাসরি পরামর্শ</span>
-                  </div>
-                  <p id="inspectorAdvice"
-                    class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium"></p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                  <button onclick="navigateTo('crop-recommender')"
-                    class="px-4 py-3 rounded-2xl bg-leaf-600 hover:bg-leaf-700 text-white text-xs font-black transition flex items-center justify-center gap-2 touch-target shadow-sm">
-                    <i class="fa-solid fa-wheat-awn"></i> <span data-i18n="btnTestCrops">বিকল্প ফসল বাছুন</span>
-                  </button>
-                  <button onclick="navigateTo('irrigation-alerts')"
-                    class="px-4 py-3 rounded-2xl bg-earth-100 dark:bg-earth-800 hover:bg-earth-200 dark:hover:bg-earth-700 text-slate-900 dark:text-white text-xs font-black border-2 border-earth-200 dark:border-earth-700 transition flex items-center justify-center gap-2 touch-target">
-                    <i class="fa-solid fa-calculator"></i> <span data-i18n="btnPlanIrrigation">সেচ খরচ হিসাব</span>
-                  </button>
-                </div>
-
-                <button onclick="readAloudInspectorAdvice()"
-                  class="w-full py-3 rounded-2xl bg-white dark:bg-earth-800 border-2 border-leaf-500 text-leaf-700 dark:text-leaf-300 text-xs font-black hover:bg-leaf-50 dark:hover:bg-earth-700 transition flex items-center justify-center gap-2 touch-target shadow-sm">
-                  <i class="fa-solid fa-volume-high text-base"></i> <span data-i18n="btnReadAdvice">পরামর্শটি মুখে
-                    শুনুন</span>
+            <!-- Contextual Quick Action Buttons -->
+            <div class="space-y-2 pt-2 border-t border-earth-100 dark:border-earth-800">
+              <div class="grid grid-cols-2 gap-2 text-xs font-black">
+                <button onclick="navigateTo('crop-recommender')"
+                  class="p-2.5 rounded-xl bg-leaf-600 hover:bg-leaf-700 text-white flex items-center justify-center gap-1.5 shadow-sm transition touch-target">
+                  <i class="fa-solid fa-wheat-awn"></i> <span data-i18n="btnTestCrops">Test Crops</span>
+                </button>
+                <button onclick="navigateTo('pump-calculator')"
+                  class="p-2.5 rounded-xl bg-earth-100 dark:bg-earth-800 hover:bg-earth-200 dark:hover:bg-earth-700 text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5 transition touch-target border border-earth-200 dark:border-earth-700">
+                  <i class="fa-solid fa-calculator"></i> <span data-i18n="btnPlanIrrigation">Calculate Pump Cost</span>
                 </button>
               </div>
+              <button onclick="playParcelAdviceVoice()"
+                class="w-full py-2.5 rounded-xl border-2 border-leaf-500/50 hover:bg-leaf-50 dark:hover:bg-leaf-950/30 text-leaf-700 dark:text-leaf-300 text-xs font-black flex items-center justify-center gap-2 transition touch-target">
+                <i class="fa-solid fa-volume-high text-base"></i> <span data-i18n="btnReadAdvice">Listen to Advice</span>
+              </button>
             </div>
           </div>
         </div>
@@ -2404,7 +2407,7 @@
       });
       try { if (window.location.hash !== '#' + pageId) window.history.pushState(null, null, '#' + pageId); } catch (e) { }
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (pageId === 'resources' || pageId === 'dashboard' || pageId === 'crop-recommender') {
+      if (pageId === 'resources' || pageId === 'dashboard' || pageId === 'crop-recommender' || pageId === 'map-explorer') {
         if (!window.userExplicitlyToggledLang && currentLang !== 'en') {
           currentLang = 'en';
           const label = document.getElementById('currentLangLabel');
@@ -2546,6 +2549,11 @@
         mapLegendMed: "মাঝারি রস",
         mapLegendOpt: "গভীর রস (>২৪%)",
         mapLegendTitle: "মাটির রস নির্দেশক স্কেল (SMAP L4)",
+        mapSelectedDistBadge: "নির্বাচিত জেলা: রংপুর (Rangpur)",
+        activeLayerIndicator: "নাসা SMAP: মাটির ১০০ সেমি গভীরে রস",
+        timeScrubberLiveTag: "আজকের লাইভ ছবি (Nov 2026)",
+        inspectorParcelName: "২ নম্বর জমি: পূর্ব উঁচু ক্ষেত",
+        inspectorStatusBadge: "জরুরি সেচ প্রয়োজন",
         mapNodesCountLbl: "৫৩৬ ইউনিয়ন সংযুক্ত",
         mapPillCount: "৫৩৬ ইউনিয়ন সংযুক্ত",
         mapPillSatView: "🛰️ স্যাটেলাইট ভিউ",
@@ -2861,7 +2869,12 @@
         mapLegendDry: "Dry Deficit (<18%)",
         mapLegendMed: "Moderate Moisture",
         mapLegendOpt: "Optimal (>24%)",
-        mapLegendTitle: "Soil Moisture Index Scale (SMAP L4)",
+        mapLegendTitle: "Soil Moisture Scale (SMAP L4)",
+        mapSelectedDistBadge: "Selected District: Rangpur (Rangpur)",
+        activeLayerIndicator: "NASA SMAP: Root-Zone Moisture (100cm)",
+        timeScrubberLiveTag: "Today's Live Feed (Nov 2026)",
+        inspectorParcelName: "Parcel 2: East Ridge",
+        inspectorStatusBadge: "Urgent Irrigation Needed",
         mapNodesCountLbl: "536 Unions Connected",
         mapPillCount: "536 Unions Connected",
         mapPillSatView: "🛰️ Satellite View",
@@ -4112,7 +4125,7 @@
     /* 11. INITIALIZATION */
     window.addEventListener('DOMContentLoaded', () => {
       const initialHash = (window.location.hash || '').replace('#', '');
-      if (initialHash === 'resources' || initialHash === 'dashboard' || initialHash === 'crop-recommender') {
+      if (initialHash === 'resources' || initialHash === 'dashboard' || initialHash === 'crop-recommender' || initialHash === 'map-explorer') {
         currentLang = 'en';
         const label = document.getElementById('currentLangLabel');
         if (label) label.textContent = 'বাংলা';
