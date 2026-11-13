@@ -657,8 +657,8 @@
           <div class="lg:col-span-8 space-y-4">
             <div
               class="bg-white dark:bg-earth-900 p-2 sm:p-3 rounded-3xl border-2 border-earth-200 dark:border-earth-700 shadow-sm relative overflow-hidden">
-              <div id="regionalLeafletMap"
-                class="w-full h-[380px] sm:h-[480px] lg:h-[540px] rounded-2xl z-0 bg-slate-100 dark:bg-earth-950">
+              <div id="bangladeshLeafletMap"
+                class="w-full h-[380px] sm:h-[480px] lg:h-[540px] rounded-2xl z-0 bg-slate-900">
               </div>
 
               <!-- Floating Real-Time Map Legend Card -->
@@ -1968,139 +1968,58 @@
       </div>
     </section>
 
-<!-- FIXED BOTTOM APP BAR FOR MOBILE (48px+ touch targets) -->
-  <nav
-    class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-earth-900/95 backdrop-blur-md border-t-2 border-earth-200 dark:border-earth-700 pb-safe shadow-2xl">
-    <div class="grid grid-cols-5 h-16 text-center items-center">
-      <button onclick="navigateTo('landing')" data-mobile-nav="landing"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-house text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navHome">Home</span>
-      </button>
-      <button onclick="navigateTo('map-explorer')" data-mobile-nav="map-explorer"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-map text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navMap">Satellite Map</span>
-      </button>
-      <!-- Center Krishi BONDHU AI Trigger -->
-      <button onclick="openVoiceModal()" aria-label="Voice Assistant"
-        class="flex flex-col items-center justify-center -mt-6 touch-target">
-        <div
-          class="w-14 h-14 rounded-full bg-gradient-to-tr from-leaf-600 to-harvest-500 text-white flex items-center justify-center shadow-glow-leaf pulse-mic border-4 border-white dark:border-earth-900">
-          <i class="fa-solid fa-microphone text-2xl"></i>
-        </div>
-        <span class="text-[10px] font-black text-leaf-700 dark:text-leaf-400 mt-1" data-i18n="navVoice">Voice</span>
-      </button>
-      <button onclick="navigateTo('crop-recommender')" data-mobile-nav="crop-recommender"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-wheat-awn text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navCrops">Crop Shift</span>
-      </button>
-      <button onclick="navigateTo('irrigation-alerts')" data-mobile-nav="irrigation-alerts"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-gas-pump text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navIrrig">Pump & Irrigation</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- KRISHI BONDHU AI VOICE ASSISTANT MODAL -->
-  <div id="voiceModal"
-    class="fixed inset-0 z-50 bg-black/65 backdrop-blur-md hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
-    <div
-      class="bg-white dark:bg-earth-900 w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4 border border-earth-200 dark:border-earth-700 max-h-[85vh] overflow-y-auto pb-safe">
-      <div class="flex items-center justify-between pb-3 border-b border-earth-100 dark:border-earth-800">
-        <div class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-leaf-100 dark:bg-leaf-950 text-leaf-600 flex items-center justify-center text-xl shadow-sm shrink-0">
-            <i class="fa-solid fa-robot"></i>
+  <!-- FOOTER -->
+  <footer
+    class="bg-white dark:bg-earth-950 border-t border-earth-200 dark:border-earth-800 py-8 sm:py-10 mt-12 transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl bg-white dark:bg-earth-800 p-1 flex items-center justify-center shrink-0 border border-earth-200 dark:border-earth-700 shadow-sm overflow-hidden">
+              <img src="assets/icons/logo.png" alt="KRISHI BONDHU AI Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-xl font-black text-slate-900 dark:text-white">KRISHI BONDHU AI</span>
           </div>
-          <div>
-            <h3 class="font-black text-slate-900 dark:text-white text-sm sm:text-base" data-i18n="voiceAssistantTitle">
-              KRISHI BONDHU AI (Voice Assistant)</h3>
-            <p id="micStateIndicator" class="text-xs text-slate-500 font-bold" data-i18n="micReady">Ready to listen... Tap microphone</p>
-          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed font-medium"
+            data-i18n="footerDesc">
+            Empowering rural farmers with NASA Earth science observation assets to combat drought, reduce fuel costs, and ensure sustainable food security.
+          </p>
         </div>
-        <button onclick="closeVoiceModal()" aria-label="Close"
-          class="text-slate-400 hover:text-slate-600 dark:hover:text-white p-2 text-2xl touch-target flex items-center justify-center">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="flex flex-col items-center justify-center py-2 sm:py-3 space-y-3">
-        <button id="micButton" onclick="toggleListening()" aria-label="Microphone"
-          class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-leaf-600 hover:bg-leaf-700 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-glow-leaf transition duration-300 transform active:scale-90 touch-target">
-          <i id="micIcon" class="fa-solid fa-microphone"></i>
-        </button>
-        <div id="soundWave" class="hidden items-center gap-1.5 h-7">
-          <div class="bar w-2 bg-leaf-500 rounded-full"></div>
-          <div class="bar w-2 bg-harvest-500 rounded-full"></div>
-          <div class="bar w-2 bg-leaf-600 rounded-full"></div>
-          <div class="bar w-2 bg-terracotta-500 rounded-full"></div>
-          <div class="bar w-2 bg-canal-500 rounded-full"></div>
-        </div>
-        <span id="listeningFeedback" class="text-xs font-black text-leaf-700 dark:text-leaf-400 text-center"
-          data-i18n="micHint">
-          Tap the circular button to speak
-        </span>
-      </div>
-
-      <div class="space-y-1">
-        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
-          <span data-i18n="yourSpeechLbl">Your Question:</span>
-          <span id="activeVoiceLangTag"
-            class="text-[10px] bg-earth-100 dark:bg-earth-800 px-2 py-0.5 rounded font-mono font-black">English
-            (en-US)</span>
-        </div>
-        <div id="spokenOutput"
-          class="p-3 sm:p-3.5 bg-earth-50 dark:bg-earth-800 rounded-2xl text-xs sm:text-sm min-h-[44px] text-slate-900 dark:text-slate-100 font-bold"
-          data-i18n="spokenPlaceholder">
-          "Tap mic and speak your question..."
-        </div>
-      </div>
-
-      <div class="space-y-1">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-slate-500" data-i18n="aiReplyLbl">Direct Satellite Solution:</span>
-          <div class="flex items-center gap-2">
-            <button id="replayVoiceBtn" onclick="readResponseAloud()"
-              class="text-xs text-leaf-600 hover:underline hidden font-black touch-target min-h-0">
-              <i class="fa-solid fa-volume-high"></i> <span data-i18n="btnReplay">Listen Again</span>
-            </button>
-            <button id="stopVoiceBtn" onclick="stopSpeaking()"
-              class="text-xs text-rose-600 hover:underline hidden font-black touch-target min-h-0">
-              <i class="fa-solid fa-volume-xmark"></i> <span data-i18n="btnStop">Stop</span>
-            </button>
-          </div>
-        </div>
-        <div id="aiResponseOutput"
-          class="p-3.5 sm:p-4 bg-emerald-50 dark:bg-earth-800/90 border-2 border-emerald-200 dark:border-earth-700 rounded-2xl text-xs sm:text-sm text-emerald-950 dark:text-emerald-100 min-h-[70px] leading-relaxed font-semibold">
-        </div>
-      </div>
-
-      <form onsubmit="handleManualSubmit(event)" class="flex gap-2 pt-1">
-        <input id="typedQuestionInput" type="text" data-i18n-placeholder="inputPlaceholder"
-          placeholder="If noisy, type your question here..."
-          class="flex-1 bg-earth-50 dark:bg-earth-800 border-2 border-earth-300 dark:border-earth-700 rounded-2xl px-3.5 py-3 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-leaf-600 touch-target" />
-        <button type="submit" aria-label="Send"
-          class="bg-leaf-600 hover:bg-leaf-700 text-white px-4 py-3 rounded-2xl text-xs font-black shadow-sm touch-target">
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </form>
-
-      <div class="pt-2 border-t border-earth-100 dark:border-earth-800 space-y-2.5">
-        <button type="button" onclick="handleMasterDirectiveQuickAsk()"
-          class="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-leaf-600 to-emerald-600 hover:from-leaf-700 hover:to-emerald-700 text-white text-xs font-black flex items-center justify-center gap-2 shadow-sm touch-target">
-          <i class="fa-solid fa-wand-magic-sparkles text-harvest-300"></i>
-          <span id="voiceMasterDirectiveLbl" data-i18n="voiceMasterDirectiveLbl">Listen to Full Multi-Agent District Advisory</span>
-        </button>
         <div>
-          <div class="text-[11px] text-slate-500 mb-2 font-black" data-i18n="quickAskTitle">Tap Below for 1-Touch Quick Answers:</div>
-          <div class="flex flex-wrap gap-2" id="quickQuestionsContainer"></div>
+          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
+            data-i18n="footerNavTitle">NAVIGATION</h4>
+          <ul class="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-400">
+            <li><a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:text-leaf-600"
+                data-i18n="navHome">Home</a></li>
+            <li><a href="#map-explorer" onclick="navigateTo('map-explorer'); return false;" class="hover:text-leaf-600"
+                data-i18n="navMap">Satellite Map</a></li>
+            <li><a href="#crop-recommender" onclick="navigateTo('crop-recommender'); return false;"
+                class="hover:text-leaf-600" data-i18n="navCrops">Crop Shift</a></li>
+            <li><a href="#irrigation-alerts" onclick="navigateTo('irrigation-alerts'); return false;"
+                class="hover:text-leaf-600" data-i18n="navIrrig">Pump & Irrigation</a></li>
+            <li><a href="#dashboard" onclick="navigateTo('dashboard'); return false;" class="hover:text-leaf-600"
+                data-i18n="navDash">Crop Health</a></li>
+            <li><a href="#resources" onclick="navigateTo('resources'); return false;" class="hover:text-leaf-600"
+                data-i18n="navRes">NASA Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
+            data-i18n="missionTitle">MISSION DETAILS</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3 font-medium">
+            NASA International Space Apps Challenge 2026: Field Shift — Adapting Farms with NASA Data.
+          </p>
+          <div class="text-[11px] text-leaf-600 font-black" data-i18n="helplineFooter">Agri Call Center: 16123</div>
         </div>
       </div>
+      <div
+        class="border-t border-earth-200 dark:border-earth-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-bold gap-2 text-center sm:text-left">
+        <p>© 2026 KRISHI BONDHU AI. Open Science for Global Agriculture.</p>
+        <p>Built for Rural Farmers with Tailwind CSS & Web Speech API.</p>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <!-- FIXED BOTTOM APP BAR FOR MOBILE (48px+ touch targets) -->
   <nav
@@ -2235,248 +2154,6 @@
       </div>
     </div>
   </div>
-
-  <!-- FOOTER -->
-  <footer
-    class="bg-white dark:bg-earth-950 border-t border-earth-200 dark:border-earth-800 py-8 sm:py-10 mt-12 transition">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
-        <div class="md:col-span-2 space-y-3">
-          <div class="flex items-center gap-3">
-            <div
-              class="w-9 h-9 rounded-xl bg-white dark:bg-earth-800 p-1 flex items-center justify-center shrink-0 border border-earth-200 dark:border-earth-700 shadow-sm overflow-hidden">
-              <img src="assets/icons/logo.png" alt="KRISHI BONDHU AI Logo" class="w-full h-full object-contain">
-            </div>
-            <span class="text-xl font-black text-slate-900 dark:text-white">KRISHI BONDHU AI</span>
-          </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed font-medium"
-            data-i18n="footerDesc">
-            Empowering rural farmers with NASA Earth science observation assets to combat drought, reduce fuel costs, and ensure sustainable food security.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
-            data-i18n="footerNavTitle">NAVIGATION</h4>
-          <ul class="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-400">
-            <li><a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:text-leaf-600"
-                data-i18n="navHome">Home</a></li>
-            <li><a href="#map-explorer" onclick="navigateTo('map-explorer'); return false;" class="hover:text-leaf-600"
-                data-i18n="navMap">Satellite Map</a></li>
-            <li><a href="#crop-recommender" onclick="navigateTo('crop-recommender'); return false;"
-                class="hover:text-leaf-600" data-i18n="navCrops">Crop Shift</a></li>
-            <li><a href="#irrigation-alerts" onclick="navigateTo('irrigation-alerts'); return false;"
-                class="hover:text-leaf-600" data-i18n="navIrrig">Pump & Irrigation</a></li>
-            <li><a href="#dashboard" onclick="navigateTo('dashboard'); return false;" class="hover:text-leaf-600"
-                data-i18n="navDash">Crop Health</a></li>
-            <li><a href="#resources" onclick="navigateTo('resources'); return false;" class="hover:text-leaf-600"
-                data-i18n="navRes">NASA Guides</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
-            data-i18n="missionTitle">MISSION DETAILS</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3 font-medium">
-            NASA International Space Apps Challenge 2026: Field Shift — Adapting Farms with NASA Data.
-          </p>
-          <div class="text-[11px] text-leaf-600 font-black" data-i18n="helplineFooter">Agri Call Center: 16123</div>
-        </div>
-      </div>
-      <div
-        class="border-t border-earth-200 dark:border-earth-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-bold gap-2 text-center sm:text-left">
-        <p>© 2026 KRISHI BONDHU AI. Open Science for Global Agriculture.</p>
-        <p>Built for Rural Farmers with Tailwind CSS & Web Speech API.</p>
-      </div>
-    </div>
-  </footer>
-
-
-
-<!-- FIXED BOTTOM APP BAR FOR MOBILE (48px+ touch targets) -->
-  <nav
-    class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-earth-900/95 backdrop-blur-md border-t-2 border-earth-200 dark:border-earth-700 pb-safe shadow-2xl">
-    <div class="grid grid-cols-5 h-16 text-center items-center">
-      <button onclick="navigateTo('landing')" data-mobile-nav="landing"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-house text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navHome">Home</span>
-      </button>
-      <button onclick="navigateTo('map-explorer')" data-mobile-nav="map-explorer"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-map text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navMap">Satellite Map</span>
-      </button>
-      <!-- Center Krishi BONDHU AI Trigger -->
-      <button onclick="openVoiceModal()" aria-label="Voice Assistant"
-        class="flex flex-col items-center justify-center -mt-6 touch-target">
-        <div
-          class="w-14 h-14 rounded-full bg-gradient-to-tr from-leaf-600 to-harvest-500 text-white flex items-center justify-center shadow-glow-leaf pulse-mic border-4 border-white dark:border-earth-900">
-          <i class="fa-solid fa-microphone text-2xl"></i>
-        </div>
-        <span class="text-[10px] font-black text-leaf-700 dark:text-leaf-400 mt-1" data-i18n="navVoice">Voice</span>
-      </button>
-      <button onclick="navigateTo('crop-recommender')" data-mobile-nav="crop-recommender"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-wheat-awn text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navCrops">Crop Shift</span>
-      </button>
-      <button onclick="navigateTo('irrigation-alerts')" data-mobile-nav="irrigation-alerts"
-        class="mobile-nav-btn flex flex-col items-center justify-center text-slate-600 dark:text-slate-400 hover:text-leaf-600 touch-target">
-        <i class="fa-solid fa-gas-pump text-base"></i>
-        <span class="text-[10px] font-black mt-0.5" data-i18n="navIrrig">Pump & Irrigation</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- KRISHI BONDHU AI VOICE ASSISTANT MODAL -->
-  <div id="voiceModal"
-    class="fixed inset-0 z-50 bg-black/65 backdrop-blur-md hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
-    <div
-      class="bg-white dark:bg-earth-900 w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4 border border-earth-200 dark:border-earth-700 max-h-[85vh] overflow-y-auto pb-safe">
-      <div class="flex items-center justify-between pb-3 border-b border-earth-100 dark:border-earth-800">
-        <div class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-leaf-100 dark:bg-leaf-950 text-leaf-600 flex items-center justify-center text-xl shadow-sm shrink-0">
-            <i class="fa-solid fa-robot"></i>
-          </div>
-          <div>
-            <h3 class="font-black text-slate-900 dark:text-white text-sm sm:text-base" data-i18n="voiceAssistantTitle">
-              KRISHI BONDHU AI (Voice Assistant)</h3>
-            <p id="micStateIndicator" class="text-xs text-slate-500 font-bold" data-i18n="micReady">Ready to listen... Tap microphone</p>
-          </div>
-        </div>
-        <button onclick="closeVoiceModal()" aria-label="Close"
-          class="text-slate-400 hover:text-slate-600 dark:hover:text-white p-2 text-2xl touch-target flex items-center justify-center">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="flex flex-col items-center justify-center py-2 sm:py-3 space-y-3">
-        <button id="micButton" onclick="toggleListening()" aria-label="Microphone"
-          class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-leaf-600 hover:bg-leaf-700 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-glow-leaf transition duration-300 transform active:scale-90 touch-target">
-          <i id="micIcon" class="fa-solid fa-microphone"></i>
-        </button>
-        <div id="soundWave" class="hidden items-center gap-1.5 h-7">
-          <div class="bar w-2 bg-leaf-500 rounded-full"></div>
-          <div class="bar w-2 bg-harvest-500 rounded-full"></div>
-          <div class="bar w-2 bg-leaf-600 rounded-full"></div>
-          <div class="bar w-2 bg-terracotta-500 rounded-full"></div>
-          <div class="bar w-2 bg-canal-500 rounded-full"></div>
-        </div>
-        <span id="listeningFeedback" class="text-xs font-black text-leaf-700 dark:text-leaf-400 text-center"
-          data-i18n="micHint">
-          Tap the circular microphone above to speak
-        </span>
-      </div>
-
-      <div class="space-y-1">
-        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
-          <span data-i18n="yourSpeechLbl">Your Question:</span>
-          <span id="activeVoiceLangTag"
-            class="text-[10px] bg-earth-100 dark:bg-earth-800 px-2 py-0.5 rounded font-mono font-black">English
-            (en-US)</span>
-        </div>
-        <div id="spokenOutput"
-          class="p-3 sm:p-3.5 bg-earth-50 dark:bg-earth-800 rounded-2xl text-xs sm:text-sm min-h-[44px] text-slate-900 dark:text-slate-100 font-bold"
-          data-i18n="spokenPlaceholder">
-          "Tap mic and speak your question..."
-        </div>
-      </div>
-
-      <div class="space-y-1">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-slate-500" data-i18n="aiReplyLbl">Direct Satellite Solution:</span>
-          <div class="flex items-center gap-2">
-            <button id="replayVoiceBtn" onclick="readResponseAloud()"
-              class="text-xs text-leaf-600 hover:underline hidden font-black touch-target min-h-0">
-              <i class="fa-solid fa-volume-high"></i> <span data-i18n="btnReplay">Listen Again</span>
-            </button>
-            <button id="stopVoiceBtn" onclick="stopSpeaking()"
-              class="text-xs text-rose-600 hover:underline hidden font-black touch-target min-h-0">
-              <i class="fa-solid fa-volume-xmark"></i> <span data-i18n="btnStop">Stop</span>
-            </button>
-          </div>
-        </div>
-        <div id="aiResponseOutput"
-          class="p-3.5 sm:p-4 bg-emerald-50 dark:bg-earth-800/90 border-2 border-emerald-200 dark:border-earth-700 rounded-2xl text-xs sm:text-sm text-emerald-950 dark:text-emerald-100 min-h-[70px] leading-relaxed font-semibold">
-        </div>
-      </div>
-
-      <form onsubmit="handleManualSubmit(event)" class="flex gap-2 pt-1">
-        <input id="typedQuestionInput" type="text" data-i18n-placeholder="inputPlaceholder"
-          placeholder="If noisy, type your question here..."
-          class="flex-1 bg-earth-50 dark:bg-earth-800 border-2 border-earth-300 dark:border-earth-700 rounded-2xl px-3.5 py-3 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-leaf-600 touch-target" />
-        <button type="submit" aria-label="Send"
-          class="bg-leaf-600 hover:bg-leaf-700 text-white px-4 py-3 rounded-2xl text-xs font-black shadow-sm touch-target">
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </form>
-
-      <div class="pt-2 border-t border-earth-100 dark:border-earth-800 space-y-2.5">
-        <button type="button" onclick="handleMasterDirectiveQuickAsk()"
-          class="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-leaf-600 to-emerald-600 hover:from-leaf-700 hover:to-emerald-700 text-white text-xs font-black flex items-center justify-center gap-2 shadow-sm touch-target">
-          <i class="fa-solid fa-wand-magic-sparkles text-harvest-300"></i>
-          <span id="voiceMasterDirectiveLbl" data-i18n="voiceMasterDirectiveLbl">Listen to Full Multi-Agent District Advisory</span>
-        </button>
-        <div>
-          <div class="text-[11px] text-slate-500 mb-2 font-black" data-i18n="quickAskTitle">Tap Below for 1-Touch Quick Answers:</div>
-          <div class="flex flex-wrap gap-2" id="quickQuestionsContainer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer
-    class="bg-white dark:bg-earth-950 border-t border-earth-200 dark:border-earth-800 py-8 sm:py-10 mt-12 transition">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
-        <div class="md:col-span-2 space-y-3">
-          <div class="flex items-center gap-3">
-            <div
-              class="w-9 h-9 rounded-xl bg-white dark:bg-earth-800 p-1 flex items-center justify-center shrink-0 border border-earth-200 dark:border-earth-700 shadow-sm overflow-hidden">
-              <img src="assets/icons/logo.png" alt="KRISHI BONDHU AI Logo" class="w-full h-full object-contain">
-            </div>
-            <span class="text-xl font-black text-slate-900 dark:text-white">KRISHI BONDHU AI</span>
-          </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed font-medium"
-            data-i18n="footerDesc">
-            Empowering rural farmers with NASA Earth science observation assets to combat drought, reduce fuel costs, and ensure sustainable food security.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
-            data-i18n="footerNavTitle">NAVIGATION</h4>
-          <ul class="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-400">
-            <li><a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:text-leaf-600"
-                data-i18n="navHome">Home</a></li>
-            <li><a href="#map-explorer" onclick="navigateTo('map-explorer'); return false;" class="hover:text-leaf-600"
-                data-i18n="navMap">Satellite Map</a></li>
-            <li><a href="#crop-recommender" onclick="navigateTo('crop-recommender'); return false;"
-                class="hover:text-leaf-600" data-i18n="navCrops">Crop Shift</a></li>
-            <li><a href="#irrigation-alerts" onclick="navigateTo('irrigation-alerts'); return false;"
-                class="hover:text-leaf-600" data-i18n="navIrrig">Pump & Irrigation</a></li>
-            <li><a href="#dashboard" onclick="navigateTo('dashboard'); return false;" class="hover:text-leaf-600"
-                data-i18n="navDash">Crop Health</a></li>
-            <li><a href="#resources" onclick="navigateTo('resources'); return false;" class="hover:text-leaf-600"
-                data-i18n="navRes">NASA Guides</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-black text-xs uppercase text-slate-900 dark:text-white tracking-wider mb-3"
-            data-i18n="missionTitle">MISSION DETAILS</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3 font-medium">
-            NASA International Space Apps Challenge 2026: Field Shift — Adapting Farms with NASA Data.
-          </p>
-          <div class="text-[11px] text-leaf-600 font-black" data-i18n="helplineFooter">Agri Call Center: 16123</div>
-        </div>
-      </div>
-      <div
-        class="border-t border-earth-200 dark:border-earth-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-bold gap-2 text-center sm:text-left">
-        <p>© 2026 KRISHI BONDHU AI. Open Science for Global Agriculture.</p>
-        <p>Built for Rural Farmers with Tailwind CSS & Web Speech API.</p>
-      </div>
-    </div>
-  </footer>
 
   <!-- SCRIPT ENGINE -->
   <script>
@@ -3442,7 +3119,7 @@
 
     function zoomMap(factor) {
       if (window.leafletMap) {
-        if (factor > 1) window.leafletMap.zoomIn();
+        if (factor > 0) window.leafletMap.zoomIn();
         else window.leafletMap.zoomOut();
         return;
       }
@@ -5217,16 +4894,18 @@ function updateMapLayerLegend(layer) {
 }
 
 window.initOrRefreshRegionalMap = function() {
-  const mapEl = document.getElementById('bangladeshLeafletMap');
+  const mapEl = document.getElementById('bangladeshLeafletMap') || document.getElementById('regionalLeafletMap');
   if (!mapEl) return;
   if (typeof L === 'undefined') {
-    mapEl.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs font-bold text-slate-300 p-4 text-center">ইন্টারনেট সংযোগ না থাকায় অফলাইন মোড সক্রিয় রয়েছে।</div>';
+    mapEl.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs font-bold text-slate-300 p-4 text-center">' +
+      (currentLang === 'bn' ? 'ইন্টারনেট সংযোগ না থাকায় অফলাইন মোড সক্রিয় রয়েছে।' : 'No internet connection. Offline mode active.') +
+      '</div>';
     return;
   }
 
   if (!window.leafletMap) {
     const startDist = bdDistricts.find(d => d.id === currentSelectedDistId) || { lat: 25.7439, lon: 89.2752 };
-    window.leafletMap = L.map('bangladeshLeafletMap', {
+    window.leafletMap = L.map(mapEl, {
       center: [startDist.lat, startDist.lon],
       zoom: 10,
       zoomControl: false,
