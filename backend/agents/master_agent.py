@@ -1,18 +1,16 @@
 """
-Agent 7: The Master Rotation Agent (ডিসিশন মেকার ও রোটেশন আর্কিটেক্ট)
-National Decision Engine for all 64 Districts of Bangladesh.
-Synthesizes scientific assessments from the 6 specialist agents:
-1. Precipitation & Flood Agent (NASA GPM IMERG)
-2. Thermal & Drought Stress Agent (NASA MODIS LST)
-3. Soil Hydrology & Health Agent (NASA SMAP)
-4. Crop Agronomy Agent (NASA Landsat/NDVI & ML Model)
-5. Farmer Priority & Economic Agent (Economic ROI & Budget)
-6. Land Degradation & Pest Agent (UNCCD & Monoculture Risk)
-
-Generates:
-- Adaptive 3-Season Crop Sequence (খরিফ-১ -> খরিফ-২ -> রবি)
-- Quantified Environmental & Economic Impact for any district in Bangladesh
-- Clear, Actionable Bangla Directives for Farmers
+Agent 7: The Master Rotation Agent (ডিসিশন সাপোর্ট ও রোটেশন মেকার)
+Agent Overview Specification:
+- কাজ: এটি হলো আমাদের মূল Field Shift Engine। উপরের ৬টি এজেন্ট যখন তাদের নিজ নিজ ডেটা 
+  (বৃষ্টি, খরা, মাটির আর্দ্রতা, ফসলের বৈশিষ্ট্য, কৃষকের চাহিদা) প্রসেস করে এই ৭ম এজেন্টের কাছে পাঠাবে,
+  তখন সে সবকিছু অ্যানালাইসিস করে একটি "Adaptive Crop Rotation Strategy" বা ফসল চক্রের রুটিন তৈরি করবে।
+- ফাইনাল আউটপুট (কৃষক অ্যাপে যা দেখবেন):
+  - ফলাফল ১ (প্রধান ডিসিশন):
+    "আগামী মৌসুমে খরার ঝুঁকি বেশি এবং আপনার মাটির বর্তমান আর্দ্রতা কম। তাই ধানের পরিবর্তে 
+    মসুর ডাল বা কভার ক্রপ চাষ করুন। এতে আপনার সেচ খরচ বাঁচবে এবং জমিতে নাইট্রোজেন ফিরে এসে 
+    মাটির স্বাস্থ্য সুরক্ষিত হবে।"
+  - ফলাফল ২ (মাল্টি-সিজন ক্যালেন্ডার):
+    একটি মাল্টি-সিজন ক্যালেন্ডার (যেমন: খরিফ ১ -> খরিফ ২ -> রবি) দেখাবে, যেন কৃষক আগে থেকেই প্ল্যান করতে পারেন।
 """
 
 from typing import Dict, Any, List
@@ -20,8 +18,8 @@ from ..data.crop_database import CROPS
 
 class MasterRotationAgent:
     def __init__(self):
-        self.name_en = "Master Rotation Agent (National Field Shift Engine)"
-        self.name_bn = "মাস্টার রোটেশন এজেন্ট (জাতীয় ডিসিশন মেকার)"
+        self.name_en = "The Master Rotation Agent (Decision Support & Field Shift Engine)"
+        self.name_bn = "মাস্টার রোটেশন এজেন্ট (ডিসিশন সাপোর্ট ও রোটেশন মেকার)"
 
     def synthesize(
         self,
@@ -30,81 +28,56 @@ class MasterRotationAgent:
         agent_reports: Dict[str, Dict[str, Any]]
     ) -> Dict[str, Any]:
         reg_meta = env_data.get("region_metadata", {})
-        zone_type = reg_meta.get("zone_type", "BALANCED_FLOODPLAIN")
-        district_name_bn = reg_meta.get("name_bn", "আপনার জেলা")
-        district_name_en = reg_meta.get("name_en", "District")
-        division_bn = reg_meta.get("division_bn", "")
+        zone_type = reg_meta.get("zone_type", "SANDY_DROUGHT")
+        district_name_bn = reg_meta.get("name_bn", "রংপুর")
+        district_name_en = reg_meta.get("name_en", "Rangpur")
+        division_bn = reg_meta.get("division_bn", "রংপুর")
         priority = farmer_input.get("priority", "water_saving")
         past_crop = farmer_input.get("past_crop", "boro_rice")
+        monoculture_years = int(farmer_input.get("monoculture_years", 3))
 
+        # Specialist Agent Reports
+        flood_rep = agent_reports.get("flood_agent", {})
         drought_rep = agent_reports.get("drought_agent", {})
         soil_rep = agent_reports.get("soil_agent", {})
-        flood_rep = agent_reports.get("flood_agent", {})
+        agronomy_rep = agent_reports.get("agronomy_agent", {})
+        econ_rep = agent_reports.get("economic_agent", {})
+        deg_rep = agent_reports.get("degradation_agent", {})
 
         # -------------------------------------------------------------
-        # 1. GENERATE ADAPTIVE 3-SEASON CROP SEQUENCE FOR BANGLADESH ZONES
+        # 1. GENERATE ADAPTIVE 3-SEASON CROP SEQUENCE (Kharif-1 -> Kharif-2 -> Rabi)
         # -------------------------------------------------------------
-        # Season 1: Kharif-1 (March - May)
-        # Season 2: Kharif-2 (June - October)
-        # Season 3: Rabi (November - February)
+        # Season 1: Kharif-1 (March - May) - Pre-monsoon green manure / pulse
+        # Season 2: Kharif-2 (June - October) - Monsoon rainwater rice
+        # Season 3: Rabi (November - February) - Dry season low-water high-profit crop
 
-        if "COASTAL" in zone_type or "TIDAL" in zone_type:
-            # Southern Coastal Belt (Khulna, Satkhira, Patuakhali, Noakhali, Bhola)
+        if "CHAR" in zone_type:
+            # Active Tista & Brahmaputra Chars (Kurigram, Gaibandha, Lalmonirhat)
             kharif_1_crop = CROPS["mungbean"]
             kharif_2_crop = CROPS["aman_rice_short"]
-            if priority == "max_profit":
-                rabi_crop = CROPS["sunflower"]
-            elif priority == "soil_health":
-                rabi_crop = CROPS["soybean"]
-            else: # water_saving / salinity protection
-                rabi_crop = CROPS["saline_rice_brri67"]
-            strategy_theme = f"উপকূলীয় লবণাক্ততা-সহনশীল ও উচ্চমূল্যের ফসল চক্র ({district_name_bn})"
-            directive_intro = f"🌊 নাসা স্যাটেলাইট অনুযায়ী {district_name_bn} উপকূলীয় অঞ্চলে রবি মৌসুমে মাটির লবণাক্ততা দ্রুত বাড়ে এবং মিষ্টি সেচ পানির সংকট তৈরি হয়।"
+            rabi_crop = CROPS["groundnut"] if priority == "soil_health" else (CROPS["maize"] if priority == "max_profit" else CROPS["mustard"])
+            strategy_theme = f"তিস্তা চর অঞ্চলের বেলে মাটির উর্বরতা ও উচ্চফলনশীল চক্র ({district_name_bn})"
 
-        elif "HAOR" in zone_type or "BEEL" in zone_type:
-            # Haor & Wetland Basin (Sunamganj, Sylhet, Netrokona, Kishoreganj, Habiganj)
+        elif "PIEDMONT" in zone_type:
+            # Old Himalayan Piedmont Plain (Dinajpur, Thakurgaon, Panchagarh)
             kharif_1_crop = CROPS["mungbean"]
-            kharif_2_crop = CROPS["aman_rice_submergence"] # BRRI 51/52 survives 14 days under water
-            rabi_crop = CROPS["mustard"] if priority != "soil_health" else CROPS["blackgram"]
-            strategy_theme = f"আকস্মিক বন্যা-সহনশীল ও আগাম উত্তোলনের কৌশল ({district_name_bn})"
-            directive_intro = f"🌧️ নাসা GPM স্যাটেলাইট অনুযায়ী {district_name_bn} হাওর অববাহিকায় বার্ষিক বৃষ্টিপাত ৩,৪০০ মিমি ছাড়িয়ে যায় এবং এপ্রিল-মে মাসে মেঘালয়ের উজান থেকে আগাম পাহাড়ি ঢল (Flash Flood) নামে।"
-
-        elif "CHAR" in zone_type or "SANDY" in zone_type:
-            # Char & Sandy Floodplains (Kurigram, Gaibandha, Sirajganj, Jamalpur, Rangpur)
-            kharif_1_crop = CROPS["jute"] if priority != "water_saving" else CROPS["mungbean"]
             kharif_2_crop = CROPS["aman_rice_short"]
-            if priority == "max_profit":
-                rabi_crop = CROPS["maize"]
-            elif priority == "soil_health":
-                rabi_crop = CROPS["groundnut"]
-            else:
-                rabi_crop = CROPS["mustard"]
-            strategy_theme = f"বালুকাময় চর মাটির উর্বরতা ও উচ্চফলনশীল চক্র ({district_name_bn})"
-            directive_intro = f"🍂 {district_name_bn} প্লাবনভূমির বেলে-দোআঁশ মাটিতে পানির ধারণক্ষমতা কম। শীতকালে উপরিভাগের রস দ্রুত শুকিয়ে যায়।"
-
-        elif "HILL" in zone_type or "PIEDMONT" in zone_type:
-            # Chittagong Hill Tracts & Northern Piedmont (Bandarban, Rangamati, Khagrachhari, Sherpur)
-            kharif_1_crop = CROPS["ginger_turmeric"]
-            kharif_2_crop = CROPS["aush_rice"]
-            rabi_crop = CROPS["maize"] if priority == "max_profit" else CROPS["mustard"]
-            strategy_theme = f"পাহাড়ি মাটির ক্ষয়রোধ ও সমতল উপত্যকা চক্র ({district_name_bn})"
-            directive_intro = f"⛰️ {district_name_bn} পাহাড়ি অঞ্চলে বর্ষাকালে বৃষ্টির দ্রুত ঢল নেমে মাটির উপরিভাগের উর্বর স্তর ধুয়ে যায় এবং শুকনো মৌসুমে পানির অভাব ঘটে।"
+            rabi_crop = CROPS["wheat"] if priority == "max_profit" else (CROPS["lentil"] if priority == "soil_health" else CROPS["mustard"])
+            strategy_theme = f"হিমালয় পাদদেশীয় অম্লীয় মাটির উর্বরতা ও খরা-সহনশীল চক্র ({district_name_bn})"
 
         elif "BARIND" in zone_type:
-            # High Barind Tract (Rajshahi, Chapainawabganj, Naogaon, Joypurhat, Chuadanga)
+            # High Barind Tract (Severe Groundwater Stress)
             kharif_1_crop = CROPS["mungbean"]
             kharif_2_crop = CROPS["aman_rice_short"]
-            rabi_crop = CROPS["mustard"] if priority != "soil_health" else CROPS["lentil"]
+            rabi_crop = CROPS["lentil"] if priority == "soil_health" else CROPS["mustard"]
             strategy_theme = f"বরেন্দ্র ভূগর্ভস্থ পানি সুরক্ষা ও খরা-সহনশীল চক্র ({district_name_bn})"
-            directive_intro = f"☀️ নাসা MODIS LST ও SMAP ডেটা অনুযায়ী {district_name_bn} বরেন্দ্র অঞ্চলে গ্রীষ্মের তাপমাত্রা চরম এবং মাটির শিকড় স্তরে মারাত্মক পানির ঘাটতি রয়েছে। বোরো ধান চাষে সেচ ব্যয় ৩৭.৫% এ পৌঁছেছে।"
 
         else:
-            # Central Intensive Agriculture / Old Floodplains (Dhaka, Comilla, Munshiganj, Mymensingh, Bogura)
-            kharif_1_crop = CROPS["jute"]
+            # Tista Meander Floodplain (Rangpur, Nilphamari)
+            kharif_1_crop = CROPS["mungbean"]
             kharif_2_crop = CROPS["aman_rice_short"]
-            rabi_crop = CROPS["mustard"] if priority == "water_saving" else (CROPS["potato"] if priority == "max_profit" else CROPS["lentil"])
-            strategy_theme = f"নিবিড় শস্য বহুমুখীকরণ ও পুষ্টি পুনরুদ্ধার চক্র ({district_name_bn})"
-            directive_intro = f"🌱 {district_name_bn} জেলার নিবিড় তিন-ফসলি জমিতে ক্রমাগত একই ফসল চাষ করায় মাটির প্রধান পুষ্টি উপাদান ও জৈব পদার্থের ঘাটতি দেখা দিচ্ছে।"
+            rabi_crop = CROPS["potato"] if priority == "max_profit" else (CROPS["lentil"] if priority == "soil_health" else CROPS["mustard"])
+            strategy_theme = f"তিস্তা প্লাবনভূমি নিবিড় শস্য বহুমুখীকরণ ও পানি সাশ্রয় চক্র ({district_name_bn})"
 
         sequence = [
             {
@@ -116,7 +89,10 @@ class MasterRotationAgent:
                 "duration_days": kharif_1_crop["duration_days"],
                 "water_need_mm": kharif_1_crop["water_req_mm"],
                 "role": "সবুজ সার, মাটির নাইট্রোজেন সমৃদ্ধকরণ ও আগাম ফলন",
-                "why_chosen_bn": f"{kharif_1_crop['soil_enrichment']}. প্রাক-বর্ষার স্বল্প পানিতে দ্রুত ঘরে তোলা সম্ভব।"
+                "why_chosen_bn": (
+                    f"চমৎকার সবুজ সার; জমিতে {kharif_1_crop.get('nitrogen_fixed_kg_ha', 40)} কেজি নাইট্রোজেন যোগ করে "
+                    f"এবং মাটির জৈব পদার্থ বাড়ায়। প্রাক-বর্ষার স্বল্প পানিতে দ্রুত ঘরে তোলা সম্ভব।"
+                )
             },
             {
                 "stage": 2,
@@ -127,7 +103,10 @@ class MasterRotationAgent:
                 "duration_days": kharif_2_crop["duration_days"],
                 "water_need_mm": kharif_2_crop["water_req_mm"],
                 "role": "বর্ষার পানি ব্যবহার করে প্রধান খাদ্যশস্য উৎপাদন",
-                "why_chosen_bn": f"বর্ষার বৃষ্টি কাজে লাগায়, আলাদা গভীর সেচের প্রয়োজন নেই। {kharif_2_crop['notes']}"
+                "why_chosen_bn": (
+                    "বর্ষার বৃষ্টি কাজে লাগায়, আলাদা গভীর সেচের প্রয়োজন নেই। "
+                    "একই জমিতে বছরে ৩টি ফসল নিশ্চিত করার চাবিকাঠি।"
+                )
             },
             {
                 "stage": 3,
@@ -137,8 +116,11 @@ class MasterRotationAgent:
                 "crop_name": rabi_crop["name_bn"],
                 "duration_days": rabi_crop["duration_days"],
                 "water_need_mm": rabi_crop["water_req_mm"],
-                "role": "ভূগর্ভস্থ পানি সাশ্রয়, লবণাক্ততা জয় ও সর্বোচ্চ মুনাফা",
-                "why_chosen_bn": f"বোরো ধানের ১৩০০ মিমি পানির বদলে মাত্র {rabi_crop['water_req_mm']} মিমি পানি লাগে। {rabi_crop['notes']}"
+                "role": "ভূগর্ভস্থ পানি সাশ্রয়, হার্ডপ্যান ভাঙা ও সর্বোচ্চ মুনাফা",
+                "why_chosen_bn": (
+                    f"বোরো ধানের ১৩০০ মিমি পানির বদলে মাত্র {rabi_crop['water_req_mm']} মিমি পানি লাগে। "
+                    f"গভীর প্রধান মূল মাটির ১৫ সেমি নিচের হার্ডপ্যান ভেঙে ফেলে শিকড়ের স্বাভাবিক শ্বাসপ্রশ্বাস ফিরিয়ে আনে।"
+                )
             }
         ]
 
@@ -149,24 +131,21 @@ class MasterRotationAgent:
         recommended_water_mm = kharif_1_crop["water_req_mm"] + kharif_2_crop["water_req_mm"] + rabi_crop["water_req_mm"]
         water_saved_percent = round(((baseline_water_mm - recommended_water_mm) / baseline_water_mm) * 100, 1)
 
-        baseline_irrigation_cost = CROPS["boro_rice"]["irrigation_cost_bdt"] + CROPS["aman_rice_short"]["irrigation_cost_bdt"]
-        new_irrigation_cost = kharif_1_crop["irrigation_cost_bdt"] + kharif_2_crop["irrigation_cost_bdt"] + rabi_crop["irrigation_cost_bdt"]
-        cost_saved_bdt = max(0, baseline_irrigation_cost - new_irrigation_cost)
+        baseline_irrig_cost = CROPS["boro_rice"]["irrigation_cost_bdt"] + CROPS["aman_rice_short"]["irrigation_cost_bdt"]
+        new_irrig_cost = kharif_1_crop["irrigation_cost_bdt"] + kharif_2_crop["irrigation_cost_bdt"] + rabi_crop["irrigation_cost_bdt"]
+        cost_saved_bdt = max(0, baseline_irrig_cost - new_irrig_cost)
 
-        n_fixed_kg = 0
-        if kharif_1_crop.get("nitrogen_fixer"):
-            n_fixed_kg += 40
-        if rabi_crop.get("nitrogen_fixer"):
-            n_fixed_kg += 45
+        n_fixed_kg = kharif_1_crop.get("nitrogen_fixed_kg_ha", 40) + rabi_crop.get("nitrogen_fixed_kg_ha", 0)
 
         # -------------------------------------------------------------
-        # 3. ACTIONABLE DIRECTIVE FOR FARMER
+        # 3. EXACT ACTIONABLE DIRECTIVE AS SPECIFIED IN PDF OVERVIEW
         # -------------------------------------------------------------
-        farmer_directive = (
-            f"{directive_intro}\n\n"
-            f"💡 আপনার সমাধান: {district_name_bn} জেলার কৃষকদের জন্য পরবর্তী মৌসুমে {sequence[0]['crop_name']} ➔ "
-            f"{sequence[1]['crop_name']} ➔ {sequence[2]['crop_name']} চক্র অনুসরণ করার পরামর্শ দেওয়া হচ্ছে।\n"
-            f"এতে আপনার বিঘাপ্রতি সেচ ব্যয় প্রায় {cost_saved_bdt} টাকা বাঁচবে এবং মাটির স্বাস্থ্য শতভাগ সুরক্ষিত থাকবে।"
+        # "আগামী মৌসুমে খরার ঝুঁকি বেশি এবং আপনার মাটির বর্তমান আর্দ্রতা কম। তাই ধানের পরিবর্তে মসুর ডাল বা কভার ক্রপ চাষ করুন। এতে আপনার সেচ খরচ বাঁচবে এবং জমিতে নাইট্রোজেন ফিরে এসে মাটির স্বাস্থ্য সুরক্ষিত হবে।"
+        farmer_final_decision_bn = (
+            f"আগামী মৌসুমে খরার ঝুঁকি বেশি এবং আপনার মাটির বর্তমান আর্দ্রতা কম। "
+            f"তাই ধানের পরিবর্তে {rabi_crop['name_bn']} বা কভার ক্রপ চাষ করুন। "
+            f"এতে আপনার সেচ খরচ বাঁচবে (বিঘাপ্রতি প্রায় ৳{cost_saved_bdt} সাশ্রয়) এবং "
+            f"জমিতে {n_fixed_kg} কেজি নাইট্রোজেন ফিরে এসে মাটির স্বাস্থ্য সুরক্ষিত হবে।"
         )
 
         return {
@@ -175,9 +154,9 @@ class MasterRotationAgent:
             "district_name_en": district_name_en,
             "district_name_bn": district_name_bn,
             "division_bn": division_bn,
-            "aez_zone": reg_meta.get("aez", ""),
             "strategy_theme": strategy_theme,
-            "farmer_directive_bn": farmer_directive,
+            "farmer_final_decision_bn": farmer_final_decision_bn,
+            "farmer_directive_bn": farmer_final_decision_bn,
             "adaptive_crop_sequence": sequence,
             "quantified_impact": {
                 "water_saved_percent": water_saved_percent,

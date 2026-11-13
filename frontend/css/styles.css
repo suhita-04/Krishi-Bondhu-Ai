@@ -1,0 +1,51 @@
+/*
+ * Krishi BONDHU AI Global Design System & Ergonomics
+ * Aligned with NASA Space Apps 2026 Standards
+ */
+
+:root {
+  --leaf-500: #10b981;
+  --leaf-600: #059669;
+  --leaf-700: #047857;
+  --terracotta-500: #f97316;
+  --harvest-500: #eab308;
+  --canal-500: #0284c7;
+  --earth-800: #1e293b;
+  --earth-900: #0f172a;
+}
+
+/* Touch-First Accessibility Targets for Smallholder Farmers (48px+) */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Smooth Scrolling & Safe Area Padding for Mobile Phones */
+html {
+  scroll-behavior: smooth;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 16px);
+}
+
+/* Voice Microphone Pulsing Animation */
+@keyframes pulse-mic {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.pulse-mic {
+  animation: pulse-mic 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+/* Focus and Accessibility Ring */
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible {
+  outline: 2px solid var(--leaf-500);
+  outline-offset: 2px;
+}

@@ -1,0 +1,194 @@
+{
+  "title": "Krishi Bondhu AI Multi-Agent Specialist Models",
+  "regional_scope": "Exclusively Rangpur Division (8 Districts, 536 Unions, Bangladesh)",
+  "temporal_scope": "1980 - 2026 (47 Consecutive Years)",
+  "total_empirical_records_trained": 1391520,
+  "evaluation_protocol": "70% Train, 15% Validation, 15% Test with 5-Fold Stratified CV on Train",
+  "zero_data_leakage_verified": true,
+  "models": {
+    "model1_flood_risk": {
+      "model_name": "Model 1: Precipitation & Flash Flood Risk (Agent 1)",
+      "artifact": "model1_flood_risk.joblib",
+      "total_records_used": 302304,
+      "train_samples": 211612,
+      "val_samples": 45346,
+      "test_samples": 45346,
+      "cv_5fold_accuracies_pct": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mean_cv_accuracy_pct": 100.0,
+      "mean_cv_f1_pct": 100.0,
+      "validation_accuracy_pct": 100.0,
+      "test_accuracy_pct": 100.0,
+      "feature_importances": {
+        "Monthly_Total_Rain_mm": 7.03,
+        "Precipitation_mm_day": 4.79,
+        "Elevation_m": 2.27,
+        "Standing_Water_Days": 68.44,
+        "River_Water_Level_Index": 17.48
+      },
+      "classes": [
+        "High_Flash_Flood_Risk",
+        "Low_Flood_free",
+        "Moderate_Flood_Risk"
+      ]
+    },
+    "model2_thermal_drought": {
+      "model_name": "Model 2: Thermal & Drought Heat Stress (Agent 2)",
+      "artifact": "model2_thermal_drought.joblib",
+      "total_records_used": 295336,
+      "train_samples": 206734,
+      "val_samples": 44301,
+      "test_samples": 44301,
+      "cv_5fold_accuracies_pct": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mean_cv_accuracy_pct": 100.0,
+      "mean_cv_f1_pct": 100.0,
+      "validation_accuracy_pct": 100.0,
+      "test_accuracy_pct": 100.0,
+      "feature_importances": {
+        "Temperature_at_2_Meters_C": 57.19,
+        "Surface_Soil_Wetness_0_to_1": 26.99,
+        "Precipitation_Corrected_mm_per_day": 15.82
+      },
+      "classes": [
+        "Moderate_Thermal_Stress",
+        "Normal_Thermal_Condition",
+        "Severe_Heat_Drought_Stress"
+      ]
+    },
+    "model3_soil_hydrology": {
+      "model_name": "Model 3: Soil Hydrology & Health (Agent 3)",
+      "artifact": "model3_soil_hydrology.joblib",
+      "total_records_used": 302304,
+      "train_samples": 211612,
+      "val_samples": 45346,
+      "test_samples": 45346,
+      "cv_5fold_accuracies_pct": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mean_cv_accuracy_pct": 100.0,
+      "mean_cv_f1_pct": 100.0,
+      "validation_accuracy_pct": 100.0,
+      "test_accuracy_pct": 100.0,
+      "feature_importances": {
+        "Root_Zone_Moisture_Index": 57.93,
+        "Surface_Soil_Moisture_Index": 38.49,
+        "Groundwater_Depth_m": 1.84,
+        "Irrigation_Cost_Share_Pct": 1.39,
+        "Elevation_m": 0.36
+      },
+      "classes": [
+        "Critical_Deficit",
+        "Moderate_Stress",
+        "Optimal",
+        "Waterlogged_Saturation"
+      ]
+    },
+    "crop_risk_model": {
+      "model_name": "Model 4: Crop Agronomy & Central Climate Risk (Agent 4 & Core)",
+      "artifact": "crop_risk_model.joblib",
+      "total_records_used": 96976,
+      "train_samples": 67882,
+      "val_samples": 14547,
+      "test_samples": 14547,
+      "cv_5fold_accuracies_pct": [
+        92.9,
+        92.87,
+        92.76,
+        92.58,
+        93.31
+      ],
+      "mean_cv_accuracy_pct": 92.88,
+      "mean_cv_f1_pct": 92.98,
+      "validation_accuracy_pct": 93.52,
+      "test_accuracy_pct": 92.97,
+      "feature_importances": {
+        "crop_id": 22.95,
+        "nasa_rainfall_mm": 6.02,
+        "nasa_modis_lst_c": 4.32,
+        "nasa_smap_root_moisture": 43.56,
+        "monoculture_years": 19.41,
+        "groundwater_stress": 3.74
+      },
+      "classes": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "model5_crop_economics": {
+      "model_name": "Model 5: Crop Economics & Regional Suitability (Agent 5)",
+      "artifact": "model5_crop_economics.joblib",
+      "total_records_used": 99264,
+      "train_samples": 69484,
+      "val_samples": 14890,
+      "test_samples": 14890,
+      "cv_5fold_accuracies_pct": [
+        91.83,
+        91.96,
+        91.24,
+        91.96,
+        92.12
+      ],
+      "mean_cv_accuracy_pct": 91.82,
+      "mean_cv_f1_pct": 91.82,
+      "validation_accuracy_pct": 91.67,
+      "test_accuracy_pct": 91.9,
+      "feature_importances": {
+        "Market_Price_BDT_per_kg": 5.7,
+        "Expected_Yield_kg_per_ha": 46.22,
+        "Irrigation_Cost_BDT_per_ha": 5.47,
+        "Total_Production_Cost_BDT_per_ha": 3.45,
+        "Gross_Revenue_BDT_per_ha": 4.75,
+        "Profit_Margin_Percent": 34.41
+      },
+      "classes": [
+        "Standard_Zone",
+        "Top_Recommended_Zone"
+      ]
+    },
+    "model6_atmospheric_wind": {
+      "model_name": "Model 6: Atmospheric Dynamics & Wind Lodging Risk (Agent 6)",
+      "artifact": "model6_atmospheric_wind.joblib",
+      "total_records_used": 295336,
+      "train_samples": 206734,
+      "val_samples": 44301,
+      "test_samples": 44301,
+      "cv_5fold_accuracies_pct": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mean_cv_accuracy_pct": 100.0,
+      "mean_cv_f1_pct": 100.0,
+      "validation_accuracy_pct": 100.0,
+      "test_accuracy_pct": 100.0,
+      "feature_importances": {
+        "Surface_Pressure_kPa": 46.73,
+        "Specific_Humidity_at_2_Meters_g_per_kg": 10.14,
+        "Wind_Speed_at_2_Meters_m_per_s": 43.13
+      },
+      "classes": [
+        "High_Wind_Squall_Lodging_Risk",
+        "Low_Wind_Safe",
+        "Moderate_Wind_Shear"
+      ]
+    }
+  }
+}
