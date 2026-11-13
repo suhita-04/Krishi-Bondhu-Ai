@@ -83,15 +83,21 @@ class FloodAgent(BaseAgent):
         if ml_prediction == "High_Flash_Flood_Risk" or standing_water_days > 4.0 or daily_rain > 12.0:
             risk_level = "CRITICAL"
             warning_bn = "আগাম পাহাড়ি ঢল ও আকস্মিক বন্যার (Flash Flood) প্রবল ঝুঁকি রয়েছে! নিচু জমিতে পানি জমে দীর্ঘমেয়াদী বোরো ধান বা রবি ফসল তলিয়ে যাওয়ার তীব্র সম্ভাবনা।"
+            warning_en = "High flash flood and inundation hazard detected! Low-lying parcels risk prolonged waterlogging."
             rec_bn = "জলমগ্নতা-সহনশীল ধানের জাত (যেমন: BRRI ধান ৫১/৫২ Sub1 জিন সম্পন্ন) অথবা দ্রুত ঘরে তোলার মতো স্বল্পমেয়াদী ফসল নির্বাচন করুন।"
+            rec_en = "Cultivate submergence-tolerant rice (BRRI dhan 51/52 Sub1) or early harvest short-cycle cultivars."
         elif ml_prediction == "Moderate_Flood_Risk" or standing_water_days > 1.0 or daily_rain > 6.0:
             risk_level = "MODERATE"
             warning_bn = "মৌসুমি বর্ষায় মাঝারি প্লাবন ও জমিতে সাময়িক জলাবদ্ধতার ঝুঁকি রয়েছে।"
+            warning_en = "Moderate seasonal waterlogging and temporary ponding alert in drainage depressions."
             rec_bn = "নিষ্কাশন সুবিধাযুক্ত জমিতে মাঝারি মেয়াদী রোপা আমন চাষ করুন এবং সেচ নালা প্রস্তুত রাখুন।"
+            rec_en = "Ensure clean farm drainage ditches and plant medium-duration Aman rice."
         else:
             risk_level = "LOW"
             warning_bn = "বন্যার ঝুঁকি অত্যন্ত কম। পানির প্রাকৃতিক প্রবাহ স্বাভাবিক রয়েছে।"
+            warning_en = "Flood risk is negligible. Hydraulic runoff and precipitation are normal."
             rec_bn = "স্বাভাবিক বৃষ্টি-নির্ভর ফসল বা নিয়মিত সেচ ব্যবস্থাপনায় ফসল চাষের উপযুক্ত পরিবেশ।"
+            rec_en = "Ideal conditions for regular rainfed or standard irrigated crops."
 
         return {
             "agent_id": self.agent_id,
@@ -122,6 +128,12 @@ class FloodAgent(BaseAgent):
                 f"প্লাবন সূচক {river_water_index}/১০০ এবং জলাবদ্ধতার স্থায়িত্ব প্রায় {standing_water_days} দিন।"
             ),
             "warning_bn": warning_bn,
+            "warning_en": warning_en,
             "recommendation_bn": rec_bn,
+            "recommendation_en": rec_en,
+            "observations_en": (
+                f"NASA GPM IMERG radar records daily precipitation of {daily_rain} mm "
+                f"({monthly_total_rain} mm monthly). Standing water persistence: {standing_water_days} days."
+            ),
             "crop_restrictions": ["sensitive_to_submergence", "long_duration_paddy"] if risk_level == "CRITICAL" else []
         }

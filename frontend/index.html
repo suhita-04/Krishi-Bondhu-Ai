@@ -312,7 +312,7 @@
      <div class="p-3.5 sm:p-4 rounded-2xl bg-black/40 border-2 border-leaf-500/50 space-y-2.5 backdrop-blur-sm">
        <div class="flex items-center justify-between flex-wrap gap-1">
          <span class="text-xs sm:text-sm font-black text-harvest-300 flex items-center gap-1.5">
-           <i class="fa-solid fa-map-location-dot text-leaf-400"></i> আপনার জেলা নির্বাচন করুন (রংপুর বিভাগের ৮ জেলা):
+           <i class="fa-solid fa-map-location-dot text-leaf-400"></i> <span data-i18n="heroSelectDistTitle">আপনার জেলা নির্বাচন করুন (রংপুর বিভাগের ৮ জেলা):</span>
          </span>
          <span id="hero-aez-tag" class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-leaf-950 border border-leaf-500 text-leaf-300 font-mono">
            AEZ-3: Tista Meander Floodplain
@@ -335,16 +335,16 @@
        <div class="relative">
          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-leaf-400 text-xs"></i>
          <input id="heroDistrictSearch" type="text" oninput="filterDistrictsBySearch()"
-           placeholder="রংপুর বিভাগের জেলা লিখুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)..."
+           placeholder="রংপুর বিভাগের জেলা লিখুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)..." data-i18n-placeholder="heroSearchPlaceholder"
            class="w-full bg-slate-950/90 border border-leaf-500/60 rounded-xl pl-8 pr-16 py-2 text-xs sm:text-sm text-white placeholder-slate-400 font-bold focus:outline-none focus:border-harvest-400" />
-         <button type="button" id="clearDistrictSearchBtn" onclick="clearDistrictSearch()" class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-[10px] px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-slate-200 font-bold">মুছুন</button>
+         <button type="button" id="clearDistrictSearchBtn" onclick="clearDistrictSearch()" class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-[10px] px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-slate-200 font-bold" data-i18n="clearBtn">মুছুন</button>
        </div>
 
        <!-- Rangpur 8-District Dropdown (১. জেলা নির্বাচন) -->
        <div>
          <label class="block text-[11px] font-bold text-slate-300 mb-1 flex items-center justify-between">
-           <span class="flex items-center gap-1"><i class="fa-solid fa-map-pin text-harvest-400"></i> ১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা):</span>
-           <span class="text-[10px] text-emerald-400 font-normal">রংপুর বিভাগ কনফিগারড</span>
+           <span class="flex items-center gap-1"><i class="fa-solid fa-map-pin text-harvest-400"></i> <span data-i18n="heroDistLbl">১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা):</span></span>
+           <span class="text-[10px] text-emerald-400 font-normal" data-i18n="heroRangpurConfigured">রংপুর বিভাগ কনফিগারড</span>
          </label>
          <select id="heroDistrictSelect" onchange="onDistrictSelectionChanged()" class="w-full bg-slate-900 border-2 border-leaf-500 rounded-xl px-3 py-2 text-sm sm:text-base text-white font-bold focus:outline-none shadow-inner">
            <option value="rangpur" selected>রংপুর (Rangpur) - তিস্তা প্লাবনভূমি ও মঙ্গা/খরা ঝুঁকি</option>
@@ -362,7 +362,7 @@
        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-0.5">
          <div>
            <label class="block text-[11px] font-bold text-slate-300 mb-1 flex items-center gap-1">
-             <i class="fa-solid fa-tree-city text-emerald-400"></i> ২. উপজেলা নির্বাচন (৫৬ উপজেলা):
+             <i class="fa-solid fa-tree-city text-emerald-400"></i> <span data-i18n="heroUpzLbl">২. উপজেলা নির্বাচন (৫৬ উপজেলা):</span>
            </label>
            <select id="heroUpazilaSelect" onchange="onHeroUpazilaChanged()" class="w-full bg-slate-900 border-2 border-leaf-500/80 rounded-xl px-3 py-2 text-xs sm:text-sm text-white font-bold focus:outline-none shadow-inner">
              <!-- Populated dynamically -->
@@ -370,7 +370,7 @@
          </div>
          <div>
            <label class="block text-[11px] font-bold text-slate-300 mb-1 flex items-center gap-1">
-             <i class="fa-solid fa-house-chimney-window text-emerald-400"></i> ৩. ইউনিয়ন নির্বাচন (৫৩৬ ইউনিয়ন):
+             <i class="fa-solid fa-house-chimney-window text-emerald-400"></i> <span data-i18n="heroUnionLbl">৩. ইউনিয়ন নির্বাচন (৫৩৬ ইউনিয়ন):</span>
            </label>
            <select id="heroUnionSelect" onchange="onHeroUnionChanged()" class="w-full bg-slate-900 border-2 border-leaf-500/80 rounded-xl px-3 py-2 text-xs sm:text-sm text-white font-bold focus:outline-none shadow-inner">
              <!-- Populated dynamically -->
@@ -380,12 +380,12 @@
 
        <!-- Union Telemetry Status Card -->
        <div id="heroUnionDetailsBadge" class="p-2 sm:p-2.5 rounded-xl bg-emerald-950/70 border border-emerald-500/50 text-[11px] text-emerald-200 flex flex-wrap items-center justify-between gap-1.5 shadow-sm">
-         <span id="heroUnionInfoText"><i class="fa-solid fa-location-dot text-emerald-400 mr-1"></i> <strong id="heroUnionNameLbl" class="text-white">রংপুর সদর</strong> | মাটির ধরন: <span id="heroUnionSoilLbl" class="text-emerald-300 font-bold">দোআঁশ</span></span>
+         <span id="heroUnionInfoText"><i class="fa-solid fa-location-dot text-emerald-400 mr-1"></i> <strong id="heroUnionNameLbl" class="text-white">রংপুর সদর</strong> | <span data-i18n="soilTypePrefix">মাটির ধরন:</span> <span id="heroUnionSoilLbl" class="text-emerald-300 font-bold">দোআঁশ</span></span>
          <span class="font-mono text-harvest-300 font-bold" id="heroUnionMetaLbl">উচ্চতা: ৩০.৫ মি. | অববাহিকা: তিস্তা</span>
        </div>
        <div class="flex items-center justify-between text-[11px] text-emerald-200 flex-wrap gap-1">
          <span id="hero-dist-risk">⚠️ মঙ্গা ও খরা ঝুঁকি, দ্রুত মাটির উপরিভাগ শুকিয়ে যাওয়ার প্রবণতা</span>
-         <span class="text-harvest-400 font-bold"><i class="fa-solid fa-satellite"></i> নাসা লাইভ সংযুক্ত (রংপুর ৫৩৬ ইউনিয়ন)</span>
+         <span class="text-harvest-400 font-bold"><i class="fa-solid fa-satellite"></i> <span data-i18n="heroNasaLiveTag">নাসা লাইভ সংযুক্ত (রংপুর ৫৩৬ ইউনিয়ন)</span></span>
        </div>
      </div>
 
@@ -595,7 +595,7 @@
             <div class="relative flex-1 min-w-[170px]">
               <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
               <input id="mapDistrictSearch" type="text" oninput="filterMapDistrictsBySearch()"
-                placeholder="রংপুর বিভাগের জেলা খুঁজুন..."
+                placeholder="রংপুর বিভাগের জেলা খুঁজুন..." data-i18n-placeholder="mapDistrictSearchPh"
                 class="w-full text-xs font-bold pl-8 pr-3 py-2.5 rounded-xl border border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none focus:border-leaf-500" />
             </div>
             <select id="mapDistrictSelect" onchange="onMapDistrictChanged()"
@@ -612,7 +612,7 @@
             </select>
             <button type="button" id="mapLocateBtn" onclick="locateFarmerOnMap()"
               class="px-3.5 py-2.5 rounded-xl bg-canal-600 hover:bg-canal-700 text-white text-xs font-black flex items-center justify-center gap-1.5 shrink-0 touch-target">
-              <i class="fa-solid fa-crosshairs"></i> <span>আমার এলাকা (GPS)</span>
+              <i class="fa-solid fa-crosshairs"></i> <span data-i18n="btnGpsArea">আমার এলাকা (GPS)</span>
             </button>
           </div>
         </div>
@@ -653,15 +653,15 @@
                 <div class="flex items-center gap-2">
                   <button type="button" id="mapScopeToggleBtn" onclick="toggleMapScope()"
                     class="px-2.5 py-1 rounded-xl bg-leaf-100 dark:bg-leaf-950 hover:bg-leaf-200 dark:hover:bg-leaf-900 text-leaf-800 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/40 flex items-center gap-1 transition shadow-sm" title="ম্যাপের পরিধি পরিবর্তন করুন">
-                    <i class="fa-solid fa-layer-group text-leaf-500"></i> <span id="mapScopeToggleLbl">📍 জেলার ইউনিয়নসমূহ</span>
+                    <i class="fa-solid fa-layer-group text-leaf-500"></i> <span id="mapScopeToggleLbl" data-i18n="mapScopeToggleLbl">📍 জেলার ইউনিয়নসমূহ</span>
                   </button>
                   <button type="button" id="mapStyleToggleBtn" onclick="toggleBaseMapStyle()"
                     class="px-2.5 py-1 rounded-xl bg-leaf-50 dark:bg-earth-800 hover:bg-leaf-100 dark:hover:bg-earth-700 text-leaf-700 dark:text-leaf-300 text-[11px] font-black border border-leaf-500/30 flex items-center gap-1">
-                    <i class="fa-solid fa-satellite"></i> <span id="mapStyleToggleLbl">স্যাটেলাইট ভিউ</span>
+                    <i class="fa-solid fa-satellite"></i> <span id="mapStyleToggleLbl" data-i18n="mapStyleToggleLbl">স্যাটেলাইট ভিউ</span>
                   </button>
                   <div
                     class="flex items-center gap-2 text-[11px] font-mono font-bold text-leaf-700 dark:text-leaf-300 bg-earth-50 dark:bg-earth-800 px-2.5 py-1 rounded-xl shrink-0">
-                    <span id="mapNodesCountLbl">৫৩৬ ইউনিয়ন সংযুক্ত</span>
+                    <span id="mapNodesCountLbl" data-i18n="mapNodesCountLbl">৫৩৬ ইউনিয়ন সংযুক্ত</span>
                     <span>|</span>
                     <span id="zoomLevelDisplay">১০x</span>
                   </div>
@@ -878,7 +878,7 @@
               <div class="flex items-center justify-between pb-2 border-b border-earth-200 dark:border-earth-700">
                 <h3 class="font-black text-base text-slate-900 dark:text-white flex items-center gap-2">
                   <i class="fa-solid fa-sliders text-leaf-600"></i>
-                  <span>আপনার জমির তথ্য ও চাষাবাদের ধরন</span>
+                  <span data-i18n="recTitle">আপনার জমির তথ্য ও চাষাবাদের ধরন</span>
                 </h3>
                 <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 border border-leaf-400">
                   কৃষক ইনপুট
@@ -890,7 +890,7 @@
                 <div class="flex items-center justify-between text-xs">
                   <span class="font-black text-harvest-300 flex items-center gap-1.5">
                     <i class="fa-solid fa-location-crosshairs text-leaf-400"></i>
-                    <span>রংপুর বিভাগ কুইক-সিলেক্ট (১ ক্লিকে বাছাই):</span>
+                    <span data-i18n="recQuickSelectTitle">রংপুর বিভাগ কুইক-সিলেক্ট (১ ক্লিকে বাছাই):</span>
                   </span>
                   <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-leaf-600 text-white uppercase tracking-wider">
                     ফুল ডেটাসেট
@@ -919,11 +919,11 @@
               <!-- 3-Tier Location Picker (১. জেলা ➔ ২. উপজেলা ➔ ৩. ইউনিয়ন) -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span>📍 ১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা)</span>
+                  <span data-i18n="recDistLbl">📍 ১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা)</span>
                   <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">৫৩৬ ইউনিয়ন সংযুক্ত</span>
                 </label>
                 <input id="recDistrictSearch" type="text" oninput="filterRecDistrictsBySearch()"
-                  placeholder="রংপুর বিভাগের জেলা খুঁজুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)..."
+                  placeholder="রংপুর বিভাগের জেলা খুঁজুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)..." data-i18n-placeholder="recDistrictSearchPh"
                   class="w-full text-xs font-bold px-3 py-2 mb-1.5 rounded-xl border border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none focus:border-leaf-500" />
                 <select id="recDistrictSelect" onchange="onRecDistrictChanged()"
                   class="w-full text-xs font-bold p-3 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
@@ -968,7 +968,7 @@
               <!-- Past Crop Selection -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span>🌾 আগের মৌসুমে কী ফসল চাষ করেছিলেন?</span>
+                  <span data-i18n="recPastCropLbl">🌾 আগের মৌসুমে কী ফসল চাষ করেছিলেন?</span>
                   <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">পুষ্টি ক্ষয় হিসাব</span>
                 </label>
                 <select id="recPastCrop" onchange="onFarmerParamsChanged()"
@@ -993,7 +993,7 @@
                   <label class="text-xs font-bold text-slate-700 dark:text-slate-300">
                     🔁 টানা কত বছর একই ফসল করছেন?
                   </label>
-                  <span id="monoRiskTag" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300">
+                  <span id="monoRiskTag" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300" data-i18n="recMonoRiskTag">
                     চরম ঝুঁকি (৩+ বছর)
                   </span>
                 </div>
@@ -1008,7 +1008,7 @@
                     <span class="text-xs font-bold text-slate-500">বছর</span>
                   </div>
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug" data-i18n="recMonoWarningDesc">
                   টানা ৩+ বছর একই ফসল চাষ করলে মাটির ১৫ সেমি নিচে শক্ত স্তর (Hardpan) তৈরি হয় ও ফলন ৩০% পর্যন্ত কমে যায়।
                 </p>
               </div>
@@ -1016,7 +1016,7 @@
               <!-- Land Area in Bigha -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span>📐 চাষযোগ্য জমির পরিমাণ (বিঘা)</span>
+                  <span data-i18n="recLandAreaLbl">📐 চাষযোগ্য জমির পরিমাণ (বিঘা)</span>
                   <span class="text-[10px] text-slate-500 font-normal">১ বিঘা ≈ ৩৩ শতক</span>
                 </label>
                 <div class="relative">
@@ -1056,12 +1056,12 @@
               <button type="button" onclick="loadLiveBackendAnalysis(currentSelectedDistId)"
                 class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-leaf-600 to-emerald-600 hover:from-leaf-700 hover:to-emerald-700 text-white font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 touch-target">
                 <i class="fa-solid fa-microchip text-base"></i>
-                <span>৬+১ এআই এজেন্ট দিয়ে খামার বিশ্লেষণ চালান</span>
+                <span data-i18n="btnRunAgentsAnalysis">৬+১ এআই এজেন্ট দিয়ে খামার বিশ্লেষণ চালান</span>
               </button>
 
               <div
                 class="p-3.5 rounded-2xl bg-leaf-500/10 border border-leaf-500/20 text-xs text-leaf-900 dark:text-leaf-200 space-y-1">
-                <span class="font-black flex items-center gap-1.5"><i class="fa-solid fa-satellite"></i> <span>নাসা স্যাটেলাইট ও রংপুর ভ্যালিডেশন</span></span>
+                <span class="font-black flex items-center gap-1.5"><i class="fa-solid fa-satellite"></i> <span data-i18n="recValidationBadge">নাসা স্যাটেলাইট ও রংপুর ভ্যালিডেশন</span></span>
                 <p class="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
                   রংপুর বিভাগের ৫৩৬ ইউনিয়নের ১,৩৯১,৫২০টি বাস্তব তথ্যে ট্রেইন করা ৬টি মডেল (GPM, SMAP, MODIS, Landsat) দিয়ে এই সুপারিশমালা নিশ্চিত করা হয়েছে।
                 </p>
@@ -1087,7 +1087,7 @@
               </div>
               <div class="space-y-1">
                 <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-                  <span>কীটপতঙ্গ ও ছত্রাকের আক্রমণ সূচক:</span>
+                  <span data-i18n="pestVulnerabilityLbl">কীটপতঙ্গ ও ছত্রাকের আক্রমণ সূচক:</span>
                   <span id="pestIndexVal" class="font-black text-rose-600">৮৪ / ১০০</span>
                 </div>
                 <div class="w-full h-2.5 bg-white/80 dark:bg-earth-800 rounded-full overflow-hidden border border-earth-200 dark:border-earth-700">
@@ -1455,31 +1455,31 @@
         <!-- Header Card -->
         <div class="bg-gradient-to-r from-earth-900 via-emerald-950 to-slate-900 text-white p-6 sm:p-8 rounded-3xl border-2 border-leaf-500/40 shadow-xl space-y-3">
           <div class="flex items-center gap-2 text-xs font-bold text-leaf-400 mb-1">
-            <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline">প্রথম পাতা</a>
+            <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline" data-i18n="resHomeBreadcrumb">প্রথম পাতা</a>
             <span>/</span>
-            <span class="text-white">নাসা গাইড, ডাটা ভ্যালিডেশন ও গবেষণা</span>
+            <span class="text-white" data-i18n="resBreadcrumbCurrent">নাসা গাইড, ডাটা ভ্যালিডেশন ও গবেষণা</span>
           </div>
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
               <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-leaf-600/30 text-leaf-300 border border-leaf-500/40">
                 NASA Space Apps 2026 • Field Shift Challenge • Team Nokkhotro
               </span>
-              <h1 class="text-2xl sm:text-4xl font-black text-white mt-2">
+              <h1 class="text-2xl sm:text-4xl font-black text-white mt-2" data-i18n="resMainHeading">
                 🛰️ নাসা আর্থ সায়েন্স ডাটা ভ্যালিডেশন ও বৈজ্ঞানিক গবেষণা নির্দেশিকা
               </h1>
-              <p class="text-xs sm:text-sm text-emerald-100/90 mt-2 max-w-3xl leading-relaxed font-medium">
+              <p class="text-xs sm:text-sm text-emerald-100/90 mt-2 max-w-3xl leading-relaxed font-medium" data-i18n="resMainSub">
                 রংপুর বিভাগের ৮টি জেলা ও ৫৩৬টি ইউনিয়নের ১৯৮০ থেকে ২০২৬ সাল পর্যন্ত ৪৭ বছরের ১,৩৯১,৫২০টি দীর্ঘমেয়াদী স্যাটেলাইট ও কৃষি-অর্থনৈতিক তথ্যভান্ডারের পূর্ণ ডাটা লাইনেজ, ৬টি স্পেশালিস্ট এআই মডেলের ক্রস-ভ্যালিডেশন এবং আন্তর্জাতিক বৈজ্ঞানিক গবেষণাসমূহের সারসংক্ষেপ।
               </p>
             </div>
             <div class="flex flex-wrap lg:flex-col gap-2 shrink-0">
               <span class="px-3.5 py-1.5 rounded-xl bg-white/10 text-xs font-black border border-white/20 flex items-center gap-2">
-                <i class="fa-solid fa-database text-harvest-400"></i> ১,৩৯১,৫২০ রেকর্ড
+                <i class="fa-solid fa-database text-harvest-400"></i> <span data-i18n="resRecordCount">১,৩৯১,৫২০ রেকর্ড</span>
               </span>
               <span class="px-3.5 py-1.5 rounded-xl bg-white/10 text-xs font-black border border-white/20 flex items-center gap-2">
-                <i class="fa-solid fa-map-pin text-rose-400"></i> ৫৩৬টি ইউনিয়ন (রংপুর)
+                <i class="fa-solid fa-map-pin text-rose-400"></i> <span data-i18n="resUnionCount">৫৩৬টি ইউনিয়ন (রংপুর)</span>
               </span>
               <span class="px-3.5 py-1.5 rounded-xl bg-white/10 text-xs font-black border border-white/20 flex items-center gap-2">
-                <i class="fa-solid fa-shield-halved text-emerald-400"></i> জিরো ডাটা লিকেজ (০%)
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i> <span data-i18n="resZeroLeakage">জিরো ডাটা লিকেজ (০%)</span>
               </span>
             </div>
           </div>
@@ -1490,9 +1490,9 @@
           <div class="flex items-center justify-between">
             <h2 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
               <i class="fa-solid fa-satellite text-leaf-600"></i>
-              <span>নাসার প্রাতিষ্ঠানিক মিশন ও উন্মুক্ত উপগ্রহ পোর্টাল</span>
+              <span data-i18n="resMissionsTitle">নাসার প্রাতিষ্ঠানিক মিশন ও উন্মুক্ত উপগ্রহ পোর্টাল</span>
             </h2>
-            <span class="text-xs text-slate-500 font-bold">সরাসরি ডেটা ব্রাউজ করুন</span>
+            <span class="text-xs text-slate-500 font-bold" data-i18n="resBrowseDataTag">সরাসরি ডেটা ব্রাউজ করুন</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -2107,7 +2107,7 @@
         <button type="button" onclick="handleQuickAsk('মাস্টার রোটেশন পরিকল্পনা কী?')"
           class="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-leaf-600 to-emerald-600 hover:from-leaf-700 hover:to-emerald-700 text-white text-xs font-black flex items-center justify-center gap-2 shadow-sm touch-target">
           <i class="fa-solid fa-wand-magic-sparkles text-harvest-300"></i>
-          <span id="voiceMasterDirectiveLbl">আমার জেলার সম্পূর্ণ এজেন্ট পরামর্শ শুনুন</span>
+          <span id="voiceMasterDirectiveLbl" data-i18n="voiceMasterDirectiveLbl">আমার জেলার সম্পূর্ণ এজেন্ট পরামর্শ শুনুন</span>
         </button>
         <div>
           <div class="text-[11px] text-slate-500 mb-2 font-black" data-i18n="quickAskTitle">এক চাপে জানতে নিচের প্রশ্নে
@@ -2270,6 +2270,63 @@
         footerDesc: "নাসা আর্থ সায়েন্স উপগ্রহের উন্মুক্ত তথ্য ব্যবহার করে দেশের কৃষক ভাইদের জন্য খরা মোকাবেলা, তেলের খরচ কমানো ও নিরাপদ চাষাবাদের মুক্ত প্ল্যাটফর্ম।",
         footerNavTitle: "নেভিগেশন", missionTitle: "মিশন তথ্য", helplineFooter: "কৃষি কল সেন্টার: ১৬১২৩",
         months: ["জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর"],
+        heroSelectDistTitle: "আপনার জেলা নির্বাচন করুন (রংপুর বিভাগের ৮ জেলা):",
+        heroSearchPlaceholder: "রংপুর বিভাগের জেলা লিখুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)...",
+        clearBtn: "মুছুন",
+        heroDistLbl: "১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা):",
+        heroRangpurConfigured: "রংপুর বিভাগ কনফিগারড",
+        heroUpzLbl: "২. উপজেলা নির্বাচন (৫৬ উপজেলা):",
+        heroUnionLbl: "৩. ইউনিয়ন নির্বাচন (৫৩৬ ইউনিয়ন):",
+        soilTypePrefix: "মাটির ধরন:",
+        heroNasaLiveTag: "নাসা লাইভ সংযুক্ত (রংপুর ৫৩৬ ইউনিয়ন)",
+        mapDistrictSearchPh: "রংপুর বিভাগের জেলা খুঁজুন...",
+        btnGpsArea: "আমার এলাকা (GPS)",
+        mapScopeToggleLbl: "📍 জেলার ইউনিয়নসমূহ",
+        mapStyleToggleLbl: "স্যাটেলাইট ভিউ",
+        mapNodesCountLbl: "৫৩৬ ইউনিয়ন সংযুক্ত",
+        activeLayerTag: "নাসা SMAP উপগ্রহ",
+        mapLegendTitle: "মাটির রস নির্দেশক স্কেল (SMAP L4)",
+        timeScrubberLabel: "আজকের লাইভ ছবি (Nov 2026)",
+        recTitle: "আপনার জমির তথ্য ও চাষাবাদের ধরন",
+        recFarmerInputBadge: "কৃষক ইনপুট",
+        recQuickSelectTitle: "রংপুর বিভাগ কুইক-সিলেক্ট (১ ক্লিকে বাছাই):",
+        recFullDatasetBadge: "ফুল ডেটাসেট",
+        recDistrictSearchPh: "রংপুর বিভাগের জেলা খুঁজুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)...",
+        recDistLbl: "📍 ১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা)",
+        recUnionsConnectedBadge: "৫৩৬ ইউনিয়ন সংযুক্ত",
+        recUpzLbl: "২. উপজেলা নির্বাচন:",
+        recUnionLbl: "৩. ইউনিয়ন নির্বাচন:",
+        recPastCropLbl: "🌾 আগের মৌসুমে কী ফসল চাষ করেছিলেন?",
+        recNutrientDecayBadge: "পুষ্টি ক্ষয় হিসাব",
+        recPastCropDesc: "পূর্বের ফসলের ওপর ভিত্তি করে মাটিতে নাইট্রোজেন ঘাটতি ও ক্ষতিকর পোকার উপস্থিতি যাচাই করা হয়।",
+        recMonoYearsLbl: "🔁 টানা কত বছর একই ফসল করছেন?",
+        recMonoRiskTag: "চরম ঝুঁকি (৩+ বছর)",
+        recMonoYearsUnit: "বছর",
+        recMonoWarningDesc: "টানা ৩+ বছর একই ফসল চাষ করলে মাটির ১৫ সেমি নিচে শক্ত স্তর (Hardpan) তৈরি হয় ও ফলন ৩০% পর্যন্ত কমে যায়।",
+        recLandAreaLbl: "📐 চাষযোগ্য জমির পরিমাণ (বিঘা)",
+        recBighaUnitDec: "১ বিঘা ≈ ৩৩ শতক",
+        recUnitBigha: "বিঘা",
+        recGoalWater: "পানি বাঁচানো",
+        recGoalProfit: "বেশি লাভ",
+        recGoalSoil: "মাটির স্বাস্থ্য",
+        btnRunAgentsAnalysis: "৬+১ এআই এজেন্ট দিয়ে খামার বিশ্লেষণ চালান",
+        recValidationBadge: "নাসা স্যাটেলাইট ও রংপুর ভ্যালিডেশন",
+        recValidationDesc: "রংপুর বিভাগের ৫৩৬ ইউনিয়নের ১,৩৯১,৫২০টি বাস্তব তথ্যে ট্রেইন করা ৬টি মডেল (GPM, SMAP, MODIS, Landsat) দিয়ে এই সুপারিশমালা নিশ্চিত করা হয়েছে।",
+        soilFatigueTitle: "মাটির ক্লান্তি ও পোকার ঝুঁকি বিশ্লেষণ (Degradation Agent)",
+        pestVulnerabilityLbl: "কীটপতঙ্গ ও ছত্রাকের আক্রমণ সূচক:",
+        masterRotationAgentBadge: "মাস্টার রোটেশন এজেন্ট (১ বছরের পূর্ণাঙ্গ পরিকল্পনা)",
+        threeSeasonCycleHeading: "৩-মৌসুমী ফসল চক্র: খরিফ-১ ➔ খরিফ-২ ➔ রবি",
+        resHomeBreadcrumb: "প্রথম পাতা",
+        resBreadcrumbCurrent: "নাসা গাইড, ডাটা ভ্যালিডেশন ও গবেষণা",
+        resMainHeading: "🛰️ নাসা আর্থ সায়েন্স ডাটা ভ্যালিডেশন ও বৈজ্ঞানিক গবেষণা নির্দেশিকা",
+        resMainSub: "রংপুর বিভাগের ৮টি জেলা ও ৫৩৬টি ইউনিয়নের ১৯৮০ থেকে ২০২৬ সাল পর্যন্ত ৪৭ বছরের ১,৩৯১,৫২০টি দীর্ঘমেয়াদী স্যাটেলাইট ও কৃষি-অর্থনৈতিক তথ্যভান্ডারের পূর্ণ ডাটা লাইনেজ, ৬টি স্পেশালিস্ট এআই মডেলের ক্রস-ভ্যালিডেশন এবং আন্তর্জাতিক বৈজ্ঞানিক গবেষণাসমূহের সারসংক্ষেপ।",
+        resRecordCount: "১,৩৯১,৫২০ রেকর্ড",
+        resUnionCount: "৫৩৬টি ইউনিয়ন (রংপুর)",
+        resZeroLeakage: "জিরো ডাটা লিকেজ (০%)",
+        resMissionsTitle: "নাসার প্রাতিষ্ঠানিক মিশন ও উন্মুক্ত উপগ্রহ পোর্টাল",
+        resBrowseDataTag: "সরাসরি ডেটা ব্রাউজ করুন",
+        chartProofTitle: "স্যাটেলাইট প্রমাণ:",
+        voiceMasterDirectiveLbl: "আমার জেলার সম্পূর্ণ এজেন্ট পরামর্শ শুনুন",
         assistantGreeting: "সালাম ও নমস্কার কৃষক ভাই! আমি কৃষি BONDHU AI। আপনি মুখে যেকোনো প্রশ্ন করতে পারেন — যেমন: 'মাটিতে কি রস আছে?', 'খরায় কোন ফসল লাগাব?', বা 'পাম্প কতক্ষণ চালাতে হবে?'।"
       },
       en: {
@@ -2324,6 +2381,63 @@
         footerDesc: "Empowering rural farmers with NASA Earth science observation assets to combat drought, reduce fuel costs, and ensure sustainable food security.",
         footerNavTitle: "Navigation", missionTitle: "Mission Details", helplineFooter: "Agri Call Center: 16123",
         months: ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"],
+        heroSelectDistTitle: "Select Your District (Rangpur Division 8 Districts):",
+        heroSearchPlaceholder: "Search Rangpur district (e.g., Rangpur, Dinajpur, Kurigram)...",
+        clearBtn: "Clear",
+        heroDistLbl: "1. Select District (Rangpur Division 8 Districts):",
+        heroRangpurConfigured: "Rangpur Division Configured",
+        heroUpzLbl: "2. Select Upazila (56 Upazilas):",
+        heroUnionLbl: "3. Select Union (536 Unions):",
+        soilTypePrefix: "Soil Texture:",
+        heroNasaLiveTag: "NASA Live Connected (Rangpur 536 Unions)",
+        mapDistrictSearchPh: "Search Rangpur districts...",
+        btnGpsArea: "My Location (GPS)",
+        mapScopeToggleLbl: "📍 District Unions",
+        mapStyleToggleLbl: "Satellite View",
+        mapNodesCountLbl: "536 Unions Connected",
+        activeLayerTag: "NASA SMAP Satellite",
+        mapLegendTitle: "Soil Moisture Scale (SMAP L4)",
+        timeScrubberLabel: "Today's Live Orbit Pass (Nov 2026)",
+        recTitle: "Farm Parcel & Crop Cultivation Profile",
+        recFarmerInputBadge: "Farmer Input",
+        recQuickSelectTitle: "Rangpur Division Quick-Select (1-Click):",
+        recFullDatasetBadge: "Full Dataset",
+        recDistrictSearchPh: "Search Rangpur districts (e.g., Rangpur, Dinajpur, Kurigram)...",
+        recDistLbl: "1. Select District (Rangpur Division 8 Districts)",
+        recUnionsConnectedBadge: "536 Unions Connected",
+        recUpzLbl: "2. Select Upazila:",
+        recUnionLbl: "3. Select Union:",
+        recPastCropLbl: "🌾 Previous Season's Crop",
+        recNutrientDecayBadge: "Nutrient Depletion Calc",
+        recPastCropDesc: "Calibrates residual nitrogen deficit and soilborne pest spore risks based on antecedent cultivation.",
+        recMonoYearsLbl: "🔁 Consecutive Years of Same Crop?",
+        recMonoRiskTag: "Severe Risk (3+ Years)",
+        recMonoYearsUnit: "Years",
+        recMonoWarningDesc: "Monoculture exceeding 3 years hardens the 15cm subsoil pan, choking root aeration and depressing yield by up to 30%.",
+        recLandAreaLbl: "📐 Cultivable Land Area (Bigha)",
+        recBighaUnitDec: "1 Bigha ≈ 33 Decimals",
+        recUnitBigha: "Bigha",
+        recGoalWater: "Save Water",
+        recGoalProfit: "Max Profit",
+        recGoalSoil: "Soil Health",
+        btnRunAgentsAnalysis: "Run 6+1 Multi-Agent Farm Analysis",
+        recValidationBadge: "NASA Satellite & Rangpur Validation",
+        recValidationDesc: "Validated against 1,391,520 real ground-truth records across all 536 unions of Rangpur Division using 6 specialized ML models.",
+        soilFatigueTitle: "Soil Degradation & Pest Vulnerability Analysis (Degradation Agent)",
+        pestVulnerabilityLbl: "Pest & Pathogen Vulnerability Index:",
+        masterRotationAgentBadge: "Master Rotation Agent (1-Year Adaptive Plan)",
+        threeSeasonCycleHeading: "3-Season Crop Rotation: Kharif-1 ➔ Kharif-2 ➔ Rabi",
+        resHomeBreadcrumb: "Home",
+        resBreadcrumbCurrent: "NASA Guide, Data Validation & Research",
+        resMainHeading: "🛰️ NASA Earth Science Data Validation & Agronomic Research Compendium",
+        resMainSub: "Complete 47-year (1980-2026) data lineage of 1,391,520 satellite and agro-economic records across 8 districts and 536 unions of Rangpur, cross-validated by 6 specialist AI agents.",
+        resRecordCount: "1,391,520 Records",
+        resUnionCount: "536 Unions (Rangpur)",
+        resZeroLeakage: "Zero Data Leakage (0%)",
+        resMissionsTitle: "NASA Institutional Missions & Open Satellite Portals",
+        resBrowseDataTag: "Browse Live Datasets",
+        chartProofTitle: "Satellite Evidence:",
+        voiceMasterDirectiveLbl: "Listen to Full Multi-Agent District Advisory",
         assistantGreeting: "Hello! I am কৃষি BONDHU AI. Ask me anything about your field — e.g. 'Is there moisture in the soil?', 'What crop to plant in drought?', or 'How long to run the pump?'."
       }
     };
@@ -2337,18 +2451,56 @@
 
     function applyTranslations() {
       const dict = t[currentLang];
+      const isBn = currentLang === 'bn';
+
+      // 1. Text Content
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.textContent = dict[key];
       });
+
+      // 2. Placeholders
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (dict[key]) el.placeholder = dict[key];
       });
+
+      // 3. Months
       dict.months.forEach((m, idx) => {
         const el = document.getElementById('m' + (idx + 1));
         if (el) el.textContent = m;
       });
+
+      // 4. Update Quick District Pills
+      if (typeof updateRangpurPillsHighlight === 'function') {
+        updateRangpurPillsHighlight(currentSelectedDistId);
+      }
+
+      // 5. Update Dropdowns & Badges
+      if (typeof populateDistrictDropdown === 'function' && bdDistricts.length > 0) {
+        populateDistrictDropdown(getFilteredHeroDistricts(), 'heroDistrictSelect');
+        populateDistrictDropdown(getFilteredHeroDistricts(), 'recDistrictSelect');
+        populateDistrictDropdown(getFilteredHeroDistricts(), 'mapDistrictSelect');
+        populateUpazilaDropdowns(currentSelectedDistId, currentSelectedUpazilaKey);
+        populateUnionDropdowns(currentSelectedDistId, currentSelectedUpazilaKey, currentSelectedUnionId);
+        updateAllUnionBadges(currentUnionObj);
+        updateHeroDistrictBadges(currentSelectedDistId);
+      }
+
+      // 6. Update Past Crop Options
+      if (typeof updatePastCropOptions === 'function') {
+        updatePastCropOptions();
+      }
+
+      // 7. Update Map Layer Legend & Nodes
+      if (typeof updateMapLayerLegend === 'function') {
+        updateMapLayerLegend(activeMapLayer);
+      }
+      if (typeof renderLocationSpecificMapNodes === 'function') {
+        renderLocationSpecificMapNodes();
+      }
+
+      // 8. Re-render Dynamic Sections
       renderRainForecast();
       renderCropComparison();
       renderCropCards();
@@ -2356,14 +2508,32 @@
       renderCalendarDays();
       renderQuickQuestions();
       updateInspectorView(currentSelectedParcel);
-      setMapLayer(activeMapLayer);
       runPumpCostCalculation();
+
       if (window.liveAnalysisData) {
-        if (typeof updateIrrigationAlertBanner === 'function') updateIrrigationAlertBanner(window.liveAnalysisData);
-        if (typeof window.updateDynamicIrrigationSchedule === 'function') window.updateDynamicIrrigationSchedule();
-        if (typeof renderDynamicCropHealthChart === 'function') renderDynamicCropHealthChart(window.liveAnalysisData);
+        if (typeof window.updateDistrictInspectorFromLive === 'function') {
+          window.updateDistrictInspectorFromLive(window.liveAnalysisData);
+        }
+        if (typeof updateIrrigationAlertBanner === 'function') {
+          updateIrrigationAlertBanner(window.liveAnalysisData);
+        }
+        if (typeof window.updateDynamicIrrigationSchedule === 'function') {
+          window.updateDynamicIrrigationSchedule();
+        }
+        if (typeof renderDynamicCropHealthChart === 'function') {
+          renderDynamicCropHealthChart(window.liveAnalysisData);
+        }
+        if (typeof renderSoilFatigueAlert === 'function') {
+          renderSoilFatigueAlert(window.liveAnalysisData?.specialist_agent_evaluations?.degradation_agent);
+        }
+        if (typeof renderThreeSeasonTimeline === 'function') {
+          renderThreeSeasonTimeline(window.liveAnalysisData?.master_adaptive_strategy, window.liveAnalysisData?.specialist_agent_evaluations?.agronomy_agent);
+        }
       }
-      document.getElementById('aiResponseOutput').textContent = dict.assistantGreeting;
+
+      // 9. Voice Assistant greeting
+      const aiOut = document.getElementById('aiResponseOutput');
+      if (aiOut) aiOut.textContent = dict.assistantGreeting;
     }
 
     /* 3. DARK / LIGHT THEME */
@@ -3369,15 +3539,36 @@ async function fetchDistrictsFromBackend() {
   }
 }
 
+
+function updatePastCropOptions() {
+  const sel = document.getElementById('recPastCrop');
+  if (!sel) return;
+  const currentVal = sel.value || currentPastCrop || 'boro_rice';
+  const isBn = currentLang === 'bn';
+  const cropOpts = [
+    { val: 'boro_rice', bn: '🌾 বোরো ধান (Boro Rice - উচ্চ সেচ ও পানির টান)', en: '🌾 Boro Rice (High Irrigation & Heavy Water Demand)' },
+    { val: 'potato', bn: '🥔 আলু (Potato - উচ্চ সার ও নিবিড় পরিচর্যা)', en: '🥔 Potato (Heavy Fertilizer & Intensive Care)' },
+    { val: 'aman_rice', bn: '🌾 রোপা আমন ধান (Aman Rice - বর্ষাকালীন ধান)', en: '🌾 Aman Rice (Monsoon Rainfed Rice)' },
+    { val: 'aush_rice', bn: '🌾 আউশ ধান (Aush Rice - গ্রীষ্মকালীন স্বল্পমেয়াদী)', en: '🌾 Aush Rice (Early Summer Short-Cycle)' },
+    { val: 'maize', bn: '🌽 হাইব্রিড ভুট্টা (Hybrid Maize - দীর্ঘমেয়াদী ফসল)', en: '🌽 Hybrid Maize (Long Duration High Feed)' },
+    { val: 'wheat', bn: '🌾 গম (Wheat - শীতকালীন রবি ফসল)', en: '🌾 Wheat (Winter Rabi Crop)' },
+    { val: 'jute', bn: '🌿 পাট (Jute - বর্ষাকালীন অর্থকরী আঁশ ফসল)', en: '🌿 Jute (Monsoon Cash Fiber)' },
+    { val: 'mustard', bn: '🌼 সরিষা (Mustard - কম সেচের লাভজনক তৈলবীজ)', en: '🌼 Mustard (Low-Water High-Profit Oilseed)' },
+    { val: 'fallow', bn: '🍂 পতিত জমি (Fallow Land)', en: '🍂 Fallow Land' }
+  ];
+  sel.innerHTML = cropOpts.map(o => `<option value="${o.val}" ${o.val === currentVal ? 'selected' : ''}>${isBn ? o.bn : o.en}</option>`).join('');
+}
+
 function populateDistrictDropdown(distList, selectId = 'heroDistrictSelect') {
   const sel = document.getElementById(selectId);
   if (!sel) return;
   sel.innerHTML = '';
+  const isBn = currentLang === 'bn';
 
   if (!distList || distList.length === 0) {
     const emptyOpt = document.createElement('option');
     emptyOpt.value = '';
-    emptyOpt.innerText = 'কোনো জেলা পাওয়া যায়নি';
+    emptyOpt.innerText = isBn ? 'কোনো জেলা পাওয়া যায়নি' : 'No districts found';
     sel.appendChild(emptyOpt);
     return;
   }
@@ -3387,11 +3578,17 @@ function populateDistrictDropdown(distList, selectId = 'heroDistrictSelect') {
   const targetList = rangpurOnly.length > 0 ? rangpurOnly : distList;
 
   const optGroup = document.createElement('optgroup');
-  optGroup.label = '📍 রংপুর বিভাগ (৮ জেলা, ৫৬ উপজেলা, ৫৩৬ ইউনিয়ন)';
+  optGroup.label = isBn
+    ? '📍 রংপুর বিভাগ (৮ জেলা, ৫৬ উপজেলা, ৫৩৬ ইউনিয়ন)'
+    : '📍 Rangpur Division (8 Districts, 56 Upazilas, 536 Unions)';
   targetList.forEach(d => {
     const opt = document.createElement('option');
     opt.value = d.id;
-    opt.innerText = `${d.name_bn} (${d.name_en}) - ${d.primary_risk}`;
+    if (isBn) {
+      opt.innerText = `${d.name_bn} (${d.name_en}) - ${d.primary_risk_bn || d.primary_risk}`;
+    } else {
+      opt.innerText = `${d.name_en} (${d.name_bn}) - ${d.primary_risk}`;
+    }
     if (d.id === currentSelectedDistId) opt.selected = true;
     optGroup.appendChild(opt);
   });
@@ -3401,6 +3598,7 @@ function populateDistrictDropdown(distList, selectId = 'heroDistrictSelect') {
 function populateUpazilaDropdowns(distId, targetUpzKey = null) {
   const dObj = getHierarchyDistrict(distId);
   const upazilaKeys = dObj && dObj.upazilas ? Object.keys(dObj.upazilas) : [];
+  const isBn = currentLang === 'bn';
 
   let selectedKey = targetUpzKey && upazilaKeys.includes(targetUpzKey) ? targetUpzKey : (upazilaKeys[0] || '');
   currentSelectedUpazilaKey = selectedKey;
@@ -3413,7 +3611,9 @@ function populateUpazilaDropdowns(distId, targetUpzKey = null) {
       const upz = dObj.upazilas[key];
       const opt = document.createElement('option');
       opt.value = key;
-      opt.textContent = `${upz.name_bn} (${upz.total_unions} ইউনিয়ন)`;
+      opt.textContent = isBn
+        ? `${upz.name_bn} (${upz.total_unions} ইউনিয়ন)`
+        : `${upz.name_en} (${upz.total_unions} Unions)`;
       if (key === selectedKey) opt.selected = true;
       sel.appendChild(opt);
     });
@@ -3426,6 +3626,7 @@ function populateUpazilaDropdowns(distId, targetUpzKey = null) {
 function populateUnionDropdowns(distId, upzKey, targetUnionId = null) {
   const upzObj = getHierarchyUpazila(distId, upzKey);
   const unions = upzObj && upzObj.unions ? upzObj.unions : [];
+  const isBn = currentLang === 'bn';
 
   let selectedUnion = null;
   if (targetUnionId) {
@@ -3446,7 +3647,9 @@ function populateUnionDropdowns(distId, upzKey, targetUnionId = null) {
     unions.forEach(u => {
       const opt = document.createElement('option');
       opt.value = u.id;
-      opt.textContent = `${u.name_bn} (উচ্চতা: ${u.elevation_m} মি.)`;
+      opt.textContent = isBn
+        ? `${u.name_bn} (উচ্চতা: ${u.elevation_m} মি.)`
+        : `${u.name_en} (Elev: ${u.elevation_m}m)`;
       if (selectedUnion && u.id === selectedUnion.id) opt.selected = true;
       sel.appendChild(opt);
     });
@@ -3456,42 +3659,103 @@ function populateUnionDropdowns(distId, upzKey, targetUnionId = null) {
   return selectedUnion;
 }
 
+
+const soilTranslationMap = {
+  'উর্বর দোআঁশ মাটি': { bn: 'উর্বর দোআঁশ মাটি', en: 'Fertile Loam' },
+  'বেলে-দোআঁশ মাটি': { bn: 'বেলে-দোআঁশ মাটি', en: 'Sandy Loam' },
+  'এঁটেল-দোআঁশ মাটি': { bn: 'এঁটেল-দোআঁশ মাটি', en: 'Clay Loam' },
+  'লালচে দোআঁশ মাটি': { bn: 'লালচে দোআঁশ মাটি', en: 'Reddish Loam' },
+  'দোআঁশ': { bn: 'দোআঁশ', en: 'Loam' }
+};
+
+const basinTranslationMap = {
+  'Atrai_Punarbhaba': { bn: 'আত্রাই-পুনর্ভবা', en: 'Atrai-Punarbhaba' },
+  'Teesta': { bn: 'তিস্তা', en: 'Teesta' },
+  'Mahananda_Karatoa': { bn: 'মহানন্দা-করতোয়া', en: 'Mahananda-Karatoa' },
+  'Teesta_Dharla': { bn: 'তিস্তা-ধরলা', en: 'Teesta-Dharla' },
+  'Brahmaputra_Teesta': { bn: 'ব্রহ্মপুত্র-তিস্তা', en: 'Brahmaputra-Teesta' },
+  'Brahmaputra_Dharla': { bn: 'ব্রহ্মপুত্র-ধরলা', en: 'Brahmaputra-Dharla' },
+  'Tangon': { bn: 'টাঙ্গন', en: 'Tangon' },
+  'তিস্তা': { bn: 'তিস্তা', en: 'Teesta' }
+};
+
+const patternTranslationMap = {
+  'Char Vegetables Pumpkin Chili & Oilseeds': { bn: 'চর সবজি, কুমড়া, মরিচ ও তৈলবীজ', en: 'Char Vegetables, Pumpkin, Chili & Oilseeds' },
+  'Intensive Vegetables Potato & Pulses': { bn: 'নিবিড় শাকসবজি, আলু ও ডাল', en: 'Intensive Vegetables, Potato & Pulses' },
+  'Fruit Orchard & Winter Vegetables': { bn: 'ফলবাগান ও শীতকালীন সবজি', en: 'Fruit Orchard & Winter Vegetables' },
+  'Cereal Grain & Pulse Oilseed Rotation': { bn: 'খাদ্যশস্য, ডাল ও তৈলবীজ চক্র', en: 'Cereal Grain & Pulse Oilseed Rotation' }
+};
+
+function getLocalizedSoil(val) {
+  const isBn = currentLang === 'bn';
+  if (soilTranslationMap[val]) return isBn ? soilTranslationMap[val].bn : soilTranslationMap[val].en;
+  return val || (isBn ? 'দোআঁশ' : 'Loam');
+}
+
+function getLocalizedBasin(val) {
+  const isBn = currentLang === 'bn';
+  if (basinTranslationMap[val]) return isBn ? basinTranslationMap[val].bn : basinTranslationMap[val].en;
+  return val || (isBn ? 'তিস্তা' : 'Teesta');
+}
+
+function getLocalizedPattern(val) {
+  const isBn = currentLang === 'bn';
+  if (patternTranslationMap[val]) return isBn ? patternTranslationMap[val].bn : patternTranslationMap[val].en;
+  return val || (isBn ? 'শীতকালীন সবজি ও আলু' : 'Winter Vegetables & Potato');
+}
+
 function updateAllUnionBadges(unionObj) {
   if (!unionObj) return;
+  const isBn = currentLang === 'bn';
   const distObj = bdDistricts.find(d => d.id === currentSelectedDistId);
-  const distNameBn = distObj ? distObj.name_bn : 'রংপুর';
+  const distName = isBn ? (distObj ? distObj.name_bn : 'রংপুর') : (distObj ? distObj.name_en : 'Rangpur');
   const upzObj = getHierarchyUpazila(currentSelectedDistId, currentSelectedUpazilaKey);
-  const upzNameBn = upzObj ? upzObj.name_bn : '';
+  const upzName = isBn ? (upzObj ? upzObj.name_bn : '') : (upzObj ? upzObj.name_en : '');
+  const unionName = isBn ? unionObj.name_bn : unionObj.name_en;
+  const soilName = getLocalizedSoil(unionObj.soil_texture);
+  const riverBasin = getLocalizedBasin(unionObj.river_basin);
 
   // 1. Hero Badge
   const heroNameLbl = document.getElementById('heroUnionNameLbl');
-  if (heroNameLbl) heroNameLbl.textContent = `${distNameBn} > ${upzNameBn} > ${unionObj.name_bn}`;
+  if (heroNameLbl) heroNameLbl.textContent = `${distName} > ${upzName} > ${unionName}`;
   const heroSoilLbl = document.getElementById('heroUnionSoilLbl');
-  if (heroSoilLbl) heroSoilLbl.textContent = unionObj.soil_texture || 'দোআঁশ';
+  if (heroSoilLbl) heroSoilLbl.textContent = soilName;
   const heroMetaLbl = document.getElementById('heroUnionMetaLbl');
-  if (heroMetaLbl) heroMetaLbl.textContent = `উচ্চতা: ${unionObj.elevation_m} মি. | অববাহিকা: ${unionObj.river_basin || 'তিস্তা'}`;
+  if (heroMetaLbl) {
+    heroMetaLbl.textContent = isBn
+      ? `উচ্চতা: ${unionObj.elevation_m} মি. | অববাহিকা: ${riverBasin}`
+      : `Elevation: ${unionObj.elevation_m}m | Basin: ${riverBasin}`;
+  }
 
   // 2. Rec Badge
   const recNameLbl = document.getElementById('recUnionNameLbl');
-  if (recNameLbl) recNameLbl.textContent = `${distNameBn} > ${upzNameBn} > ${unionObj.name_bn}`;
+  if (recNameLbl) recNameLbl.textContent = `${distName} > ${upzName} > ${unionName}`;
   const recSoil = document.getElementById('recUnionSoil');
-  if (recSoil) recSoil.textContent = `মাটির ধরন: ${unionObj.soil_texture || 'দোআঁশ'}`;
+  if (recSoil) recSoil.textContent = isBn ? `মাটির ধরন: ${soilName}` : `Soil Type: ${soilName}`;
   const recElev = document.getElementById('recUnionElevation');
-  if (recElev) recElev.textContent = `উচ্চতা: ${unionObj.elevation_m} মি.`;
+  if (recElev) recElev.textContent = isBn ? `উচ্চতা: ${unionObj.elevation_m} মি.` : `Elevation: ${unionObj.elevation_m}m`;
   const recRiver = document.getElementById('recUnionRiver');
-  if (recRiver) recRiver.textContent = `অববাহিকা: ${unionObj.river_basin || 'তিস্তা'}`;
+  if (recRiver) recRiver.textContent = isBn ? `অববাহিকা: ${riverBasin}` : `Basin: ${riverBasin}`;
 
   // 3. Map Badge
   const mapBadge = document.getElementById('mapSelectedDistBadge');
-  if (mapBadge) mapBadge.textContent = `নির্বাচিত এলাকা: ${distNameBn} > ${upzNameBn} > ${unionObj.name_bn}`;
+  if (mapBadge) {
+    mapBadge.textContent = isBn
+      ? `নির্বাচিত এলাকা: ${distName} > ${upzName} > ${unionName}`
+      : `Selected Area: ${distName} > ${upzName} > ${unionName}`;
+  }
 
   // 4. Irrigation Badge
   const irrigBadge = document.getElementById('irrigDistBadge');
-  if (irrigBadge) irrigBadge.textContent = `📍 ${distNameBn} > ${upzNameBn} > ${unionObj.name_bn}`;
+  if (irrigBadge) irrigBadge.textContent = `📍 ${distName} > ${upzName} > ${unionName}`;
 
   // 5. Dashboard Badge
   const dashBadge = document.getElementById('dashDistCropBadge');
-  if (dashBadge) dashBadge.textContent = `📍 এলাকা: ${distNameBn} > ${upzNameBn} > ${unionObj.name_bn} | ফসল তুলনা: বোরো ধান বনাম প্রস্তাবিত রোটেশন`;
+  if (dashBadge) {
+    dashBadge.textContent = isBn
+      ? `📍 এলাকা: ${distName} > ${upzName} > ${unionName} | ফসল তুলনা: বোরো ধান বনাম প্রস্তাবিত রোটেশন`
+      : `📍 Area: ${distName} > ${upzName} > ${unionName} | Crop Shift: Boro Rice vs Shift Rotation`;
+  }
 }
 
 function getFilteredHeroDistricts() {
@@ -3566,8 +3830,24 @@ function filterMapDistrictsBySearch() {
 }
 
 function updateRangpurPillsHighlight(distId) {
+  const isBn = currentLang === 'bn';
+  const distNames = {
+    rangpur: { bn: 'রংপুর', en: 'Rangpur' },
+    dinajpur: { bn: 'দিনাজপুর', en: 'Dinajpur' },
+    kurigram: { bn: 'কুড়িগ্রাম', en: 'Kurigram' },
+    gaibandha: { bn: 'গাইবান্ধা', en: 'Gaibandha' },
+    nilphamari: { bn: 'নীলফামারী', en: 'Nilphamari' },
+    thakurgaon: { bn: 'ঠাকুরগাঁও', en: 'Thakurgaon' },
+    panchagarh: { bn: 'পঞ্চগড়', en: 'Panchagarh' },
+    lalmonirhat: { bn: 'লালমনিরহাট', en: 'Lalmonirhat' }
+  };
+
   document.querySelectorAll('.rangpur-quick-pill').forEach(btn => {
-    const isTarget = btn.getAttribute('data-dist') === distId;
+    const dId = btn.getAttribute('data-dist');
+    if (dId && distNames[dId]) {
+      btn.textContent = isBn ? distNames[dId].bn : distNames[dId].en;
+    }
+    const isTarget = dId === distId;
     if (btn.classList.contains('rangpur-hero-pill')) {
       if (isTarget) {
         btn.className = 'rangpur-hero-pill rangpur-quick-pill px-3 py-1 rounded-xl font-black bg-leaf-500 text-white shadow ring-2 ring-leaf-300 transition touch-target';
@@ -3623,19 +3903,32 @@ function syncDistrictSelectors(distId, targetUpzKey = null, targetUnionId = null
 
 function updateHeroDistrictBadges(distId) {
   const distObj = bdDistricts.find(d => d.id === distId);
+  const isBn = currentLang === 'bn';
   if (distObj) {
     const aezTag = document.getElementById('hero-aez-tag');
     if (aezTag) aezTag.innerText = distObj.aez;
     const riskTag = document.getElementById('hero-dist-risk');
-    if (riskTag) riskTag.innerText = `⚠️ ${distObj.primary_risk}`;
+    if (riskTag) {
+      riskTag.innerText = isBn
+        ? `⚠️ ${distObj.primary_risk_bn || distObj.primary_risk}`
+        : `⚠️ ${distObj.primary_risk}`;
+    }
 
     const mapBadge = document.getElementById('mapSelectedDistBadge');
-    if (mapBadge) mapBadge.textContent = `নির্বাচিত জেলা: ${distObj.name_bn} (${distObj.name_en})`;
+    if (mapBadge) {
+      mapBadge.textContent = isBn
+        ? `নির্বাচিত জেলা: ${distObj.name_bn} (${distObj.name_en})`
+        : `Selected District: ${distObj.name_en} (${distObj.name_bn})`;
+    }
     const mapAez = document.getElementById('mapSelectedAezBadge');
     if (mapAez) mapAez.textContent = distObj.aez;
 
     const irrigBadge = document.getElementById('irrigDistBadge');
-    if (irrigBadge) irrigBadge.textContent = `📍 জেলা: ${distObj.name_bn} (${distObj.name_en})`;
+    if (irrigBadge) {
+      irrigBadge.textContent = isBn
+        ? `📍 জেলা: ${distObj.name_bn} (${distObj.name_en})`
+        : `📍 District: ${distObj.name_en} (${distObj.name_bn})`;
+    }
   }
 }
 
@@ -3864,6 +4157,7 @@ function renderSoilFatigueAlert(degAgent) {
   const warnEl = document.getElementById('soilFatigueWarningText');
   const recEl = document.getElementById('soilFatigueRecText');
   if (!card) return;
+  const isBn = currentLang === 'bn';
 
   const pestIdx = degAgent.metrics?.pest_vulnerability_index ?? 28;
   const status = degAgent.status || 'MODERATE_RISK';
@@ -3872,26 +4166,29 @@ function renderSoilFatigueAlert(degAgent) {
     card.className = 'p-4 sm:p-5 rounded-3xl bg-rose-50 dark:bg-rose-950/30 border-2 border-rose-300 dark:border-rose-800 space-y-3';
     if (badge) {
       badge.className = 'px-3 py-1 rounded-full text-xs font-black bg-rose-600 text-white';
-      badge.textContent = '⚠️ চরম মাটির ক্লান্তি (Break Cycle)';
+      badge.textContent = isBn ? '⚠️ চরম মাটির ক্লান্তি (Break Cycle)' : '⚠️ Severe Soil Fatigue (Break Cycle)';
     }
   } else if (status === 'MODERATE_RISK') {
     card.className = 'p-4 sm:p-5 rounded-3xl bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-300 dark:border-amber-800 space-y-3';
     if (badge) {
       badge.className = 'px-3 py-1 rounded-full text-xs font-black bg-amber-500 text-slate-950';
-      badge.textContent = '🟡 মাঝারি ঝুঁকি';
+      badge.textContent = isBn ? '🟡 মাঝারি ঝুঁকি' : '🟡 Moderate Risk';
     }
   } else {
     card.className = 'p-4 sm:p-5 rounded-3xl bg-emerald-50 dark:bg-emerald-950/30 border-2 border-emerald-300 dark:border-emerald-800 space-y-3';
     if (badge) {
       badge.className = 'px-3 py-1 rounded-full text-xs font-black bg-emerald-600 text-white';
-      badge.textContent = '🟢 মাটি সুস্থ';
+      badge.textContent = isBn ? '🟢 মাটি সুস্থ' : '🟢 Healthy Soil';
     }
   }
 
-  if (indexVal) indexVal.textContent = `${pestIdx} / ১০০`;
+  if (indexVal) indexVal.textContent = isBn ? `${pestIdx} / ১০০` : `${pestIdx} / 100`;
   if (indexBar) indexBar.style.width = `${Math.min(100, Math.max(5, pestIdx))}%`;
-  if (warnEl) warnEl.textContent = degAgent.warning_bn || degAgent.observations_bn || '';
-  if (recEl) recEl.textContent = `💡 করণীয়: ${degAgent.recommendation_bn || ''}`;
+  if (warnEl) warnEl.textContent = isBn ? (degAgent.warning_bn || degAgent.observations_bn || '') : (degAgent.warning_en || degAgent.observations_en || degAgent.warning_bn || '');
+  if (recEl) {
+    const recText = isBn ? (degAgent.recommendation_bn || '') : (degAgent.recommendation_en || degAgent.recommendation_bn || '');
+    recEl.textContent = isBn ? `💡 করণীয়: ${recText}` : `💡 Action: ${recText}`;
+  }
 }
 
 function renderThreeSeasonTimeline(master, agroAgent) {
@@ -3900,15 +4197,25 @@ function renderThreeSeasonTimeline(master, agroAgent) {
   const gridEl = document.getElementById('timelineStepsGrid');
   const impactEl = document.getElementById('timelineImpactBar');
   if (!gridEl || !master) return;
+  const isBn = currentLang === 'bn';
 
-  if (titleEl) titleEl.textContent = master.strategy_theme || '৩-মৌসুমী ফসল চক্র';
+  if (titleEl) {
+    titleEl.textContent = isBn
+      ? (master.strategy_theme || '৩-মৌসুমী ফসল চক্র: খরিফ-১ ➔ খরিফ-২ ➔ রবি')
+      : (master.strategy_theme_en || '3-Season Crop Rotation: Kharif-1 ➔ Kharif-2 ➔ Rabi');
+  }
   if (priorityEl) {
-    const pMap = {
+    const pMapBn = {
       water_saving: 'অগ্রাধিকার: পানি বাঁচানো',
       max_profit: 'অগ্রাধিকার: বেশি লাভ',
       soil_health: 'অগ্রাধিকার: মাটির স্বাস্থ্য'
     };
-    priorityEl.textContent = pMap[currentPriority] || 'অগ্রাধিকার: পানি বাঁচানো';
+    const pMapEn = {
+      water_saving: 'Priority: Save Water',
+      max_profit: 'Priority: Max Profit',
+      soil_health: 'Priority: Soil Health'
+    };
+    priorityEl.textContent = isBn ? (pMapBn[currentPriority] || 'অগ্রাধিকার: পানি বাঁচানো') : (pMapEn[currentPriority] || 'Priority: Save Water');
   }
 
   const mlPreds = agroAgent?.ml_crop_risk_predictions || {};
@@ -3924,24 +4231,31 @@ function renderThreeSeasonTimeline(master, agroAgent) {
     const st = stageStyles[step.stage] || stageStyles[1];
     const mlInfo = mlPreds[step.crop_id];
     const mlBadge = mlInfo
-      ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-white dark:bg-earth-900 border border-earth-200 dark:border-earth-700 text-leaf-700 dark:text-leaf-300">ML সফলতা: ${mlInfo.ml_success_probability_pct}%</span>`
+      ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-white dark:bg-earth-900 border border-earth-200 dark:border-earth-700 text-leaf-700 dark:text-leaf-300">${isBn ? `ML সফলতা: ${mlInfo.ml_success_probability_pct}%` : `ML Score: ${mlInfo.ml_success_probability_pct}%`}</span>`
       : '';
+    const stageSeason = isBn ? `ধাপ ${step.stage}: ${step.season}` : `Stage ${step.stage}: ${step.season_en || step.season_code || step.season}`;
+    const cropName = isBn ? step.crop_name : (step.crop_name_en || step.crop_name);
+    const roleText = isBn ? step.role : (step.role_en || step.role);
+    const whyText = isBn ? step.why_chosen_bn : (step.why_chosen_en || step.why_chosen_bn);
+    const daysText = isBn ? `${step.duration_days} দিন` : `${step.duration_days} Days`;
+    const waterText = isBn ? `${step.water_need_mm} মিমি` : `${step.water_need_mm} mm`;
+
     return `
       <div class="relative p-4 rounded-2xl border-2 ${st.border} ${st.bg} space-y-2.5 flex flex-col justify-between">
         <div class="space-y-2">
           <div class="flex items-center justify-between gap-1 flex-wrap">
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black ${st.badge}">ধাপ ${step.stage}: ${step.season}</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black ${st.badge}">${stageSeason}</span>
             ${mlBadge}
           </div>
           <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-            <span>${st.icon}</span> ${step.crop_name}
+            <span>${st.icon}</span> ${cropName}
           </h4>
-          <p class="text-[11px] font-bold text-leaf-700 dark:text-leaf-300">${step.role}</p>
-          <p class="text-xs text-slate-700 dark:text-slate-300 leading-snug">${step.why_chosen_bn}</p>
+          <p class="text-[11px] font-bold text-leaf-700 dark:text-leaf-300">${roleText}</p>
+          <p class="text-xs text-slate-700 dark:text-slate-300 leading-snug">${whyText}</p>
         </div>
         <div class="pt-2 border-t border-earth-200/70 dark:border-earth-700 flex items-center justify-between text-[11px] font-black text-slate-700 dark:text-slate-300">
-          <span>⏱️ ${step.duration_days} দিন</span>
-          <span>💧 ${step.water_need_mm} মিমি</span>
+          <span>⏱️ ${daysText}</span>
+          <span>💧 ${waterText}</span>
         </div>
       </div>
     `;
@@ -4069,23 +4383,32 @@ function updateMapLayerLegend(layer) {
   const barEl = document.getElementById('mapLegendBar');
   const labelsEl = document.getElementById('mapLegendLabels');
   if (!titleEl || !barEl || !labelsEl) return;
+  const isBn = currentLang === 'bn';
 
   if (layer === 'smap') {
-    titleEl.textContent = 'মাটির রস নির্দেশক স্কেল (SMAP L4)';
+    titleEl.textContent = isBn ? 'মাটির রস নির্দেশক স্কেল (SMAP L4)' : 'Soil Moisture Scale (SMAP L4)';
     barEl.className = 'w-full h-3 rounded-full bg-gradient-to-r from-red-500 via-amber-500 to-emerald-500 mb-1';
-    labelsEl.innerHTML = '<span class="text-rose-600 font-bold">শুকনো (<১৮%)</span><span class="text-amber-600 font-bold">মাঝারি রস</span><span class="text-emerald-600 font-bold">পর্যাপ্ত রস (>২৪%)</span>';
+    labelsEl.innerHTML = isBn
+      ? '<span class="text-rose-600 font-bold">শুকনো (<১৮%)</span><span class="text-amber-600 font-bold">মাঝারি রস</span><span class="text-emerald-600 font-bold">পর্যাপ্ত রস (>২৪%)</span>'
+      : '<span class="text-rose-600 font-bold">Dry (<18%)</span><span class="text-amber-600 font-bold">Moderate</span><span class="text-emerald-600 font-bold">Adequate (>24%)</span>';
   } else if (layer === 'ndvi') {
-    titleEl.textContent = 'ফসলের সবুজ স্বাস্থ্য স্কেল (Landsat/NDVI)';
+    titleEl.textContent = isBn ? 'ফসলের সবুজ স্বাস্থ্য স্কেল (Landsat/NDVI)' : 'Canopy Health Scale (Landsat/NDVI)';
     barEl.className = 'w-full h-3 rounded-full bg-gradient-to-r from-amber-500 via-lime-500 to-emerald-700 mb-1';
-    labelsEl.innerHTML = '<span class="text-amber-600 font-bold">হালকা/চাপযুক্ত</span><span class="text-lime-600 font-bold">স্বাভাবিক</span><span class="text-emerald-700 font-bold">গাঢ় সতেজ (>০.৫৮)</span>';
+    labelsEl.innerHTML = isBn
+      ? '<span class="text-amber-600 font-bold">হালকা/চাপযুক্ত</span><span class="text-lime-600 font-bold">স্বাভাবিক</span><span class="text-emerald-700 font-bold">গাঢ় সতেজ (>০.৫৮)</span>'
+      : '<span class="text-amber-600 font-bold">Stressed</span><span class="text-lime-600 font-bold">Normal</span><span class="text-emerald-700 font-bold">Vigorous (>0.58)</span>';
   } else if (layer === 'ecostress') {
-    titleEl.textContent = 'পৃষ্ঠ তাপমাত্রা ও তাপীয় চাপ (ECOSTRESS LST)';
+    titleEl.textContent = isBn ? 'পৃষ্ঠ তাপমাত্রা ও তাপীয় চাপ (ECOSTRESS LST)' : 'Surface Thermal Stress (ECOSTRESS LST)';
     barEl.className = 'w-full h-3 rounded-full bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-600 mb-1';
-    labelsEl.innerHTML = '<span class="text-emerald-600 font-bold">অনুকূল (<৩২°C)</span><span class="text-amber-600 font-bold">উষ্ণ (৩৪°C)</span><span class="text-rose-600 font-bold">তীব্র তাপদাহ (>৩৬°C)</span>';
+    labelsEl.innerHTML = isBn
+      ? '<span class="text-emerald-600 font-bold">অনুকূল (<৩২°C)</span><span class="text-amber-600 font-bold">উষ্ণ (৩৪°C)</span><span class="text-rose-600 font-bold">তীব্র তাপদাহ (>৩৬°C)</span>'
+      : '<span class="text-emerald-600 font-bold">Optimal (<32°C)</span><span class="text-amber-600 font-bold">Warm (34°C)</span><span class="text-rose-600 font-bold">Heatwave (>36°C)</span>';
   } else if (layer === 'gpm') {
-    titleEl.textContent = 'বৃষ্টিপাত ও প্লাবন ঝুঁকি স্কেল (NASA GPM IMERG)';
+    titleEl.textContent = isBn ? 'বৃষ্টিপাত ও প্লাবন ঝুঁকি স্কেল (NASA GPM IMERG)' : 'Precipitation & Flood Risk (NASA GPM)';
     barEl.className = 'w-full h-3 rounded-full bg-gradient-to-r from-orange-500 via-emerald-500 via-sky-400 to-blue-700 mb-1';
-    labelsEl.innerHTML = '<span class="text-orange-600 font-bold">অনাবৃষ্টি</span><span class="text-emerald-600 font-bold">স্বাভাবিক</span><span class="text-sky-500 font-bold">মাঝারি</span><span class="text-blue-700 font-bold">উচ্চ প্লাবন</span>';
+    labelsEl.innerHTML = isBn
+      ? '<span class="text-orange-600 font-bold">অনাবৃষ্টি</span><span class="text-emerald-600 font-bold">স্বাভাবিক</span><span class="text-sky-500 font-bold">মাঝারি</span><span class="text-blue-700 font-bold">উচ্চ প্লাবন</span>'
+      : '<span class="text-orange-600 font-bold">Drought</span><span class="text-emerald-600 font-bold">Normal</span><span class="text-sky-500 font-bold">Moderate</span><span class="text-blue-700 font-bold">High Flood</span>';
   }
 }
 
@@ -4165,10 +4488,13 @@ function renderLocationSpecificMapNodes() {
       const isUpzSelected = (upz.key === currentSelectedUpazilaKey && d.id === currentSelectedDistId);
 
       // 1. Upazila Centroid Badge
+      const isBn = currentLang === 'bn';
+      const upzLabel = isBn ? `${upz.name_bn} (${upz.total_unions} ইউনিয়ন)` : `${upz.name_en} (${upz.total_unions} Unions)`;
+      const upzFont = isBn ? "'Hind Siliguri',sans-serif" : "'Plus Jakarta Sans',sans-serif";
       const upzIcon = L.divIcon({
         className: 'upazila-map-pill',
-        html: `<div style="background:${isUpzSelected ? '#047857' : 'rgba(15,23,42,0.85)'};border:1.5px solid ${isUpzSelected ? '#34d399' : '#64748b'};color:#ffffff;font-size:10px;font-weight:bold;padding:2px 8px;border-radius:12px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.5);cursor:pointer;font-family:'Hind Siliguri',sans-serif;">
-                🏢 ${upz.name_bn} (${upz.total_unions})
+        html: `<div style="background:${isUpzSelected ? '#047857' : 'rgba(15,23,42,0.85)'};border:1.5px solid ${isUpzSelected ? '#34d399' : '#64748b'};color:#ffffff;font-size:10px;font-weight:bold;padding:2px 8px;border-radius:12px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.5);cursor:pointer;font-family:${upzFont};">
+                🏢 ${upzLabel}
                </div>`,
         iconAnchor: [38, 12]
       });
@@ -4198,18 +4524,37 @@ function renderLocationSpecificMapNodes() {
           fillOpacity: isUnionSelected ? 0.88 : (isUpzSelected ? 0.65 : 0.45)
         }).addTo(window.leafletMap);
 
-        const tooltipHtml = `
+        const isBn = currentLang === 'bn';
+        const dName = isBn ? d.name_bn : d.name_en;
+        const upzName = isBn ? upz.name_bn : upz.name_en;
+        const uName = isBn ? u.name_bn : u.name_en;
+        const soilName = isBn ? (u.soil_texture || 'দোআঁশ') : (u.soil_texture_en || u.soil_texture || 'Loam');
+        const basinName = isBn ? (u.river_basin || 'তিস্তা') : (u.river_basin_en || u.river_basin || 'Tista');
+        const tooltipHtml = isBn ? `
           <div style="font-family:'Hind Siliguri',sans-serif;min-width:170px;padding:3px;">
-            <div style="font-weight:bold;font-size:13px;color:#059669;margin-bottom:2px;">📍 ${u.name_bn}</div>
-            <div style="font-size:11px;color:#475569;margin-bottom:3px;">উপজেলা: <b>${upz.name_bn}</b> (${d.name_bn})</div>
+            <div style="font-weight:bold;font-size:13px;color:#059669;margin-bottom:2px;">📍 ${uName}</div>
+            <div style="font-size:11px;color:#475569;margin-bottom:3px;">উপজেলা: <b>${upzName}</b> (${dName})</div>
             <div style="background:${color};color:#ffffff;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:6px;display:inline-block;margin-bottom:4px;">
               ${label}
             </div>
             <div style="font-size:11px;color:#334155;line-height:1.4;">
-              মাটি: <b>${u.soil_texture}</b><br>
-              উচ্চতা: <b>${u.elevation_m} মি.</b> • ${u.river_basin || 'তিস্তা'} অববাহিকা
+              মাটি: <b>${soilName}</b><br>
+              উচ্চতা: <b>${u.elevation_m} মি.</b> • ${basinName} অববাহিকা
             </div>
             <div style="font-size:10px;color:#0284c7;font-weight:bold;margin-top:3px;">👉 ক্লিক করে এই ইউনিয়নের বিস্তারিত তথ্য দেখুন</div>
+          </div>
+        ` : `
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;min-width:170px;padding:3px;">
+            <div style="font-weight:bold;font-size:13px;color:#059669;margin-bottom:2px;">📍 ${uName}</div>
+            <div style="font-size:11px;color:#475569;margin-bottom:3px;">Upazila: <b>${upzName}</b> (${dName})</div>
+            <div style="background:${color};color:#ffffff;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:6px;display:inline-block;margin-bottom:4px;">
+              ${label}
+            </div>
+            <div style="font-size:11px;color:#334155;line-height:1.4;">
+              Soil: <b>${soilName}</b><br>
+              Elevation: <b>${u.elevation_m}m</b> • ${basinName} Basin
+            </div>
+            <div style="font-size:10px;color:#0284c7;font-weight:bold;margin-top:3px;">👉 Click to inspect this union telemetry</div>
           </div>
         `;
         circle.bindTooltip(tooltipHtml, { direction: 'top', sticky: true });
@@ -4383,11 +4728,11 @@ function locateFarmerOnMap() {
         handleUnionChange(nearestUnion.id);
         window.centerMapOnSelectedUnion(nearestUnion);
       }
-      if (btn) btn.innerHTML = '<i class="fa-solid fa-crosshairs"></i> <span>আমার এলাকা (GPS)</span>';
+      if (btn) btn.innerHTML = '<i class="fa-solid fa-crosshairs"></i> <span data-i18n="btnGpsArea">আমার এলাকা (GPS)</span>';
     },
     () => {
       alert(currentLang === 'bn' ? 'অবস্থান পাওয়া যায়নি। দয়া করে তালিকা থেকে বেছে নিন।' : 'Unable to retrieve GPS location.');
-      if (btn) btn.innerHTML = '<i class="fa-solid fa-crosshairs"></i> <span>আমার এলাকা (GPS)</span>';
+      if (btn) btn.innerHTML = '<i class="fa-solid fa-crosshairs"></i> <span data-i18n="btnGpsArea">আমার এলাকা (GPS)</span>';
     },
     { timeout: 8000 }
   );
@@ -4408,7 +4753,9 @@ window.updateDistrictInspectorFromLive = function(data) {
   const nameEl = document.getElementById('inspectorParcelName');
   if (nameEl) {
     if (unionObj && upzObj) {
-      nameEl.textContent = `📍 ${unionObj.name_bn} (${upzObj.name_bn}, ${distObj ? distObj.name_bn : 'রংপুর'})`;
+      nameEl.textContent = isBn
+        ? `📍 ${unionObj.name_bn} (${upzObj.name_bn}, ${distObj ? distObj.name_bn : 'রংপুর'})`
+        : `📍 ${unionObj.name_en} (${upzObj.name_en}, ${distObj ? distObj.name_en : 'Rangpur'})`;
     } else {
       nameEl.textContent = isBn ? `${dist.name_bn || 'জেলা'} (${dist.division_bn || ''})` : `${dist.name_en || 'District'} (${dist.division || ''})`;
     }
@@ -4465,24 +4812,50 @@ window.updateDistrictInspectorFromLive = function(data) {
   const advEl = document.getElementById('inspectorAdvice');
   if (advEl) {
     if (unionObj) {
-      advEl.innerHTML = `
+      const recPattern = getLocalizedPattern(unionObj.recommended_pattern);
+      const soilTex = getLocalizedSoil(unionObj.soil_texture);
+      const elevType = isBn ? (unionObj.elevation_type || 'মাঝারি উঁচু') : (unionObj.elevation_type_en || unionObj.elevation_type || 'Medium High');
+      const drainage = isBn ? (unionObj.drainage || 'উত্তম নিষ্কাশন') : (unionObj.drainage_en || 'Good Drainage');
+      const basin = getLocalizedBasin(unionObj.river_basin);
+      const directive = isBn
+        ? (master.farmer_directive_bn || agents.soil_agent?.observations_bn || 'পরিমিত সেচ ও উপযুক্ত ফসল চক্র বজায় রাখুন।')
+        : (master.farmer_directive_en || agents.soil_agent?.observations_en || 'Maintain measured irrigation and climate-smart crop rotations.');
+
+      advEl.innerHTML = isBn ? `
         <div class="space-y-1.5 text-left">
           <div class="text-[11px] font-bold text-emerald-900 dark:text-emerald-200">
-            🌾 <strong>প্রস্তাবিত ফসল প্যাটার্ন:</strong> ${unionObj.recommended_pattern || 'শীতকালীন সবজি ও আলু'}
+            🌾 <strong>প্রস্তাবিত ফসল প্যাটার্ন:</strong> ${recPattern}
           </div>
           <div class="text-[11px] text-slate-700 dark:text-slate-300">
-            💧 <strong>মাটি ও নিষ্কাশন:</strong> ${unionObj.soil_texture} (${unionObj.elevation_type}) • ${unionObj.drainage || 'উত্তম নিষ্কাশন'}
+            💧 <strong>মাটি ও নিষ্কাশন:</strong> ${soilTex} (${elevType}) • ${drainage}
           </div>
           <div class="text-[11px] text-slate-700 dark:text-slate-300">
-            ⛰️ <strong>উচ্চতা ও নদী:</strong> সমুদ্রপৃষ্ঠ থেকে ${unionObj.elevation_m} মিটার • ${unionObj.river_basin || 'তিস্তা'} অববাহিকা
+            ⛰️ <strong>উচ্চতা ও নদী:</strong> সমুদ্রপৃষ্ঠ থেকে ${unionObj.elevation_m} মিটার • ${basin} অববাহিকা
           </div>
           <div class="text-[11px] text-harvest-700 dark:text-harvest-400 font-semibold pt-1 border-t border-emerald-200 dark:border-emerald-700/60">
-            🤖 <strong>নাসা এগ্রো-এজেন্ট পরামর্শ:</strong> ${master.farmer_directive_bn || agents.soil_agent?.observations_bn || 'পরিমিত সেচ ও উপযুক্ত ফসল চক্র বজায় রাখুন।'}
+            🤖 <strong>নাসা এগ্রো-এজেন্ট পরামর্শ:</strong> ${directive}
+          </div>
+        </div>
+      ` : `
+        <div class="space-y-1.5 text-left">
+          <div class="text-[11px] font-bold text-emerald-900 dark:text-emerald-200">
+            🌾 <strong>Recommended Pattern:</strong> ${recPattern}
+          </div>
+          <div class="text-[11px] text-slate-700 dark:text-slate-300">
+            💧 <strong>Soil & Drainage:</strong> ${soilTex} (${elevType}) • ${drainage}
+          </div>
+          <div class="text-[11px] text-slate-700 dark:text-slate-300">
+            ⛰️ <strong>Elevation & Basin:</strong> ${unionObj.elevation_m}m AMSL • ${basin} Basin
+          </div>
+          <div class="text-[11px] text-harvest-700 dark:text-harvest-400 font-semibold pt-1 border-t border-emerald-200 dark:border-emerald-700/60">
+            🤖 <strong>NASA Agro-Agent Directive:</strong> ${directive}
           </div>
         </div>
       `;
     } else {
-      advEl.textContent = master.farmer_directive_bn || agents.soil_agent?.observations_bn || '';
+      advEl.textContent = isBn
+        ? (master.farmer_directive_bn || agents.soil_agent?.observations_bn || '')
+        : (master.farmer_directive_en || agents.soil_agent?.observations_en || master.farmer_directive_bn || '');
     }
   }
 

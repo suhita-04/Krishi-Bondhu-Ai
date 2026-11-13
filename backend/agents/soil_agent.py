@@ -94,7 +94,7 @@ class SoilAgent(BaseAgent):
             except Exception as e:
                 print(f"[WARN] SoilAgent prediction error: {e}")
 
-        # Bengali warnings and directives
+        # Bengali and English warnings and directives
         if ml_prediction == "Critical_Groundwater_Stress" or root_moisture < 0.20 or irrigation_cost_share >= 32.0:
             health_status = "CRITICAL_WATER_DEPLETION"
             warning_bn = (
@@ -102,18 +102,31 @@ class SoilAgent(BaseAgent):
                 f"মোট উৎপাদন খরচের {irrigation_cost_share}%-এ পৌঁছেছে (ঐতিহাসিক ১২.৩% থেকে বৃদ্ধি পেয়ে ৩৭.৫%)। "
                 f"গভীর নলকূপে অতিরিক্ত পানি উত্তোলন অব্যাহত রাখলে অ্যাকুইফার ফেইল করার উপক্রম হবে।"
             )
+            warning_en = (
+                f"Critical subsoil moisture deficit in root zone (0-100cm). Irrigation costs in Tista & Barind "
+                f"have reached {irrigation_cost_share}% of total crop operational budget. "
+                f"Continued excessive tube-well pumping risks severe aquifer draw-down."
+            )
             rec_bn = (
                 "বোরো ধানের মতো অতিরিক্ত পানিটানা ফসল বাদ দিয়ে ১০০% কম পানির লেগিউম (মুগ/মসুর) বা সরিষা আবাদ করুন। "
                 "এতে শিকড়ের গভীরের পানি সংরক্ষিত থাকবে এবং প্রাকৃতিক ভূগর্ভস্থ পানি রিচার্জের সুযোগ পাবে।"
             )
+            rec_en = (
+                "Replace water-thirsty Boro rice with drought-resilient legumes (mungbean/lentil) or mustard. "
+                "Preserves root-zone moisture and promotes natural groundwater recharge."
+            )
         elif root_moisture > 0.40:
             health_status = "WATERLOGGED"
             warning_bn = "মাটির রুট-জোনে অতিরিক্ত পানি জমে আছে এবং শিকড়ে অক্সিজেন চলাচল ব্যাহত হচ্ছে।"
+            warning_en = "Excessive moisture in root zone causing aeration stress to crop roots."
             rec_bn = "জমি দ্রুত নিষ্কাশনের ব্যবস্থা করুন এবং জলাবদ্ধতা-সহনশীল ফসল নির্বাচন করুন।"
+            rec_en = "Ensure rapid field surface drainage and choose submergence-tolerant crop cultivars."
         else:
             health_status = "STABLE"
             warning_bn = "মাটির রুট-জোনে আর্দ্রতা গ্রহণযোগ্য মাত্রায় রয়েছে।"
+            warning_en = "Soil root-zone moisture levels are within optimal agronomic thresholds."
             rec_bn = "মাটির ভেতরের আর্দ্রতা ধরে রাখতে ডাল জাতীয় সবুজ সার ও ফসল চক্র বজায় রাখুন।"
+            rec_en = "Maintain green manure legumes and balanced crop rotation to sustain soil moisture retention."
 
         return {
             "agent_id": self.agent_id,
@@ -142,6 +155,12 @@ class SoilAgent(BaseAgent):
                 f"ভূগর্ভস্থ পানির গভীরতা {gw_depth_m} মিটার এবং কৃষকের উৎপাদন ব্যয়ের {irrigation_cost_share}% যাচ্ছে শুধুই সেচ খরচে।"
             ),
             "warning_bn": warning_bn,
+            "warning_en": warning_en,
             "recommendation_bn": rec_bn,
+            "recommendation_en": rec_en,
+            "observations_en": (
+                f"NASA SMAP L4 root-zone moisture index is {root_moisture_index} (wetness: {surface_wetness:.2f}). "
+                f"ML model diagnostic: '{ml_prediction}' (confidence: {ml_confidence_pct}%)."
+            ),
             "water_conservation_priority": health_status == "CRITICAL_WATER_DEPLETION"
         }

@@ -82,19 +82,31 @@ class DroughtAgent(BaseAgent):
                 f"মাটির উপরিভাগের তাপমাত্রা মারাত্মক উচ্চ ({lst_c}°C)! "
                 f"তীব্র বাষ্পীভবনে জমি দ্রুত শুকিয়ে খরা সৃষ্টি করবে এবং ফসলের শিকড়ে আর্দ্রতা শূন্যের কোটায় নামবে।"
             )
+            warning_en = (
+                f"Critically elevated land surface temperature ({lst_c}°C)! "
+                f"Intense evapotranspiration accelerates soil moisture depletion down to root zone."
+            )
             rec_bn = (
                 "উচ্চ পানির বোরো ধান পরিহার করে চরম খরা ও তাপমাত্রাসহনশীল ফসল (যেমন: বারি সরিষা-১৪/১৭, "
                 "তিল, ছোলা বা বাজরা) বেছে নিন। দুপুর ১২:০০-৩:০০ টায় সেচ সম্পূর্ণ নিষিদ্ধ; "
                 "বাষ্পীভবন এড়াতে রাত ৩:৩০ থেকে ভোর ৬:০০ টায় হালকা সেচ দিন।"
             )
+            rec_en = (
+                "Avoid thirsty Boro rice; adopt climate-resilient mustard, sesame, or pearl millet. "
+                "Never irrigate during 12:00-3:00 PM peak sun; irrigate between 3:30 AM and 6:00 AM to prevent evaporation."
+            )
         elif ml_prediction == "Moderate_Thermal_Stress" or lst_c >= 33.0 or surface_wetness < 0.35:
             stress_level = "MODERATE"
             warning_bn = f"মাটির তাপমাত্রা মাঝারি উষ্ণ ({lst_c}°C) এবং বাষ্পীভবনের গতি বৃদ্ধি পাচ্ছে।"
+            warning_en = f"Moderate thermal surface warmth ({lst_c}°C) with increasing water loss rate."
             rec_bn = "মাটির আর্দ্রতা ধরে রাখতে খড়কুটো দিয়ে মালচিং করুন এবং পরিমিত সেচের ব্যবস্থা রাখুন।"
+            rec_en = "Apply organic residue mulching and provide measured night-time hydration."
         else:
             stress_level = "MILD"
             warning_bn = f"তাপমাত্রা ও বাষ্পীভবনের হার সহনশীল মাত্রায় রয়েছে ({lst_c}°C)।"
+            warning_en = f"Thermal conditions and evapotranspiration are within stable thresholds ({lst_c}°C)."
             rec_bn = "তাপজনিত খরা ঝুঁকি নেই; নিয়মিত পরিচর্যা ও সাধারণ সেচ অব্যাহত রাখুন।"
+            rec_en = "Zero thermal drought hazard; continue standard crop husbandry."
 
         return {
             "agent_id": self.agent_id,
@@ -123,6 +135,12 @@ class DroughtAgent(BaseAgent):
                 f"এবং সারফেস আর্দ্রতা সূচক {surface_wetness} রেকর্ড করা হয়েছে। বাষ্পীভবন চাপ সূচক: {evapo_score}/১০০।"
             ),
             "warning_bn": warning_bn,
+            "warning_en": warning_en,
             "recommendation_bn": rec_bn,
+            "recommendation_en": rec_en,
+            "observations_en": (
+                f"NASA MODIS LST records land surface temperature of {lst_c}°C (air temp {air_temp_2m}°C) "
+                f"and surface wetness {surface_wetness}. Evaporative stress: {evapo_score}/100."
+            ),
             "drought_flag": stress_level == "SEVERE"
         }

@@ -16,6 +16,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     # --- RABI CROPS (Winter: Nov - Feb) ---
     "mustard": {
         "id": "mustard",
+        "name_en": "BARI Mustard-14/17",
         "name_bn": "বারি সরিষা-১৪/১৭ (Mustard)",
         "season": "Rabi",
         "duration_days": 80,
@@ -35,6 +36,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "lentil": {
         "id": "lentil",
+        "name_en": "BARI Lentil-8",
         "name_bn": "বারি মসুর-৮ (Lentil)",
         "season": "Rabi",
         "duration_days": 105,
@@ -54,6 +56,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "sunflower": {
         "id": "sunflower",
+        "name_en": "Hysun-33 Sunflower",
         "name_bn": "হাইসান-৩৩ সূর্যমুখী (Sunflower)",
         "season": "Rabi",
         "duration_days": 100,
@@ -73,6 +76,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "soybean": {
         "id": "soybean",
+        "name_en": "BARI Soybean-6",
         "name_bn": "বারি সয়াবিন-৬ (Soybean)",
         "season": "Rabi",
         "duration_days": 105,
@@ -92,6 +96,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "groundnut": {
         "id": "groundnut",
+        "name_en": "BARI Groundnut-9",
         "name_bn": "বারি চিনাবাদাম-৯ (Groundnut)",
         "season": "Rabi",
         "duration_days": 125,
@@ -111,6 +116,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "maize": {
         "id": "maize",
+        "name_en": "High-Yield Hybrid Maize",
         "name_bn": "উচ্চফলনশীল হাইব্রিড ভুট্টা (Hybrid Maize)",
         "season": "Rabi",
         "duration_days": 135,
@@ -130,6 +136,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "boro_rice": {
         "id": "boro_rice",
+        "name_en": "Boro Rice (BRRI dhan 28/29)",
         "name_bn": "বোরো ধান (Boro Rice / BRRI dhan 28/29)",
         "season": "Rabi",
         "duration_days": 150,
@@ -149,6 +156,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "saline_rice_brri67": {
         "id": "saline_rice_brri67",
+        "name_en": "Saline-Tolerant Rice (BRRI dhan 67)",
         "name_bn": "লবণাক্ততা-সহনশীল বোরো ধান (BRRI dhan 67)",
         "season": "Rabi",
         "duration_days": 140,
@@ -168,6 +176,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "wheat": {
         "id": "wheat",
+        "name_en": "BARI Wheat-33 (Blast Resistant)",
         "name_bn": "বারি গম-৩৩ (Wheat - Blast Resistant)",
         "season": "Rabi",
         "duration_days": 105,
@@ -187,6 +196,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "potato": {
         "id": "potato",
+        "name_en": "Diamond Potato (High Yield)",
         "name_bn": "উন্নত জাতের ডায়মন্ড আলু (Potato)",
         "season": "Rabi",
         "duration_days": 90,
@@ -208,6 +218,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     # --- KHARIF-1 CROPS (Pre-Monsoon / Summer: Mar - May) ---
     "mungbean": {
         "id": "mungbean",
+        "name_en": "BARI Mungbean-6",
         "name_bn": "বারি মুগ-৬ (Mungbean)",
         "season": "Kharif-1",
         "duration_days": 65,
@@ -227,6 +238,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "aush_rice": {
         "id": "aush_rice",
+        "name_en": "Aush Rice (BRRI dhan 48)",
         "name_bn": "উফশী আউশ ধান (BRRI dhan 48 / Parija)",
         "season": "Kharif-1",
         "duration_days": 100,
@@ -246,6 +258,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "jute": {
         "id": "jute",
+        "name_en": "Tossa Jute & Mesta",
         "name_bn": "তোষা পাট ও মেস্তা (Tossa Jute)",
         "season": "Kharif-1",
         "duration_days": 120,
@@ -265,6 +278,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "ginger_turmeric": {
         "id": "ginger_turmeric",
+        "name_en": "Ginger & Turmeric",
         "name_bn": "পাহাড়ি আদা ও হলুদ (Ginger & Turmeric)",
         "season": "Kharif-1",
         "duration_days": 210,
@@ -286,6 +300,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     # --- KHARIF-2 CROPS (Monsoon: Jun - Oct) ---
     "aman_rice_short": {
         "id": "aman_rice_short",
+        "name_en": "Short-Duration Aman Rice (BRRI dhan 75)",
         "name_bn": "স্বল্পমেয়াদী রোপা আমন (BRRI dhan 75 / BINA dhan-17)",
         "season": "Kharif-2",
         "duration_days": 115,
@@ -305,6 +320,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "aman_rice_submergence": {
         "id": "aman_rice_submergence",
+        "name_en": "Submergence-Tolerant Aman (BRRI dhan 51/52)",
         "name_bn": "জলমগ্নতা-সহনশীল আমন (BRRI dhan 51/52 / Swarna Sub-1)",
         "season": "Kharif-2",
         "duration_days": 140,
@@ -324,6 +340,7 @@ CROPS: Dict[str, Dict[str, Any]] = {
     },
     "blackgram": {
         "id": "blackgram",
+        "name_en": "BARI Blackgram-3",
         "name_bn": "মাসকলাই (Blackgram / BARI Mash-3)",
         "season": "Kharif-2",
         "duration_days": 75,

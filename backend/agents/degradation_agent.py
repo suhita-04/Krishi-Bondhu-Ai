@@ -82,18 +82,31 @@ class DegradationAgent(BaseAgent):
                 f"মাটিতে চরম 'Crop Fatigue' দেখা দিয়েছে! মাটির ১৫ সেমি গভীরে শক্ত লাঙল-তল (Hardpan) তৈরি হয়েছে। "
                 f"একই গোত্রের ফসলে মাজরা পোকা ও ব্লাস্ট রোগের ঝুঁকি সূচক {pest_index}/১০০।"
             )
+            warning_en = (
+                f"Continuous monoculture for {monoculture_years} years and negative satellite EVI slope ({evi_slope}) "
+                f"indicate critical soil fatigue and 15cm compacted plow hardpan. "
+                f"Stem borer and blast pathogen vulnerability index is elevated to {pest_index}/100."
+            )
             rec_bn = (
                 "অবিলম্বে 'Crop Family' পরিবর্তন করুন (ধানের পর ধান নয়; গভীর মূলীয় সরিষা বা মুগ ডাল আবাদ করুন)। "
                 "এটি ক্ষতিকর পোকামাকড়ের জীবনচক্র ভেঙে দেবে এবং ইউএনসিসিডি গাইডলাইন অনুযায়ী জৈব পদার্থ ফিরিয়ে আনবে।"
             )
+            rec_en = (
+                "Immediately rotate crop botanical families (break continuous paddy with taproot mustard or mungbean). "
+                "This disrupts insect pest breeding cycles and restores subsoil organic structure according to UNCCD guidelines."
+            )
         elif monoculture_years >= 2:
             alert_level = "MODERATE_RISK"
             warning_bn = f"মাটির পুষ্টি উপাদানের ভারসাম্য কমতে শুরু করেছে (টানা {monoculture_years} বছর একই ফসল)।"
+            warning_en = f"Soil nutrient equilibrium is depleting after {monoculture_years} consecutive cycles of the same crop."
             rec_bn = "পরবর্তী মৌসুমে ভিন্ন জাতের কভার ক্রপ বা লেগিউম ফসল রোপণ করার পরামর্শ দেওয়া হচ্ছে।"
+            rec_en = "Recommended to introduce leguminous cover crops or pulse shifts in the subsequent rotation cycle."
         else:
             alert_level = "HEALTHY"
             warning_bn = "মাটির অবক্ষয় ঝুঁকি সহনশীল মাত্রায় রয়েছে।"
+            warning_en = "Soil degradation and pest pressure are within sustainable baseline thresholds."
             rec_bn = "বিদ্যমান বৈচিত্র্যময় ফসল আবাদ ধারা অব্যাহত রাখুন।"
+            rec_en = "Maintain current balanced crop rotation practices."
 
         return {
             "agent_id": self.agent_id,
@@ -123,6 +136,12 @@ class DegradationAgent(BaseAgent):
                 f"ক্ষতিকর পোকামাকড়ের আক্রমণ সূচক {pest_index}/১০০। বায়ুমণ্ডলীয় ঝড়ে হেলে পড়ার ঝুঁকি: '{ml_prediction}'।"
             ),
             "warning_bn": warning_bn,
+            "warning_en": warning_en,
             "recommendation_bn": rec_bn,
+            "recommendation_en": rec_en,
+            "observations_en": (
+                f"5-year NASA MODIS EVI slope ({evi_slope}) and {monoculture_years} continuous years of single-crop cultivation "
+                f"yield pest vulnerability index of {pest_index}/100. Wind lodging class: '{ml_prediction}'."
+            ),
             "break_crop_cycle_mandatory": alert_level == "CRITICAL_SOIL_FATIGUE"
         }

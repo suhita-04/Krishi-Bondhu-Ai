@@ -78,56 +78,64 @@ DISTRICTS: Dict[str, Dict[str, Any]] = {
         "lat": 25.7439, "lon": 89.2752, "aez": "AEZ-3: Tista Meander Floodplain", "zone_type": "SANDY_DROUGHT",
         "soil_type": "Sandy loam, low moisture retention, organic matter ~1.2%",
         "groundwater_stress": "Moderate", "historical_irrigation_cost_share": "24.5%",
-        "primary_risk": "Monga/Drought vulnerability, rapid surface dry-out", "default_past_crop": "potato"
+        "primary_risk": "Monga/Drought vulnerability, rapid surface dry-out", "default_past_crop": "potato",
+        "primary_risk_bn": "মঙ্গা ও খরা ঝুঁকি, দ্রুত মাটির উপরিভাগ শুকিয়ে যাওয়ার প্রবণতা",
     },
     "dinajpur": {
         "id": "dinajpur", "name_en": "Dinajpur", "name_bn": "দিনাজপুর", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 25.6217, "lon": 88.6355, "aez": "AEZ-1: Old Himalayan Piedmont Plain", "zone_type": "SANDY_DROUGHT",
         "soil_type": "Coarse sandy loam, very acidic (pH 4.8 - 5.5)",
         "groundwater_stress": "High", "historical_irrigation_cost_share": "27.0%",
-        "primary_risk": "Soil acidity & seasonal agricultural drought", "default_past_crop": "boro_rice"
+        "primary_risk": "Soil acidity & seasonal agricultural drought", "default_past_crop": "boro_rice",
+        "primary_risk_bn": "পুরাতন হিমালয় পাদদেশীয় বেলে-দোআঁশ ও খরা",
     },
     "kurigram": {
         "id": "kurigram", "name_en": "Kurigram", "name_bn": "কুড়িগ্রাম", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 25.8054, "lon": 89.6362, "aez": "AEZ-2: Active Tista Floodplain & Chars", "zone_type": "CHAR_FLOODPLAIN",
         "soil_type": "Loose sand and silt, poor nutrient retention",
         "groundwater_stress": "Low", "historical_irrigation_cost_share": "15.0%",
-        "primary_risk": "Severe river erosion, seasonal floods & char land poverty", "default_past_crop": "groundnut"
+        "primary_risk": "Severe river erosion, seasonal floods & char land poverty", "default_past_crop": "groundnut",
+        "primary_risk_bn": "তিস্তা ও ব্রহ্মপুত্র চরাঞ্চল ও নদীভাঙন",
     },
     "gaibandha": {
         "id": "gaibandha", "name_en": "Gaibandha", "name_bn": "গাইবান্ধা", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 25.3288, "lon": 89.5408, "aez": "AEZ-2: Active Tista & Brahmaputra Chars", "zone_type": "CHAR_FLOODPLAIN",
         "soil_type": "Alluvial silt and sand",
         "groundwater_stress": "Low", "historical_irrigation_cost_share": "17.0%",
-        "primary_risk": "Floods during monsoon, dry sandstorms in pre-monsoon", "default_past_crop": "mustard"
+        "primary_risk": "Floods during monsoon, dry sandstorms in pre-monsoon", "default_past_crop": "mustard",
+        "primary_risk_bn": "তিস্তা ও ব্রহ্মপুত্র চরাঞ্চল ও মৌসুমী বন্যা",
     },
     "nilphamari": {
         "id": "nilphamari", "name_en": "Nilphamari", "name_bn": "নীলফামারী", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 25.9318, "lon": 88.8560, "aez": "AEZ-3: Tista Meander Floodplain", "zone_type": "SANDY_DROUGHT",
         "soil_type": "Sandy loam, low fertility",
         "groundwater_stress": "Moderate", "historical_irrigation_cost_share": "21.0%",
-        "primary_risk": "Low rainfall in winter, high irrigation dependency", "default_past_crop": "boro_rice"
+        "primary_risk": "Low rainfall in winter, high irrigation dependency", "default_past_crop": "boro_rice",
+        "primary_risk_bn": "তিস্তা সেচ ক্যানেল ও স্বল্প বৃষ্টিপাত",
     },
     "thakurgaon": {
         "id": "thakurgaon", "name_en": "Thakurgaon", "name_bn": "ঠাকুরগাঁও", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 26.0337, "lon": 88.4617, "aez": "AEZ-1: Old Himalayan Piedmont Plain", "zone_type": "SANDY_DROUGHT",
         "soil_type": "Acidic sandy loam, rich in stone/pebble substrata",
         "groundwater_stress": "High", "historical_irrigation_cost_share": "26.5%",
-        "primary_risk": "Subsurface stony layer prevents deep root penetration", "default_past_crop": "wheat"
+        "primary_risk": "Subsurface stony layer prevents deep root penetration", "default_past_crop": "wheat",
+        "primary_risk_bn": "অম্লীয় বেলে-দোআঁশ ও ভূগর্ভস্থ পাথর স্তর",
     },
     "panchagarh": {
         "id": "panchagarh", "name_en": "Panchagarh", "name_bn": "পঞ্চগড়", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 26.3411, "lon": 88.5542, "aez": "AEZ-1: Old Himalayan Piedmont Plain", "zone_type": "SANDY_DROUGHT",
         "soil_type": "Light sandy loam, ideal for tea and pulses",
         "groundwater_stress": "Moderate", "historical_irrigation_cost_share": "23.0%",
-        "primary_risk": "Extreme winter cold spells (fog-burn on crops)", "default_past_crop": "mustard"
+        "primary_risk": "Extreme winter cold spells (fog-burn on crops)", "default_past_crop": "mustard",
+        "primary_risk_bn": "হিমালয় সংলগ্ন চরম শৈত্যপ্রবাহ ও কুয়াশা",
     },
     "lalmonirhat": {
         "id": "lalmonirhat", "name_en": "Lalmonirhat", "name_bn": "লালমনিরহাট", "division": "Rangpur", "division_bn": "রংপুর",
         "lat": 25.9923, "lon": 89.2847, "aez": "AEZ-2: Tista Alluvial Belt", "zone_type": "CHAR_FLOODPLAIN",
         "soil_type": "Sandy char soil, low nitrogen",
         "groundwater_stress": "Low", "historical_irrigation_cost_share": "16.0%",
-        "primary_risk": "Tista barrage upstream water withdrawal & flash deluge", "default_past_crop": "maize"
+        "primary_risk": "Tista barrage upstream water withdrawal & flash deluge", "default_past_crop": "maize",
+        "primary_risk_bn": "তিস্তা ব্যারাজ ভাটি অঞ্চল ও বালুময় চর",
     },
 
     # ================= SYLHET DIVISION (Haor Basin & Flash Floods) =================
