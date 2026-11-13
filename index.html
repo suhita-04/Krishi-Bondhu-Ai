@@ -840,16 +840,14 @@
         <div class="bg-white dark:bg-earth-900 p-5 sm:p-6 rounded-3xl border-2 border-earth-200 dark:border-earth-700">
           <div class="flex items-center gap-2 text-xs font-bold text-leaf-600 dark:text-leaf-400 mb-1">
             <a href="#landing" onclick="navigateTo('landing'); return false;" class="hover:underline"
-              data-i18n="navHome">প্রথম পাতা</a>
+              data-i18n="navHome">Home</a>
             <span>/</span>
-            <span class="text-slate-900 dark:text-white" data-i18n="navCrops">লাভজনক ফসল</span>
+            <span class="text-slate-900 dark:text-white" data-i18n="navCrops">Crop Shift</span>
           </div>
-          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="cropsHeading">খরায় কম
-            পানিতে বেশি লাভজনক বিকল্প ফসল</h1>
+          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="cropsHeading">High-Yield Drought-Resilient Alternative Crops</h1>
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-2xl leading-relaxed font-medium"
             data-i18n="cropsSub">
-            অনাবৃষ্টি বা সেচের পানির সংকট থাকলে সনাতন বোরো ধান বা ভুট্টার পেছনে অতিরিক্ত ডিজেল না পুড়িয়ে বাজরা, জোয়ার বা
-            ডাল চাষ করুন। অল্প খরচে বেশি ফলন ও নিশ্চিত লাভ মিলবে।
+            When facing low rain or falling water tables, avoid burning expensive diesel on paddy or corn. Cultivate millet, sorghum, or pulses for secure yields.
           </p>
         </div>
 
@@ -858,13 +856,12 @@
           class="bg-gradient-to-r from-emerald-950 via-leaf-950 to-earth-900 text-white p-5 sm:p-7 rounded-3xl border-2 border-leaf-700/60 shadow-md space-y-4 sm:space-y-5">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-leaf-800/80 pb-3">
             <div>
-              <span class="text-[10px] font-black uppercase text-harvest-400" data-i18n="compBadge">এক নজরে তুলনা</span>
-              <h3 class="text-lg sm:text-xl font-black text-white" data-i18n="compHeading">সনাতন ফসল বনাম খরা-সহনশীল
-                স্মার্ট ফসল</h3>
+              <span class="text-[10px] font-black uppercase text-harvest-400" data-i18n="compBadge">At a Glance</span>
+              <h3 class="text-lg sm:text-xl font-black text-white" data-i18n="compHeading">Traditional Crops vs NASA Climate-Smart Shifts</h3>
             </div>
             <span class="text-xs text-emerald-200 font-bold bg-white/10 px-3 py-1 rounded-full self-start sm:self-auto"
               data-i18n="compWaterSavedTag">
-              💧 পানি সাশ্রয় ও খরচের হিসাব
+              💧 Water Conserved & Financial Metrics
             </span>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="cropComparisonGrid"></div>
@@ -872,16 +869,16 @@
 
         <!-- Filter & Feed Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    <div class="lg:col-span-4 space-y-4">
+          <div class="lg:col-span-4 space-y-4">
             <div
               class="bg-white dark:bg-earth-900 p-5 rounded-3xl border-2 border-earth-200 dark:border-earth-700 space-y-4 shadow-sm">
               <div class="flex items-center justify-between pb-2 border-b border-earth-200 dark:border-earth-700">
                 <h3 class="font-black text-base text-slate-900 dark:text-white flex items-center gap-2">
                   <i class="fa-solid fa-sliders text-leaf-600"></i>
-                  <span data-i18n="recTitle">আপনার জমির তথ্য ও চাষাবাদের ধরন</span>
+                  <span data-i18n="recTitle">Your Land & Farming Profile</span>
                 </h3>
-                <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 border border-leaf-400">
-                  কৃষক ইনপুট
+                <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-leaf-100 dark:bg-leaf-950 text-leaf-800 dark:text-leaf-300 border border-leaf-400" data-i18n="recInputBadge">
+                  Farmer Input
                 </span>
               </div>
 
@@ -890,51 +887,51 @@
                 <div class="flex items-center justify-between text-xs">
                   <span class="font-black text-harvest-300 flex items-center gap-1.5">
                     <i class="fa-solid fa-location-crosshairs text-leaf-400"></i>
-                    <span data-i18n="recQuickSelectTitle">রংপুর বিভাগ কুইক-সিলেক্ট (১ ক্লিকে বাছাই):</span>
+                    <span data-i18n="recQuickSelectTitle">Rangpur Division Quick-Select (1-Click):</span>
                   </span>
-                  <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-leaf-600 text-white uppercase tracking-wider">
-                    ফুল ডেটাসেট
+                  <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-leaf-600 text-white uppercase tracking-wider" data-i18n="recFullDatasetTag">
+                    Full Dataset
                   </span>
                 </div>
                 <div class="flex flex-wrap gap-1.5">
                   <button type="button" onclick="selectRangpurDistrict('rangpur')" data-dist="rangpur"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">রংপুর</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Rangpur</button>
                   <button type="button" onclick="selectRangpurDistrict('dinajpur')" data-dist="dinajpur"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">দিনাজপুর</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Dinajpur</button>
                   <button type="button" onclick="selectRangpurDistrict('kurigram')" data-dist="kurigram"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">কুড়িগ্রাম</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Kurigram</button>
                   <button type="button" onclick="selectRangpurDistrict('gaibandha')" data-dist="gaibandha"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">গাইবান্ধা</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Gaibandha</button>
                   <button type="button" onclick="selectRangpurDistrict('nilphamari')" data-dist="nilphamari"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">নীলফামারী</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Nilphamari</button>
                   <button type="button" onclick="selectRangpurDistrict('thakurgaon')" data-dist="thakurgaon"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">ঠাকুরগাঁও</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Thakurgaon</button>
                   <button type="button" onclick="selectRangpurDistrict('panchagarh')" data-dist="panchagarh"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">পঞ্চগড়</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Panchagarh</button>
                   <button type="button" onclick="selectRangpurDistrict('lalmonirhat')" data-dist="lalmonirhat"
-                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">লালমনিরহাট</button>
+                    class="rangpur-quick-pill px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 hover:bg-leaf-600 text-white border border-white/20 transition touch-target">Lalmonirhat</button>
                 </div>
               </div>
 
-              <!-- 3-Tier Location Picker (১. জেলা ➔ ২. উপজেলা ➔ ৩. ইউনিয়ন) -->
+              <!-- 3-Tier Location Picker (1. District ➔ 2. Upazila ➔ 3. Union) -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span data-i18n="recDistLbl">📍 ১. জেলা নির্বাচন (রংপুর বিভাগের ৮ জেলা)</span>
-                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold" data-i18n="recDistSelectUnionsTag">৫৩৬ ইউনিয়ন সংযুক্ত</span>
+                  <span data-i18n="recDistLbl">📍 1. Select District (8 Rangpur Districts)</span>
+                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold" data-i18n="recDistSelectUnionsTag">536 Unions Connected</span>
                 </label>
                 <input id="recDistrictSearch" type="text" oninput="filterRecDistrictsBySearch()"
-                  placeholder="রংপুর বিভাগের জেলা খুঁজুন (যেমন: রংপুর, দিনাজপুর, কুড়িগ্রাম)..." data-i18n-placeholder="recDistrictSearchPh"
+                  placeholder="Search Rangpur district (e.g. Rangpur, Dinajpur, Kurigram)..." data-i18n-placeholder="recDistrictSearchPh"
                   class="w-full text-xs font-bold px-3 py-2 mb-1.5 rounded-xl border border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none focus:border-leaf-500" />
                 <select id="recDistrictSelect" onchange="onRecDistrictChanged()"
                   class="w-full text-xs font-bold p-3 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
-                  <option value="rangpur">রংপুর (Rangpur)</option>
+                  <option value="rangpur">Rangpur</option>
                 </select>
 
                 <!-- Upazila & Union Selectors -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2.5">
                   <div>
                     <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
-                      <i class="fa-solid fa-tree-city text-leaf-600 dark:text-leaf-400"></i> <span data-i18n="recUpzSelectLbl">২. উপজেলা নির্বাচন</span>
+                      <i class="fa-solid fa-tree-city text-leaf-600 dark:text-leaf-400"></i> <span data-i18n="recUpzSelectLbl">2. Select Upazila</span>
                     </label>
                     <select id="recUpazilaSelect" onchange="onRecUpazilaChanged()"
                       class="w-full text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
@@ -943,7 +940,7 @@
                   </div>
                   <div>
                     <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
-                      <i class="fa-solid fa-house-chimney-window text-leaf-600 dark:text-leaf-400"></i> <span data-i18n="recUnionSelectLbl">৩. ইউনিয়ন নির্বাচন</span>
+                      <i class="fa-solid fa-house-chimney-window text-leaf-600 dark:text-leaf-400"></i> <span data-i18n="recUnionSelectLbl">3. Select Union</span>
                     </label>
                     <select id="recUnionSelect" onchange="onRecUnionChanged()"
                       class="w-full text-xs font-bold p-2.5 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target shadow-inner">
@@ -955,12 +952,12 @@
                 <!-- Rec Union Details Card -->
                 <div id="recUnionInfoCard" class="mt-2.5 p-2.5 rounded-2xl bg-leaf-50 dark:bg-leaf-950/40 border border-leaf-200 dark:border-leaf-800 text-[11px] text-leaf-900 dark:text-leaf-200 flex flex-col gap-1 shadow-sm">
                   <div class="flex items-center justify-between font-bold">
-                    <span id="recUnionTitle"><i class="fa-solid fa-location-dot text-emerald-500 mr-1"></i> <span id="recUnionNameLbl">রংপুর সদর</span></span>
-                    <span id="recUnionElevation" class="font-mono text-amber-600 dark:text-amber-400 font-bold">উচ্চতা: ৩০.৫ মি.</span>
+                    <span id="recUnionTitle"><i class="fa-solid fa-location-dot text-emerald-500 mr-1"></i> <span id="recUnionNameLbl">Rangpur > Badarganj > Damodarpur</span></span>
+                    <span id="recUnionElevation" class="font-mono text-amber-600 dark:text-amber-400 font-bold">Elevation: 30.5m</span>
                   </div>
                   <div class="flex items-center justify-between text-[10px] text-slate-600 dark:text-slate-400">
-                    <span id="recUnionSoil">মাটির ধরন: দোআঁশ</span>
-                    <span id="recUnionRiver">নদী অববাহিকা: তিস্তা</span>
+                    <span id="recUnionSoil">Soil Type: Loam</span>
+                    <span id="recUnionRiver">Basin: Tista</span>
                   </div>
                 </div>
               </div>
@@ -968,31 +965,32 @@
               <!-- Past Crop Selection -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span data-i18n="recPastCropLbl">🌾 আগের মৌসুমে কী ফসল চাষ করেছিলেন?</span>
-                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold" data-i18n="recNutrientLossTag">পুষ্টি ক্ষয় হিসাব</span>
+                  <span data-i18n="recPastCropLbl">🌾 What crop did you grow in the previous season?</span>
+                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold" data-i18n="recNutrientLossTag">Soil Depletion Metric</span>
                 </label>
                 <select id="recPastCrop" onchange="onFarmerParamsChanged()"
                   class="w-full text-xs font-bold p-3 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target">
-                  <option value="boro_rice" selected>🌾 বোরো ধান (Boro Rice - উচ্চ সেচ ও পানির টান)</option>
-                  <option value="potato">🥔 আলু (Potato - উচ্চ সার ও নিবিড় পরিচর্যা)</option>
-                  <option value="aman_rice_short">🌾 রোপা আমন ধান (Aman Rice - বর্ষাকালীন ধান)</option>
-                  <option value="aush_rice">🌾 আউশ ধান (Aush Rice - গ্রীষ্মকালীন স্বল্পমেয়াদী)</option>
-                  <option value="maize">🌽 হাইব্রিড ভুট্টা (Hybrid Maize - দীর্ঘমেয়াদী ফসল)</option>
-                  <option value="wheat">🌾 গম (Wheat - শীতকালীন রবি ফসল)</option>
-                  <option value="jute">🌿 পাট (Jute - বর্ষাকালীন অর্থকরী আঁশ ফসল)</option>
-                  <option value="mustard">🌼 সরিষা (Mustard - কম সেচের লাভজনক তৈলবীজ)</option>
+                  <option value="boro_rice" selected>🌾 Boro Rice (High Irrigation & High Water Deficit)</option>
+                  <option value="potato">🥔 Potato (Cold-Sensitive Winter Rabi)</option>
+                  <option value="aman_rice_short">🌾 Aman Rice (Monsoon Rainfed Rice)</option>
+                  <option value="aush_rice">🌾 Aush Rice (Summer Short-Cycle Rice)</option>
+                  <option value="maize">🌽 Hybrid Maize (Drought-Sensitive Corn)</option>
+                  <option value="wheat">🌾 Wheat (Terminal Heat-Stress Vulnerable)</option>
+                  <option value="jute">🌿 Jute (Retting Water Scarcity)</option>
+                  <option value="mustard">🌼 Mustard (Low-Water Oilseed)</option>
+                  <option value="fallow">🍂 Fallow Land</option>
                 </select>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug" data-i18n="recPastCropDesc">পূর্বের ফসলের ওপর ভিত্তি করে মাটিতে নাইট্রোজেন ঘাটতি ও ক্ষতিকর পোকার উপস্থিতি যাচাই করা হয়।</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug" data-i18n="recPastCropDesc">Evaluates residual nitrogen deficit and subterranean pest cycle vulnerability based on prior crop.</p>
               </div>
 
               <!-- Consecutive Monoculture Years (Slider + Number Input) -->
               <div class="p-3.5 rounded-2xl bg-earth-50 dark:bg-earth-800/70 border border-earth-200 dark:border-earth-700 space-y-2">
                 <div class="flex items-center justify-between gap-2">
-                  <label class="text-xs font-bold text-slate-700 dark:text-slate-300">
-                    🔁 টানা কত বছর একই ফসল করছেন?
+                  <label class="text-xs font-bold text-slate-700 dark:text-slate-300" data-i18n="recMonoQuestion">
+                    🔁 How many consecutive years have you grown the same crop?
                   </label>
                   <span id="monoRiskTag" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300" data-i18n="recMonoRiskTag">
-                    চরম ঝুঁকি (৩+ বছর)
+                    Critical Risk (3+ Years)
                   </span>
                 </div>
                 <div class="flex items-center gap-3">
@@ -1003,49 +1001,47 @@
                     <input id="recMonocultureNumber" type="number" min="1" max="10" value="3"
                       oninput="syncMonocultureInputs(this.value, 'number')"
                       class="w-14 text-center text-xs font-black p-2 rounded-xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-900 text-slate-900 dark:text-white focus:outline-none" />
-                    <span class="text-xs font-bold text-slate-500" data-i18n="recMonoYears">বছর</span>
+                    <span class="text-xs font-bold text-slate-500" data-i18n="recMonoYears">Yrs</span>
                   </div>
                 </div>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug" data-i18n="recMonoWarningDesc">
-                  টানা ৩+ বছর একই ফসল চাষ করলে মাটির ১৫ সেমি নিচে শক্ত স্তর (Hardpan) তৈরি হয় ও ফলন ৩০% পর্যন্ত কমে যায়।
+                  Monoculture for 3+ years forms an impermeable subterranean hardpan 15 cm below surface, cutting yields up to 30%.
                 </p>
               </div>
 
               <!-- Land Area in Bigha -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
-                  <span data-i18n="recLandAreaLbl">📐 চাষযোগ্য জমির পরিমাণ (বিঘা)</span>
-                  <span class="text-[10px] text-slate-500 font-normal" data-i18n="recLandDecimalSub">১ বিঘা ≈ ৩৩ শতক</span>
+                  <span data-i18n="recLandAreaLbl">📐 Cultivable Land Area (Bigha)</span>
+                  <span class="text-[10px] text-slate-500 font-normal" data-i18n="recLandDecimalSub">1 Bigha ≈ 33 Decimals</span>
                 </label>
                 <div class="relative">
                   <input id="recLandBigha" type="number" min="0.5" max="100" step="0.5" value="2"
                     onchange="onFarmerParamsChanged()"
                     class="w-full text-xs font-bold p-3 pr-14 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-white dark:bg-earth-800 text-slate-900 dark:text-white focus:outline-none touch-target" />
-                  <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-black text-slate-500" data-i18n="recLandUnit">বিঘা</span>
+                  <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-black text-slate-500" data-i18n="recLandUnit">Bigha</span>
                 </div>
               </div>
 
               <!-- Farmer Priority -->
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5"
-                  data-i18n="paramGoalLbl">🎯 আপনার প্রধান উদ্দেশ্য / প্রাধান্য</label>
+                  data-i18n="paramGoalLbl">🎯 Primary Objective / Priority</label>
                 <div class="grid grid-cols-3 gap-2 text-xs">
                   <button type="button" onclick="setCropGoal('water_saving', this)"
-                    class="crop-goal-btn active p-2.5 rounded-2xl border-2 border-leaf-600 bg-leaf-600 text-white font-black text-center touch-target flex flex-col items-center justify-center gap-1 shadow-sm"
-                    data-i18n="goalWater">
+                    class="crop-goal-btn active p-2.5 rounded-2xl border-2 border-leaf-600 bg-leaf-600 text-white font-black text-center touch-target flex flex-col items-center justify-center gap-1 shadow-sm">
                     <i class="fa-solid fa-droplet text-sm"></i>
-                    <span>পানি বাঁচানো</span>
+                    <span data-i18n="recGoalWaterSpan">Save Water</span>
                   </button>
                   <button type="button" onclick="setCropGoal('max_profit', this)"
-                    class="crop-goal-btn p-2.5 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-800 dark:text-slate-200 font-bold text-center touch-target flex flex-col items-center justify-center gap-1"
-                    data-i18n="goalProfit">
+                    class="crop-goal-btn p-2.5 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-800 dark:text-slate-200 font-bold text-center touch-target flex flex-col items-center justify-center gap-1">
                     <i class="fa-solid fa-sack-dollar text-sm text-harvest-500"></i>
-                    <span>বেশি লাভ</span>
+                    <span data-i18n="recGoalProfitSpan">Max Profit</span>
                   </button>
                   <button type="button" onclick="setCropGoal('soil_health', this)"
                     class="crop-goal-btn p-2.5 rounded-2xl border-2 border-earth-200 dark:border-earth-700 bg-earth-50 dark:bg-earth-800 text-slate-800 dark:text-slate-200 font-bold text-center touch-target flex flex-col items-center justify-center gap-1">
                     <i class="fa-solid fa-leaf text-sm text-emerald-500"></i>
-                    <span>মাটির স্বাস্থ্য</span>
+                    <span data-i18n="recGoalSoilSpan">Soil Health</span>
                   </button>
                 </div>
               </div>
@@ -1054,20 +1050,20 @@
               <button type="button" onclick="loadLiveBackendAnalysis(currentSelectedDistId)"
                 class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-leaf-600 to-emerald-600 hover:from-leaf-700 hover:to-emerald-700 text-white font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 touch-target">
                 <i class="fa-solid fa-microchip text-base"></i>
-                <span data-i18n="btnRunAgentsAnalysis">৬+১ এআই এজেন্ট দিয়ে খামার বিশ্লেষণ চালান</span>
+                <span data-i18n="btnRunAgentsAnalysis">Run Farm Analysis with 6+1 AI Agents</span>
               </button>
 
               <div
                 class="p-3.5 rounded-2xl bg-leaf-500/10 border border-leaf-500/20 text-xs text-leaf-900 dark:text-leaf-200 space-y-1">
-                <span class="font-black flex items-center gap-1.5"><i class="fa-solid fa-satellite"></i> <span data-i18n="recValidationBadge">নাসা স্যাটেলাইট ও রংপুর ভ্যালিডেশন</span></span>
-                <p class="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
-                  রংপুর বিভাগের ৫৩৬ ইউনিয়নের ১,৩৯১,৫২০টি বাস্তব তথ্যে ট্রেইন করা ৬টি মডেল (GPM, SMAP, MODIS, Landsat) দিয়ে এই সুপারিশমালা নিশ্চিত করা হয়েছে।
+                <span class="font-black flex items-center gap-1.5"><i class="fa-solid fa-satellite"></i> <span data-i18n="recValidationBadge">NASA Satellite & Rangpur Validation</span></span>
+                <p class="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium" data-i18n="recValidationDesc">
+                  Validated across 1,391,520 real observations across 536 unions in Rangpur Division using 6 trained models (GPM, SMAP, MODIS, Landsat).
                 </p>
               </div>
             </div>
           </div>
 
-<!-- Dynamic 3-Season Timeline, Soil Fatigue Alert & Crop Feed -->
+          <!-- Dynamic 3-Season Timeline, Soil Fatigue Alert & Crop Feed -->
           <div class="lg:col-span-8 space-y-5">
             <!-- Soil Fatigue & Monoculture Alert Card (Degradation Agent) -->
             <div id="soilFatigueAlertCard"
@@ -1075,24 +1071,24 @@
               <div class="flex flex-wrap items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
                   <i class="fa-solid fa-bug text-rose-600 text-lg"></i>
-                  <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="recDegradationHeader">মাটির ক্লান্তি ও পোকার ঝুঁকি বিশ্লেষণ (Degradation Agent)</h3>
+                  <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="recDegradationHeader">Soil Degradation & Pest Vulnerability (Degradation Agent)</h3>
                 </div>
-                <span id="soilFatigueBadge" class="px-3 py-1 rounded-full text-xs font-black bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300" data-i18n="recDegradationStatus">যাচাই হচ্ছে...</span>
+                <span id="soilFatigueBadge" class="px-3 py-1 rounded-full text-xs font-black bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300" data-i18n="recDegradationStatus">Analyzing...</span>
               </div>
               <div class="space-y-1">
                 <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-                  <span data-i18n="pestVulnerabilityLbl">কীটপতঙ্গ ও ছত্রাকের আক্রমণ সূচক:</span>
-                  <span id="pestIndexVal" class="font-black text-rose-600" data-i18n="recInitialPestIndex">৮৪ / ১০০</span>
+                  <span data-i18n="pestVulnerabilityLbl">Pest & Fungal Vulnerability Index:</span>
+                  <span id="pestIndexVal" class="font-black text-rose-600" data-i18n="recInitialPestIndex">84 / 100</span>
                 </div>
                 <div class="w-full h-2.5 bg-white/80 dark:bg-earth-800 rounded-full overflow-hidden border border-earth-200 dark:border-earth-700">
                   <div id="pestIndexBar" class="h-full bg-gradient-to-r from-amber-500 to-rose-600 rounded-full transition-all duration-300" style="width: 84%"></div>
                 </div>
               </div>
-              <p id="soilFatigueWarningText" class="text-xs text-slate-800 dark:text-slate-200 font-semibold leading-relaxed">
-                টানা একই ফসল চাষে মাটির পুষ্টি ও জৈব পদার্থের ঘাটতি বিশ্লেষণ করা হচ্ছে...
+              <p id="soilFatigueWarningText" class="text-xs text-slate-800 dark:text-slate-200 font-semibold leading-relaxed" data-i18n="recSoilFatigueWarningPlh">
+                Analyzing nutrient depletion and soil organic matter loss from consecutive monoculture...
               </p>
-              <p id="soilFatigueRecText" class="text-xs text-leaf-800 dark:text-leaf-300 font-bold bg-white/60 dark:bg-earth-900/60 p-2.5 rounded-xl border border-leaf-500/20">
-                💡 পরামর্শ লোড হচ্ছে...
+              <p id="soilFatigueRecText" class="text-xs text-leaf-800 dark:text-leaf-300 font-bold bg-white/60 dark:bg-earth-900/60 p-2.5 rounded-xl border border-leaf-500/20" data-i18n="recSoilFatigueRecPlh">
+                💡 Loading operational advice...
               </p>
             </div>
 
@@ -1102,21 +1098,21 @@
               <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-earth-200 dark:border-earth-700">
                 <div>
                   <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-[10px] font-black uppercase text-leaf-600 dark:text-leaf-400" data-i18n="recMasterRotationBadge">মাস্টার রোটেশন এজেন্ট (১ বছরের পূর্ণাঙ্গ পরিকল্পনা)</span>
-                    <span id="timelinePriorityBadge" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-leaf-100 text-leaf-800 dark:bg-leaf-950 dark:text-leaf-300 border border-leaf-300" data-i18n="recPriorityWater">অগ্রাধিকার: পানি বাঁচানো</span>
+                    <span class="text-[10px] font-black uppercase text-leaf-600 dark:text-leaf-400" data-i18n="recMasterRotationBadge">Master Rotation Agent (Full 1-Year Plan)</span>
+                    <span id="timelinePriorityBadge" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-leaf-100 text-leaf-800 dark:bg-leaf-950 dark:text-leaf-300 border border-leaf-300" data-i18n="recPriorityWater">Priority: Save Water</span>
                   </div>
-                  <h3 id="timelineThemeTitle" class="text-base sm:text-lg font-black text-slate-900 dark:text-white mt-0.5">
-                    ৩-মৌসুমী ফসল চক্র: খরিফ-১ ➔ খরিফ-২ ➔ রবি
+                  <h3 id="timelineThemeTitle" class="text-base sm:text-lg font-black text-slate-900 dark:text-white mt-0.5" data-i18n="recTimelineTitle">
+                    3-Season Crop Rotation: Kharif-1 ➔ Kharif-2 ➔ Rabi
                   </h3>
                 </div>
                 <button type="button" onclick="playBanglaVoiceAdvice()"
                   class="px-3.5 py-2 rounded-2xl bg-leaf-600 hover:bg-leaf-700 text-white text-xs font-black flex items-center gap-1.5 shadow-sm touch-target">
-                  <i class="fa-solid fa-volume-high"></i> <span data-i18n="recListenPlanBtn">পরিকল্পনা শুনুন</span>
+                  <i class="fa-solid fa-volume-high"></i> <span data-i18n="recListenPlanBtn">Listen Plan</span>
                 </button>
               </div>
               <div id="timelineStepsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div class="p-4 rounded-2xl bg-earth-50 dark:bg-earth-800 text-xs font-bold text-slate-500">
-                  জেলা ও ফসল বিশ্লেষণ লোড হচ্ছে...
+                <div class="p-4 rounded-2xl bg-earth-50 dark:bg-earth-800 text-xs font-bold text-slate-500" data-i18n="recTimelineLoadingPlh">
+                  Loading district & crop analysis...
                 </div>
               </div>
               <div id="timelineImpactBar" class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-earth-200 dark:border-earth-700 text-xs">
@@ -1124,10 +1120,8 @@
             </div>
 
             <div class="flex items-center justify-between pb-1 text-xs">
-              <span class="font-black text-slate-900 dark:text-white uppercase" id="cropMatchCount">৩টি উপযুক্ত বিকল্প
-                ফসল</span>
-              <span class="text-leaf-600 dark:text-leaf-400 font-black" data-i18n="cropSortBadge">খরা সহনশীলতায়
-                সাজানো</span>
+              <span class="font-black text-slate-900 dark:text-white uppercase" id="cropMatchCount" data-i18n="recCropMatchCount">3 Optimal Alternative Crops</span>
+              <span class="text-leaf-600 dark:text-leaf-400 font-black" data-i18n="cropSortBadge">Sorted by Drought Resilience</span>
             </div>
             <div class="space-y-4" id="cropCardsContainer"></div>
           </div>
@@ -2410,7 +2404,7 @@
       });
       try { if (window.location.hash !== '#' + pageId) window.history.pushState(null, null, '#' + pageId); } catch (e) { }
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (pageId === 'resources' || pageId === 'dashboard') {
+      if (pageId === 'resources' || pageId === 'dashboard' || pageId === 'crop-recommender') {
         if (!window.userExplicitlyToggledLang && currentLang !== 'en') {
           currentLang = 'en';
           const label = document.getElementById('currentLangLabel');
@@ -2620,6 +2614,18 @@
         recQuickSmartFilter: "স্মার্ট ফিল্টারিং",
         recRunAnalysisBtn: "৬+১ এআই এজেন্ট দিয়ে খামার বিশ্লেষণ চালান",
         recTitle: "আপনার জমির তথ্য ও চাষাবাদের ধরন",
+        recInputBadge: "কৃষক ইনপুট",
+        recFullDatasetTag: "ফুল ডেটাসেট",
+        recMonoQuestion: "🔁 টানা কত বছর একই ফসল করছেন?",
+        recGoalWaterSpan: "পানি বাঁচানো",
+        recGoalProfitSpan: "বেশি লাভ",
+        recGoalSoilSpan: "মাটির স্বাস্থ্য",
+        recValidationDesc: "রংপুর বিভাগের ৫৩৬ ইউনিয়নের ১,৩৯১,৫২০টি বাস্তব তথ্যে ট্রেইন করা ৬টি মডেল (GPM, SMAP, MODIS, Landsat) দিয়ে এই সুপারিশমালা নিশ্চিত করা হয়েছে।",
+        recSoilFatigueWarningPlh: "টানা একই ফসল চাষে মাটির পুষ্টি ও জৈব পদার্থের ঘাটতি বিশ্লেষণ করা হচ্ছে...",
+        recSoilFatigueRecPlh: "💡 পরামর্শ লোড হচ্ছে...",
+        recTimelineTitle: "৩-মৌসুমী ফসল চক্র: খরিফ-১ ➔ খরিফ-২ ➔ রবি",
+        recTimelineLoadingPlh: "জেলা ও ফসল বিশ্লেষণ লোড হচ্ছে...",
+        recCropMatchCount: "৩টি উপযুক্ত বিকল্প ফসল",
         recUnionLbl: "৩. ইউনিয়ন নির্বাচন:",
         recUnionSelectLbl: "৩. ইউনিয়ন নির্বাচন",
         recUnionsConnectedBadge: "৫৩৬ ইউনিয়ন সংযুক্ত",
@@ -2923,7 +2929,19 @@
         recQuickSelectTitle: "Rangpur Division Quick-Select (1-Click):",
         recQuickSmartFilter: "Smart Filter",
         recRunAnalysisBtn: "Run 6+1 Multi-Agent Farm Analysis",
-        recTitle: "Farm Parcel & Crop Cultivation Profile",
+        recTitle: "Your Land & Farming Profile",
+        recInputBadge: "Farmer Input",
+        recFullDatasetTag: "Full Dataset",
+        recMonoQuestion: "🔁 How many consecutive years have you grown the same crop?",
+        recGoalWaterSpan: "Save Water",
+        recGoalProfitSpan: "Max Profit",
+        recGoalSoilSpan: "Soil Health",
+        recValidationDesc: "Validated across 1,391,520 real observations across 536 unions in Rangpur Division using 6 trained models (GPM, SMAP, MODIS, Landsat).",
+        recSoilFatigueWarningPlh: "Analyzing nutrient depletion and soil organic matter loss from consecutive monoculture...",
+        recSoilFatigueRecPlh: "💡 Loading operational advice...",
+        recTimelineTitle: "3-Season Crop Rotation: Kharif-1 ➔ Kharif-2 ➔ Rabi",
+        recTimelineLoadingPlh: "Loading district & crop analysis...",
+        recCropMatchCount: "3 Optimal Alternative Crops",
         recUnionLbl: "3. Select Union:",
         recUnionSelectLbl: "3. Select Union",
         recUnionsConnectedBadge: "536 Unions Connected",
@@ -4094,7 +4112,7 @@
     /* 11. INITIALIZATION */
     window.addEventListener('DOMContentLoaded', () => {
       const initialHash = (window.location.hash || '').replace('#', '');
-      if (initialHash === 'resources' || initialHash === 'dashboard') {
+      if (initialHash === 'resources' || initialHash === 'dashboard' || initialHash === 'crop-recommender') {
         currentLang = 'en';
         const label = document.getElementById('currentLangLabel');
         if (label) label.textContent = 'বাংলা';
@@ -4749,16 +4767,18 @@ function syncMonocultureInputs(val, source) {
   if (source !== 'number' && numberInput) numberInput.value = num;
 
   const riskTag = document.getElementById('monoRiskTag');
+  const isBn = currentLang === 'bn';
+  const numFormatted = formatBilingualNumber(num, currentLang);
   if (riskTag) {
     if (num >= 3) {
       riskTag.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300';
-      riskTag.textContent = `চরম ঝুঁকি (${num} বছর)`;
+      riskTag.textContent = isBn ? `চরম ঝুঁকি (${numFormatted} বছর)` : `Critical Risk (${numFormatted} yrs)`;
     } else if (num === 2) {
       riskTag.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-300';
-      riskTag.textContent = `সতর্কতা (${num} বছর)`;
+      riskTag.textContent = isBn ? `সতর্কতা (${numFormatted} বছর)` : `Warning (${numFormatted} yrs)`;
     } else {
       riskTag.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300';
-      riskTag.textContent = `স্বাভাবিক (${num} বছর)`;
+      riskTag.textContent = isBn ? `স্বাভাবিক (${numFormatted} বছর)` : `Normal (${numFormatted} yr)`;
     }
   }
 
@@ -4922,15 +4942,25 @@ function renderThreeSeasonTimeline(master, agroAgent) {
 
   if (impactEl && master.quantified_impact) {
     const imp = master.quantified_impact;
-    impactEl.innerHTML = `
+    impactEl.innerHTML = isBn ? `
       <div class="p-2.5 rounded-xl bg-canal-50 dark:bg-earth-800 font-black text-canal-700 dark:text-canal-300 text-center">
-        💧 পানি সাশ্রয়: ${imp.water_saved_percent}%
+        💧 পানি সাশ্রয়: ${imp.water_saved_percent}%
       </div>
       <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-earth-800 font-black text-emerald-700 dark:text-emerald-300 text-center">
-        💵 সেচ সাশ্রয়: ৳${imp.irrigation_cost_saved_bdt_per_bigha}/বিঘা
+        💵 সেচ সাশ্রয়: ৳${imp.irrigation_cost_saved_bdt_per_bigha}/বিঘা
       </div>
       <div class="p-2.5 rounded-xl bg-harvest-50 dark:bg-earth-800 font-black text-harvest-700 dark:text-harvest-300 text-center">
         🌿 জৈব নাইট্রোজেন: +${imp.natural_nitrogen_added_kg_per_hectare} কেজি/হে.
+      </div>
+    ` : `
+      <div class="p-2.5 rounded-xl bg-canal-50 dark:bg-earth-800 font-black text-canal-700 dark:text-canal-300 text-center">
+        💧 Water Saved: ${imp.water_saved_percent}%
+      </div>
+      <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-earth-800 font-black text-emerald-700 dark:text-emerald-300 text-center">
+        💵 Cost Saved: ৳${imp.irrigation_cost_saved_bdt_per_bigha}/bigha
+      </div>
+      <div class="p-2.5 rounded-xl bg-harvest-50 dark:bg-earth-800 font-black text-harvest-700 dark:text-harvest-300 text-center">
+        🌿 Bio Nitrogen: +${imp.natural_nitrogen_added_kg_per_hectare} kg/ha
       </div>
     `;
   }
